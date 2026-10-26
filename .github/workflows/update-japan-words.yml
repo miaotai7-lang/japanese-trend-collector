@@ -28,6 +28,15 @@ jobs:
           cache-dependency-path: requirements.txt
       - name: Install tokenizer
         run: pip install -r requirements.txt
+      - name: Run collector regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Set monthly reference cache key
+        id: cache-month
+        run: echo "month=$(date -u +%Y%m)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        with:
+          path: .dictionary-cache
+          key: jp-bilingual-dictionaries-v852-${{ steps.cache-month.outputs.month }}
       - name: Aggregate permitted RSS summaries
         run: python collector.py --root docs
       - name: Save rolling dictionary for the next scheduled run
