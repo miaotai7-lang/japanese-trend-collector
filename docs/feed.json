@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": null,
+  "sourceDescription": "尚未运行定时采集；此文件是空模板，不是真实实时词表",
+  "counts": {"words": 0, "seenDocuments": 0, "sourceSucceeded": 0},
+  "sourceStatus": [],
+  "items": []
+}
