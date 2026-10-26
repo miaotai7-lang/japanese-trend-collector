@@ -9,7 +9,7 @@
 - 采样指标 `last7` 是本系统**最近 7 天抓到的去重 RSS 标题出现次数**，不是全日本网络词频。首次运行没有历史对照，真正的趋势变化需要几次采集后才有意义。
 - 个人/网站作者的 RSS 来源可能修改、停止服务或限流。单一来源失败不会删除已收集词汇；全部来源失败会直接报错并保留上一次发布的数据。
 - 最多公开展示约 800 个词；保留最近 45 天的累计样本。
-- 假名是自动形态素分析候选，中文与英文是通过 MyMemory 获取的**机器翻译候选，未经逐条核实**。每次至多为 8 个缺译词请求翻译，失败保留为空。不能把这些候选当成官方专业术语翻译。
+- V8.5.2 起只发布**假名、日中和日英两份公开词典释义同时齐全**的学习候选；不再使用此前错误较多的 MyMemory 单词机器翻译，未匹配的原始采集词保留待核对、暂不展示。所有释义仍非语境人工核对结果。
 
 ## 不用打开网站也自动运行的启用流程
 
@@ -30,7 +30,7 @@ GitHub Actions 计划在**日本时间每天 08:15、20:15**采集（UTC `15 23,
 - GitHub 定时程序只更新自己的 `docs/` 数据和 GitHub Pages，**不会自动部署、覆盖或更改 Firebase Hosting 网站**。
 - 采集的数据是公开的；`docs/state.json` 也会公开，不能存个人信息、账号密码或密钥。
 - 词条的本机关注标记保存在当前设备的浏览器 localStorage。点击「加入我的词典」只是将候选带入原有编辑器，**需要你人工确认并保存**才进入 Firebase 私人术语库。
-- 若要禁用外部翻译请求，在工作流中将 `python collector.py --root docs` 改为 `python collector.py --root docs --no-translation`。
+- V8.5.2 不再调用 MyMemory 翻译服务；下载公开参考词典是构建合格日中英学习词汇的必要步骤。如果下载失败则保留上一版数据，不会发布空白数据。
 - GitHub 账户和 Actions 设置因平台政策、配额和权限可能发生变化。遇到部署被拒绝，检查仓库 Actions permissions (`Read and write permissions`) 与 Pages 的 GitHub Actions 来源设置。
 
 ## 测试
@@ -44,3 +44,18 @@ python collector.py --root docs
 ```
 
 容器或开发环境若无法访问外部网络，不能当作真实采集成功；`docs/feed.json` 初始模板不含任何伪造的“当前热门词”。
+
+## V8.5.2：避免错误词汇与缺失中英释义
+
+2026-10-26 起的质量策略：公开 feed 只展示同时具备 **假名、中文、英文** 的双语词典匹配候选。过去 MyMemory 对孤立日语短词的翻译（例如「いい→你问」「れる→a cable」）不再使用；采集到的语法碎片不显示。采集原始词及来源继续存在 `docs/state.json`（作为候选池），词典暂未匹配的词不会强行翻译。
+
+**词典来源**：
+
+- 日中：[`lxl66566/Japanese-Chinese-thesaurus`](https://github.com/lxl66566/Japanese-Chinese-thesaurus)，The Unlicense。下载词库 `final.json`，按日语原形严格匹配。
+- 日英：[EDRDG EDICT2u](https://www.edrdg.org/pub/Nihongo/)（JMdict/EDICT 项目，EDRDG 许可／CC BY-SA 署名相同方式分享）。保留原词条的英文释义候选，不凭日文字形猜测。
+
+**许可声明**：公开 `docs/feed.json` 中引用的日英词典释义按上游许可署名和同方式分享；数据层按 CC BY-SA 4.0 提供（见本仓库 `DICTIONARY_ATTRIBUTION.md`）。原有网站的个人词库、独立代码及账号数据不受此数据层许可扩展约束。
+
+两个参考词典原始文件只保存在 GitHub Actions 的 `.dictionary-cache`，按月重取，不提交完整第三方辞典至仓库，也不会写入 Firebase。若源站下载失败或文件异常，整个更新任务失败，**保留上一版公开 feed，不发布空白或错译的新版本**。
+
+独立检查：向 `main` 发起 PR 将触发 `Validate bilingual word quality (no publication)` 工作流，在线下载真实词典并对当前候选词执行严格匹配，绝不覆盖已发布数据。实际采集次数和词库覆盖率会随 RSS 来源变化，少量词条不代表系统故障。
