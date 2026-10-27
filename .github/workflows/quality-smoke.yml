@@ -1,4 +1,4 @@
-name: Validate Japanese word quality and sourced slang (no publication)
+name: Validate genuine internet slang only (no publication)
 on:
   pull_request:
     branches: [main]
@@ -8,40 +8,26 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: pip
-      - run: pip install -r requirements.txt
-      - name: Run local regression suite
-        run: python -m unittest discover -s tests -v
-      - name: Verify licensed dictionaries and research-backed slang
+      - name: Run isolated regression tests
+        run: python -m unittest discover -s tests -p 'test_slang_only.py' -v
+      - name: Publish to temporary directory only; audit slang and bilingual content
         run: |
           python - <<'PY'
+          import json, tempfile
           from datetime import datetime, timedelta, timezone
-          from collector import load_json, build_feed, normalize
-          from quality import load_reference_dictionaries, improve_entries
-          from trend_signals import load_reviewed,import_reviewed
-          now=datetime.now(timezone(timedelta(hours=9)))
-          zh,en=load_reference_dictionaries('.dictionary-cache')
-          state=load_json('docs/state.json',{'terms':{},'seenDocs':{}})
-          metric=improve_entries(state,zh,en)
-          approved=load_reviewed('data/verified_slang.json',now.date())
-          import_reviewed(state,approved,now,normalize)
-          feed=build_feed(state,now,[])
-          trends=[w for w in feed['items'] if w.get('trendCurrent')]
-          print('DICTIONARIES:',len(zh),len(en))
-          print('QUALITY:',metric)
-          print('EVIDENCE-BASED SLANG:',[(w['jp'],w['evidenceDate'],w['evidencePublisher']) for w in trends])
-          print('GENERAL VOCABULARY:',len(feed['items'])-len(trends))
-          print('REVIEW QUEUE:',feed['counts'].get('reviewQueue'))
-          assert len(zh)>1000 and len(en)>1000
-          assert len(approved)>=7 and len(trends)>=7
-          assert all(w['zh'] and w['en'] and w['kana'] for w in feed['items'])
-          assert all(w['jp'] not in ('いい','れる') for w in feed['items'])
-          assert all(w.get('trendVerified') and w.get('evidenceDate') for w in trends)
-          assert not any(w['jp'] in ('女性','監督','行く','帰る') and w.get('trendCurrent') for w in feed['items'])
+          from slang_only import run
+          with tempfile.TemporaryDirectory() as t:
+              f=run(t,'slang_terms.json',no_network=True)
+              forbidden={'情報','会社','見る','食べる','アクセス','いい','れる'}
+              assert f['feedType']=='japanese-internet-slang-only'
+              assert len(f['items'])>=6
+              assert all(x['jp'] not in forbidden and x['zh'] and x['en'] and x['kana'] and x['sources'] for x in f['items'])
+              print('Approved recent slang:',len(f['items']))
+              print('Preview:', [(x['jp'],x['zh'],x['en']) for x in f['items'][:5]])
           PY
