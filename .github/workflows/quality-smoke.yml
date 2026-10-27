@@ -1,4 +1,4 @@
-name: Validate bilingual word quality (no publication)
+name: Validate Japanese word quality and sourced slang (no publication)
 on:
   pull_request:
     branches: [main]
@@ -16,22 +16,32 @@ jobs:
           python-version: '3.12'
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Run regression tests
+      - name: Run local regression suite
         run: python -m unittest discover -s tests -v
-      - name: Check authentic dictionary downloads and public feed compatibility
+      - name: Verify licensed dictionaries and research-backed slang
         run: |
           python - <<'PY'
           from datetime import datetime, timedelta, timezone
-          from collector import load_json, build_feed
+          from collector import load_json, build_feed, normalize
           from quality import load_reference_dictionaries, improve_entries
-          zh,en = load_reference_dictionaries('.dictionary-cache')
-          state = load_json('docs/state.json', {'terms':{},'seenDocs':{}})
-          metrics = improve_entries(state, zh, en)
-          data = build_feed(state,datetime.now(timezone(timedelta(hours=9))),[])
-          print('LEXICONS:',len(zh),'Chinese and',len(en),'English')
-          print('QUALITY:',metrics)
-          print('PREVIEW:', [(x['jp'],x['zh'][:22],x['en'][:24]) for x in data['items'][:12]])
-          assert len(zh) > 1000 and len(en) > 1000
-          assert len(data['items']) >= 15, 'Insufficient bilingual coverage; do not publish'
-          assert all(x['jp'] not in ('いい','れる') and x['zh'] and x['en'] for x in data['items'])
+          from trend_signals import load_reviewed,import_reviewed
+          now=datetime.now(timezone(timedelta(hours=9)))
+          zh,en=load_reference_dictionaries('.dictionary-cache')
+          state=load_json('docs/state.json',{'terms':{},'seenDocs':{}})
+          metric=improve_entries(state,zh,en)
+          approved=load_reviewed('data/verified_slang.json',now.date())
+          import_reviewed(state,approved,now,normalize)
+          feed=build_feed(state,now,[])
+          trends=[w for w in feed['items'] if w.get('trendCurrent')]
+          print('DICTIONARIES:',len(zh),len(en))
+          print('QUALITY:',metric)
+          print('EVIDENCE-BASED SLANG:',[(w['jp'],w['evidenceDate'],w['evidencePublisher']) for w in trends])
+          print('GENERAL VOCABULARY:',len(feed['items'])-len(trends))
+          print('REVIEW QUEUE:',feed['counts'].get('reviewQueue'))
+          assert len(zh)>1000 and len(en)>1000
+          assert len(approved)>=7 and len(trends)>=7
+          assert all(w['zh'] and w['en'] and w['kana'] for w in feed['items'])
+          assert all(w['jp'] not in ('いい','れる') for w in feed['items'])
+          assert all(w.get('trendVerified') and w.get('evidenceDate') for w in trends)
+          assert not any(w['jp'] in ('女性','監督','行く','帰る') and w.get('trendCurrent') for w in feed['items'])
           PY

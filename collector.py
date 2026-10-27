@@ -22,18 +22,21 @@ from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-VERSION = '1.1'
+VERSION = '1.2'
+from trend_signals import load_reviewed, import_reviewed, record_candidates, feed_topics
 from quality import load_reference_dictionaries, improve_entries, eligible_word
 JST = timezone(timedelta(hours=9))
 MAX_ITEMS = 800
 MAX_FEED_BYTES = 2_000_000
 SOURCE_FEEDS = [
-    ('google_jp', 'Google Trends 日本', 'https://trends.google.com/trending/rss?geo=JP', '热点搜索', 'trend'),
+    ('google_jp', 'Google Trends 日本', 'https://trends.google.com/trending/rss?geo=JP', '热点搜索', 'topic'),
     ('hatena_general', 'はてな・综合', 'https://b.hatena.ne.jp/hotentry.rss', '社会・生活', 'freq'),
     ('hatena_tech', 'はてな・科技', 'https://b.hatena.ne.jp/hotentry/it.rss', '科技・互联网', 'freq'),
     ('hatena_life', 'はてな・生活', 'https://b.hatena.ne.jp/hotentry/life.rss', '生活・健康', 'freq'),
     ('hatena_entertainment', 'はてな・娱乐', 'https://b.hatena.ne.jp/hotentry/entertainment.rss', '娱乐・文化', 'freq'),
     ('yahoo_business', 'Yahoo!新闻・经济', 'https://news.yahoo.co.jp/rss/topics/business.xml', '经济・商业', 'freq'),
+    ('slang_news', 'Google 新闻・流行语线索', 'https://news.google.com/rss/search?q='+urllib.parse.quote('若者言葉 流行語')+'&hl=ja&gl=JP&ceid=JP:ja', '流行语候选', 'slang_signal'),
+    ('meme_news', 'Google 新闻・网络迷因线索', 'https://news.google.com/rss/search?q='+urllib.parse.quote('ネットスラング ミーム')+'&hl=ja&gl=JP&ceid=JP:ja', '网络迷因候选', 'slang_signal'),
 ]
 STOPWORDS = set('いい よい れる られる せる させる これ それ あれ こちら こと もの ため よう とき さん そこ ここ ところ うち など そして つまり また さらに しかし でも です ます ある いる する なる ない した された する のは から まで この その 今回 本日 最近 今日 明日 昨日 全部 今後 日本 人間 人気 動画 記事 紹介 お知らせ テレビ ニュース 発表 発生 新た 世界 社会 未来 全体 一部 のち 一覧 話題 内容 開催 来月 本当 理由 問題 実際 例年 大量 大きい 小さい 多い ものすごい さまざま 多く 一つ について として よる それぞれ による きょう ほか ほぼ すべて 引き続き ともに なか 一方 あと 記録 動き 続く 今月 発売 無料 公式 確認 更新 重要 可能 必要 対応 おすすめ まとめ 知らせ どう なぜ いま 人々 以上 以下'.split())
 BAD_SUFFIXES = ('する','した','です','ます')
@@ -170,8 +173,11 @@ def ingest(articles, state, tokenizer, now):
         if a['id'] in seen_docs:continue
         seen_docs[a['id']]=date
         unique_new += 1
+        if a['kind']=='slang_signal':
+            record_candidates(state,a,now,normalize)
+            continue
         values=tokenize_title(a['title'],tokenizer)
-        if a['kind']=='trend':
+        if a['kind']=='topic':
             q=trend_query(a['title'],tokenizer)
             if q:values=[q]+values
         # Prevent same term being counted twice within a document.
@@ -190,7 +196,7 @@ def ingest(articles, state, tokenizer, now):
             entry['daily'][date]=entry['daily'].get(date,0)+1
             if a['category'] not in entry['categories']:entry['categories'].append(a['category'])
             if a['kind'] not in entry['kinds']:entry['kinds'].append(a['kind'])
-            if a['kind']=='trend':entry['trendCount']=int(entry.get('trendCount') or 0)+1
+            if a['kind']=='topic':entry['trendCount']=int(entry.get('trendCount') or 0)+1
             if not entry.get('kana'):entry['kana']=reading
             if not any(s.get('url')==a['url'] for s in entry['sources']):
                 entry['sources']=[{'title':a['title'][:120],'url':a['url'],'publisher':a['source'],'seenAt':date}]+entry['sources'][:3]
@@ -215,8 +221,18 @@ def build_feed(state, now, results):
         delta=max(0,last7-prev7)
         # Differentiate Google searches from repeated everyday article words.
         # Sample frequency is not universal internet frequency.
-        score=last7*2+min(delta,20)*3+min(e.get('trendCount',0),20)*12
-        word={k:e.get(k) for k in ['id','jp','kana','zh','en','verification','translationSources','firstSeen','lastSeen','docCount','trendCount','kinds','categories','sources']}
+        is_slang=bool(e.get('trendVerified'))
+        # Research evidence has an expiry for the *current* trend view;
+        # the historical research record remains searchable in the combined list.
+        evidence_age=(today-datetime.strptime(e.get('evidenceDate','1970-01-01'),'%Y-%m-%d').date()).days if is_slang else 99999
+        is_current_slang=is_slang and (0 <= evidence_age <= 180)
+        # A verified 2026 survey entry is ranked first. No RSS count is invented.
+        # Search query spikes are topics, not proof of a linguistic new slang term.
+        score=(1200 + max(0,12-int(e.get('evidenceRank') or 12))*12 + min(last7,10)*2) if is_current_slang else (last7*2+min(delta,20)*3)
+        word={k:e.get(k) for k in ['id','jp','kana','zh','en','verification','translationSources','firstSeen','lastSeen','docCount','trendCount','kinds','categories','sources',
+                                      'trendVerified','evidenceDate','evidenceRank','evidencePublisher','contextNote']}
+        word['trendCurrent']=is_current_slang
+        word['kinds']=(['trend']+[k for k in (word.get('kinds') or []) if k == 'freq']) if is_current_slang else [k for k in (word.get('kinds') or []) if k == 'freq']
         word.update({'last7':last7,'previous7':prev7,'score':score})
         words.append(word)
     words.sort(key=lambda x:(-x['score'],-x['last7'],x['jp']))
@@ -225,12 +241,15 @@ def build_feed(state, now, results):
         'schemaVersion':1,'generatedAt':now.isoformat(timespec='seconds'),
         'dictionarySources':[{'name':'Japanese-Chinese-thesaurus','license':'Unlicense','url':'https://github.com/lxl66566/Japanese-Chinese-thesaurus'},
                              {'name':'EDRDG EDICT2u','license':'CC BY-SA','url':'https://www.edrdg.org/pub/Nihongo/'}],
-        'sourceDescription':'公开RSS和Google Trends标题采样；仅展示日中、日英词典均匹配的候选词；未逐条核实语境，不代表日本全网词频',
-        'counts':{'words':len(words),'candidateWords':len(terms),
+        'sourceDescription':'有2026调查出处的网络流行语与一般标题高频词严格分开；搜索查询只作为话题线索；日中英文为研究用途释义，不代表日本全网词频',
+        'counts':{'words':len(words),'verifiedSlang':sum(bool(w.get('trendVerified')) for w in words),
+                  'currentSlang':sum(bool(w.get('trendCurrent')) for w in words),
+                  'reviewQueue':len(state.get('slangReviewQueue',{})),'topicSamples':len(feed_topics(state)),
+                  'candidateWords':len(terms),
                   'heldForReview':len(terms)-sum(bool(e.get('qualityApproved')) for e in terms.values()),
                   'seenDocuments':len(state.get('seenDocs',{})),
                   'sourceSucceeded':sum(r['status']=='ok' for r in results)},
-        'sourceStatus':results,'items':words,
+        'sourceStatus':results,'topics':feed_topics(state),'items':words,
     }
 
 
@@ -244,6 +263,7 @@ def main(argv=None):
     p.add_argument('--fixture-dir',default='',help='Read fixture RSS instead of internet; only for isolated tests')
     p.add_argument('--dictionary-cache',default='.dictionary-cache',
                    help='Location of the two openly licensed reference files')
+    p.add_argument('--reviewed-slang',default='data/verified_slang.json', help='Manual evidence-reviewed slang entries (source URL and date required)')
     p.add_argument('--no-network-dictionaries',action='store_true',
                    help='Use existing dictionary files only; for tests and offline diagnostics')
     args=p.parse_args(argv)
@@ -283,6 +303,15 @@ def main(argv=None):
         print('ERROR bilingual dictionary unavailable; keeping prior feed: '+str(exc)[:200],file=sys.stderr)
         return 3
     quality=improve_entries(state,zh_dict,en_dict)
+    # Strictly vetted research entries are imported only AFTER general dictionary enrichment.
+    # New unverified RSS slang guesses remain in state.slangReviewQueue, not the public feed.
+    try:
+        approved=load_reviewed(args.reviewed_slang,now.date())
+        added=import_reviewed(state,approved,now,normalize)
+        print(f'RESEARCH: {len(approved)} verified slang records, {added} newly linked')
+    except Exception as exc:
+        print('ERROR reviewed slang evidence missing or invalid; retaining previous published feed: '+str(exc)[:160],file=sys.stderr)
+        return 4
     generated=build_feed(state,now,sources)
     print('QUALITY: '+json.dumps(quality,ensure_ascii=False))
     dump_json(root/'state.json',state)

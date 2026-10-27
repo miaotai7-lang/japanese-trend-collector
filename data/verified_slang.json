@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "curationNotice": "精选经过报道证实的日本新兴/再流行用语；中文英文为研究用途的整理意译，非官方认证翻译；不要将研究排名视为全体日本人的流行程度。",
+  "items": [
+    {
+      "jp": "メロい",
+      "kana": "めろい",
+      "zh": "令人心动；迷人到让人着迷（年轻人口语）",
+      "en": "heart-melting; swoon-worthy (youth slang)",
+      "category": "网络口语",
+      "date": "2026-10-02",
+      "rank": 1,
+      "publisher": "渋谷トレンドリサーチ／ING",
+      "source": "https://prtimes.jp/main/html/rd/p/000000221.000026876.html",
+      "note": "夸赞外貌、举动、气质或内在特质令人心动；常用于喜欢的偶像或他人"
+    },
+    {
+      "jp": "ドパガキ",
+      "kana": "どぱがき",
+      "zh": "沉迷短视频等高刺激内容的人（戏谑，可能带贬义）",
+      "en": "dopamine-chasing kid/person (teasing, potentially derogatory)",
+      "category": "网络俚语",
+      "date": "2026-10-02",
+      "rank": 2,
+      "publisher": "渋谷トレンドリサーチ／ING",
+      "source": "https://prtimes.jp/main/html/rd/p/000000221.000026876.html",
+      "note": "由「ドーパミン中毒のガキ」缩写而来，口气视场合可能不礼貌"
+    },
+    {
+      "jp": "フレネミー",
+      "kana": "ふれねみー",
+      "zh": "表面友好、暗中敌对的人；伪朋友",
+      "en": "frenemy; a friend who is also an enemy",
+      "category": "人际关系",
+      "date": "2026-10-02",
+      "rank": 3,
+      "publisher": "渋谷トレンドリサーチ／ING",
+      "source": "https://prtimes.jp/main/html/rd/p/000000221.000026876.html",
+      "note": "源自 friend + enemy；在年轻人之间也可开玩笑使用"
+    },
+    {
+      "jp": "シャバい",
+      "kana": "しゃばい",
+      "zh": "不够酷、很逊、俗气（语境依赖）",
+      "en": "lame; uncool (slang, context-dependent)",
+      "category": "网络口语",
+      "date": "2026-10-02",
+      "rank": 6,
+      "publisher": "渋谷トレンドリサーチ／ING",
+      "source": "https://prtimes.jp/main/html/rd/p/000000221.000026876.html",
+      "note": "在 2026 年秋季流行语调查榜上；含义随说话者与语境改变"
+    },
+    {
+      "jp": "ネ申",
+      "kana": "かみ",
+      "zh": "神级、太厉害了（把「神」拆字的网络写法）",
+      "en": "god-tier; awesome (stylized spelling of 神)",
+      "category": "网络用语",
+      "date": "2026-10-02",
+      "rank": 5,
+      "publisher": "渋谷トレンドリサーチ／ING",
+      "source": "https://prtimes.jp/main/html/rd/p/000000221.000026876.html",
+      "note": "较早的网络写法在 2026 年被重新提及，不是 2026 年新创造的词"
+    },
+    {
+      "jp": "セロ活",
+      "kana": "せろかつ",
+      "zh": "以放松、舒缓压力和调节身心为目的的活动（关注血清素）",
+      "en": "serotonin-minded self-care; restorative activities",
+      "category": "生活方式",
+      "date": "2026-09-09",
+      "rank": 0,
+      "publisher": "SHIBUYA109 lab.",
+      "source": "https://www.shibuya109.co.jp/shibuya109lab/reports/20260909/",
+      "note": "2026 上半年趋势研究：散步、阅读、自然体验等舒缓身心的活动"
+    },
+    {
+      "jp": "ファッションスピ活",
+      "kana": "ふぁっしょんすぴかつ",
+      "zh": "把轻度参拜、护身符和能量景点融入日常出游的潮流",
+      "en": "casual spirituality as a lifestyle/fashion activity",
+      "category": "生活方式",
+      "date": "2026-09-09",
+      "rank": 0,
+      "publisher": "SHIBUYA109 lab.",
+      "source": "https://www.shibuya109.co.jp/shibuya109lab/reports/20260909/",
+      "note": "不是说年轻人一定有宗教信仰，而是把神社与护身符作为轻松的出游体验"
+    },
+    {
+      "jp": "〇〇すぎて滅",
+      "kana": "まるまるすぎてめつ",
+      "zh": "太……以至于“原地消失”——夸张形容情绪过强",
+      "en": "so ... I am literally done/gone (exaggerated meme phrase)",
+      "category": "网络迷因",
+      "date": "2026-06-04",
+      "rank": 1,
+      "publisher": "αZ総研／マイナビニュース",
+      "source": "https://news.mynavi.jp/article/20260604-4540169/",
+      "note": "固定句式，〇〇可替换为「好き」「尊い」等，用于夸张表达强烈的喜欢或情绪"
+    }
+  ]
+}
