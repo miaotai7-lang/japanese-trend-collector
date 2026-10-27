@@ -213,9 +213,8 @@ def build_feed(state, now, results):
     words=[]
     today=now.date()
     for e in terms.values():
-        if e.get('trendVerified') and not e.get('daily') and not e.get('docCount'):
-            # Historical fixed-list entries are not auto-discovered RSS terms.
-            continue
+        # Evidence-reviewed slang may have no RSS appearance counts.
+        # Preserve source/date and keep last7 == 0 instead of inventing frequency.
         if not e.get('qualityApproved') or not (e.get('jp') and e.get('kana') and e.get('zh') and e.get('en')):
             continue
         daily=e.get('daily',{})
