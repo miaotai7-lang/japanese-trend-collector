@@ -24,6 +24,7 @@ from pathlib import Path
 
 VERSION = '1.2'
 from trend_signals import load_reviewed, import_reviewed, record_candidates, feed_topics
+from auto_discovery import discover_from_rss
 from quality import load_reference_dictionaries, improve_entries, eligible_word
 JST = timezone(timedelta(hours=9))
 MAX_ITEMS = 800
@@ -212,6 +213,8 @@ def build_feed(state, now, results):
     words=[]
     today=now.date()
     for e in terms.values():
+        # Evidence-reviewed slang may have no RSS appearance counts.
+        # Preserve source/date and keep last7 == 0 instead of inventing frequency.
         if not e.get('qualityApproved') or not (e.get('jp') and e.get('kana') and e.get('zh') and e.get('en')):
             continue
         daily=e.get('daily',{})
@@ -263,7 +266,7 @@ def main(argv=None):
     p.add_argument('--fixture-dir',default='',help='Read fixture RSS instead of internet; only for isolated tests')
     p.add_argument('--dictionary-cache',default='.dictionary-cache',
                    help='Location of the two openly licensed reference files')
-    p.add_argument('--reviewed-slang',default='data/verified_slang.json', help='Manual evidence-reviewed slang entries (source URL and date required)')
+    p.add_argument('--reviewed-slang',default='', help='Manual evidence-reviewed slang entries (source URL and date required)')
     p.add_argument('--no-network-dictionaries',action='store_true',
                    help='Use existing dictionary files only; for tests and offline diagnostics')
     args=p.parse_args(argv)
@@ -305,14 +308,18 @@ def main(argv=None):
     quality=improve_entries(state,zh_dict,en_dict)
     # Strictly vetted research entries are imported only AFTER general dictionary enrichment.
     # New unverified RSS slang guesses remain in state.slangReviewQueue, not the public feed.
-    try:
-        approved=load_reviewed(args.reviewed_slang,now.date())
-        added=import_reviewed(state,approved,now,normalize)
-        print(f'RESEARCH: {len(approved)} verified slang records, {added} newly linked')
-    except Exception as exc:
-        print('ERROR reviewed slang evidence missing or invalid; retaining previous published feed: '+str(exc)[:160],file=sys.stderr)
-        return 4
+    if args.reviewed_slang:
+        # Optional archive; not an automatic-discovery source.
+        try:
+            approved=load_reviewed(args.reviewed_slang,now.date())
+            added=import_reviewed(state,approved,now,normalize)
+            print(f'RESEARCH: {len(approved)} optional reviewed records, {added} newly linked')
+        except Exception as exc:
+            print('ERROR optional reviewed slang invalid: '+str(exc)[:160],file=sys.stderr)
+            return 4
     generated=build_feed(state,now,sources)
+    generated['discovered']=discover_from_rss(state,tokenizer,zh_dict,en_dict,now.date())
+    generated['counts']['discovered']=len(generated['discovered'])
     print('QUALITY: '+json.dumps(quality,ensure_ascii=False))
     dump_json(root/'state.json',state)
     dump_json(root/'feed.json',generated)
