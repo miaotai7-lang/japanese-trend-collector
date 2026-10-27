@@ -1,0 +1,121 @@
+{
+  "version": "8.5.3",
+  "policy": "Only documented current Japanese internet slang, memes and slang-like expressions; no generic headlines, search queries, brand names, events or arbitrary morphological tokens.",
+  "terms": [
+    {
+      "jp": "メロい",
+      "kana": "めろい",
+      "zh": "让人心动、迷得不行（形容人或举动很有魅力）",
+      "en": "swoon-worthy; irresistibly charming",
+      "category": "网络口语",
+      "referenceDate": "2026-10-02",
+      "rank": 1,
+      "source": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+      "publisher": "渋谷トレンドリサーチ"
+    },
+    {
+      "jp": "ドパガキ",
+      "kana": "どぱがき",
+      "zh": "沉迷短视频等高刺激内容的人（常作自嘲）",
+      "en": "a dopamine-addicted short-form-content junkie (self-deprecating slang)",
+      "category": "网络文化",
+      "referenceDate": "2026-10-02",
+      "rank": 2,
+      "source": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+      "publisher": "渋谷トレンドリサーチ"
+    },
+    {
+      "jp": "フレネミー",
+      "kana": "ふれねみー",
+      "zh": "表面是朋友、暗中却怀有敌意的人",
+      "en": "frenemy; a friend who behaves like an enemy",
+      "category": "人际关系",
+      "referenceDate": "2026-10-02",
+      "rank": 3,
+      "source": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+      "publisher": "渋谷トレンドリサーチ"
+    },
+    {
+      "jp": "シャバい",
+      "kana": "しゃばい",
+      "zh": "很逊、没劲、名不副实（非正式用语）",
+      "en": "lame; weak; underwhelming",
+      "category": "网络口语",
+      "referenceDate": "2026-10-02",
+      "rank": 6,
+      "source": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+      "publisher": "渋谷トレンドリサーチ"
+    },
+    {
+      "jp": "ワッサー",
+      "kana": "わっさー",
+      "zh": "嗨！最近怎么样？（街头风格的问候语）",
+      "en": "Wassup?; What's up?",
+      "category": "网络口语",
+      "referenceDate": "2026-10-02",
+      "rank": 6,
+      "source": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+      "publisher": "渋谷トレンドリサーチ"
+    },
+    {
+      "jp": "ドパい",
+      "kana": "どぱい",
+      "zh": "特别刺激、令人兴奋到上头",
+      "en": "exhilarating; a huge dopamine rush (slang)",
+      "category": "网络文化",
+      "referenceDate": "2026-10-02",
+      "source": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+      "publisher": "渋谷トレンドリサーチ・次に来る言葉"
+    },
+    {
+      "jp": "ドパおじ",
+      "kana": "どぱおじ",
+      "zh": "沉迷强刺激网络内容的中年男性（戏称）",
+      "en": "dopamine-chasing middle-aged man (joking slang)",
+      "category": "网络文化",
+      "referenceDate": "2026-10-15",
+      "source": "https://www.watch.impress.co.jp/docs/topic/2148127.html",
+      "publisher": "Impress Watch"
+    },
+    {
+      "jp": "ドパおば",
+      "kana": "どぱおば",
+      "zh": "沉迷强刺激网络内容的中年女性（戏称）",
+      "en": "dopamine-chasing middle-aged woman (joking slang)",
+      "category": "网络文化",
+      "referenceDate": "2026-10-15",
+      "source": "https://www.watch.impress.co.jp/docs/topic/2148127.html",
+      "publisher": "Impress Watch"
+    },
+    {
+      "jp": "冷笑系",
+      "kana": "れいしょうけい",
+      "zh": "以冷嘲、挖苦他人热情为态度的一类人",
+      "en": "cynical mocker; someone who sneers at others' enthusiasm",
+      "category": "网络文化",
+      "referenceDate": "2026-10-08",
+      "source": "https://fomo-fomo.com/sns/trend/reisho-kei-social-post-trend-2026/",
+      "publisher": "FOMO²"
+    },
+    {
+      "jp": "冷笑界隈",
+      "kana": "れいしょうかいわい",
+      "zh": "网上喜欢嘲弄认真或热情表达的群体、圈子",
+      "en": "online cynicism crowd; people who mock earnest enthusiasm",
+      "category": "网络文化",
+      "referenceDate": "2026-10-08",
+      "source": "https://fomo-fomo.com/sns/trend/reisho-kei-social-post-trend-2026/",
+      "publisher": "FOMO²"
+    },
+    {
+      "jp": "〇〇すぎて滅！",
+      "kana": "まるまるすぎてめつ",
+      "zh": "太……了，简直要被萌／喜欢到消失（夸张表达）",
+      "en": "so ... that I'm literally gone; I'm deceased (exaggerated fandom slang)",
+      "category": "梗与固定表达",
+      "referenceDate": "2026-09-10",
+      "source": "https://media.asahiconnect-o.com/colum/post-4586/",
+      "publisher": "朝日コネクト大阪"
+    }
+  ]
+}
