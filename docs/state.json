@@ -1004,11 +1004,11 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 5,
+      "docCount": 6,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 3,
-        "2026-10-27": 2
+        "2026-10-27": 3
       },
       "categories": [
         "社会・生活",
@@ -2659,11 +2659,12 @@
       "en": "use",
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
-      "lastSeen": "2026-10-26",
-      "docCount": 2,
+      "lastSeen": "2026-10-27",
+      "docCount": 3,
       "trendCount": 0,
       "daily": {
-        "2026-10-26": 2
+        "2026-10-26": 2,
+        "2026-10-27": 1
       },
       "categories": [
         "社会・生活",
@@ -2673,6 +2674,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "GMO、PCのバックアップと電源オフ呼びかけ　VPS利用者に　きょう正午の攻撃予告受け",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002616/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "無料の画像生成AI「Moss-Image」がすごい　日本語も漫画も生成、商用利用OKの実力を試した (1/4)",
           "url": "https://ascii.jp/elem/000/004/445/4445534/",
@@ -3038,11 +3045,11 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 4,
+      "docCount": 5,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 3,
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
         "社会・生活",
@@ -3053,6 +3060,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "GMO、PCのバックアップと電源オフ呼びかけ　VPS利用者に　きょう正午の攻撃予告受け",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002616/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "イヌとの触れ合いは「その後に受けるストレス」から身を守るのに役立つ可能性",
           "url": "https://gigazine.net/news/20261026-physically-touching-dog-protect-stress/",
@@ -3509,11 +3522,11 @@
       "verification": "词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 8,
+      "docCount": 10,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 4,
-        "2026-10-27": 4
+        "2026-10-27": 6
       },
       "categories": [
         "社会・生活",
@@ -3523,6 +3536,18 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "偽アプリにトークンを渡す脆弱性、Android版Microsoft Authenticatorに",
+          "url": "https://pc.watch.impress.co.jp/docs/news/2151376.html",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
+        {
+          "title": "NECのルータ「Aterm」、PHP脆弱性の影響なし　設定画面URLの「.php」は無関係",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002614/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "ウェブサイトも“保守・修繕”の発想が必要。「PHPの脆弱性」から、経営層・サイト運営者に知っておいてほしいこと",
           "url": "https://internet.watch.impress.co.jp/docs/special/2151050.html",
@@ -3534,18 +3559,6 @@
           "url": "https://forest.watch.impress.co.jp/docs/news/2151104.html",
           "publisher": "はてな・科技",
           "seenAt": "2026-10-27"
-        },
-        {
-          "title": "PSNに新たな脆弱性が発覚か。二段階認証を回避してファミリーメンバーが勝手に追加される被害が発生中",
-          "url": "https://game.watch.impress.co.jp/docs/news/2151226.html",
-          "publisher": "はてな・科技",
-          "seenAt": "2026-10-27"
-        },
-        {
-          "title": "Googleの圧縮形式「Brotli」に深刻な脆弱性「HTTP2Shell」、Web関連に幅広く影響／OpenAIが発見した「Node2Shell」の影響が拡大、認証なしでリモートコード実行のおそれ",
-          "url": "https://forest.watch.impress.co.jp/docs/news/2151000.html",
-          "publisher": "はてな・综合",
-          "seenAt": "2026-10-26"
         }
       ],
       "qualityApproved": false
@@ -4134,19 +4147,26 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 4,
+      "docCount": 5,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 2,
-        "2026-10-27": 2
+        "2026-10-27": 3
       },
       "categories": [
-        "社会・生活"
+        "社会・生活",
+        "科技・互联网"
       ],
       "kinds": [
         "freq"
       ],
       "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "高市首相G7欠席が招く最悪事態…EUにEV優遇策「日本車除外案」、実施なら国産自動車メーカー大打撃｜日刊ゲンダイDIGITAL",
           "url": "https://www.nikkan-gendai.com/articles/view/news/394753",
@@ -4162,12 +4182,6 @@
         {
           "title": "福田康夫元首相が死去、90歳　消費者庁設置や対中関係安定に尽力 - 日本経済新聞",
           "url": "https://www.nikkei.com/article/DGXZQOUA181TU0Y2A110C2000000/",
-          "publisher": "はてな・综合",
-          "seenAt": "2026-10-26"
-        },
-        {
-          "title": "福田康夫元首相が死去 90歳 | NHKニュース",
-          "url": "https://news.web.nhk/newsweb/na/nd-20261026de65501",
           "publisher": "はてな・综合",
           "seenAt": "2026-10-26"
         }
@@ -4820,11 +4834,11 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 5,
+      "docCount": 6,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 4,
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
         "社会・生活",
@@ -4834,6 +4848,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "NECのルータ「Aterm」、PHP脆弱性の影響なし　設定画面URLの「.php」は無関係",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002614/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "「Brotli」の脆弱性「HTTP2Shell」はMicrosoft製品にも影響、「.NET」に定例外更新／「Visual Studio」、「PowerShell」でもセキュリティアップデート",
           "url": "https://forest.watch.impress.co.jp/docs/news/2151104.html",
@@ -5299,11 +5319,12 @@
       "en": "foreign country",
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
-      "lastSeen": "2026-10-26",
-      "docCount": 3,
+      "lastSeen": "2026-10-27",
+      "docCount": 5,
       "trendCount": 0,
       "daily": {
-        "2026-10-26": 3
+        "2026-10-26": 3,
+        "2026-10-27": 2
       },
       "categories": [
         "社会・生活",
@@ -5313,6 +5334,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "外国人が「よう日本人、我が国でエボリューションしたこの寿司はどう？」って見せてくるヤツ、いまんところ、全部食べたい。食わせろ",
+          "url": "https://togetter.com/li/2763303",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "逆に海外ニキネキは外国に行って何を食べるんだ…？「折角ここまで来たし、現地の美味しいものを食べよう！」とはならないのか…？",
           "url": "https://togetter.com/li/2762914",
@@ -5632,11 +5659,11 @@
       "verification": "词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 4,
+      "docCount": 5,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 3,
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
         "社会・生活",
@@ -5646,6 +5673,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "79億円要求されたGMO　「能動的サイバー防御」求める理由 | 毎日新聞",
           "url": "https://mainichi.jp/articles/20261026/k00/00m/020/387000c",
@@ -5720,11 +5753,11 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 7,
+      "docCount": 9,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 3,
-        "2026-10-27": 4
+        "2026-10-27": 6
       },
       "categories": [
         "社会・生活",
@@ -5734,6 +5767,18 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
+        {
+          "title": "GMO、PCのバックアップと電源オフ呼びかけ　VPS利用者に　きょう正午の攻撃予告受け",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002616/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "GMO不正アクセス、犯人側は「27日に顧客のPC攻撃」予告　GMOが端末回収、ホワイトハッカーが解析中",
           "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002610/",
@@ -5745,18 +5790,6 @@
           "url": "https://news.yahoo.co.jp/articles/1fa990bde6be68596b35b779cbc8843279c01012",
           "publisher": "はてな・科技",
           "seenAt": "2026-10-27"
-        },
-        {
-          "title": "日本企業が「サイバー攻撃はAIのせい」にして目を背ける“本当の原因”",
-          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/27/news018.html",
-          "publisher": "はてな・科技",
-          "seenAt": "2026-10-27"
-        },
-        {
-          "title": "ARTEXだけではない：日本を狙う3つの攻撃基盤に見るAI関与の実態",
-          "url": "https://www.trendmicro.com/ja_jp/jp-security/26/j/expertview-20261023-01.html",
-          "publisher": "はてな・科技",
-          "seenAt": "2026-10-26"
         }
       ],
       "qualityApproved": true,
@@ -6257,11 +6290,11 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 5,
+      "docCount": 7,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 3,
-        "2026-10-27": 2
+        "2026-10-27": 4
       },
       "categories": [
         "社会・生活",
@@ -6271,6 +6304,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "外国人が「よう日本人、我が国でエボリューションしたこの寿司はどう？」って見せてくるヤツ、いまんところ、全部食べたい。食わせろ",
+          "url": "https://togetter.com/li/2763303",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "どこかで聞いた「海外旅行先で訪れた国の料理よりも自国の料理を食べたがる人が多いが、日本人は例外でその土地の料理を食べたがる謎の存在だ」というのを思い出した",
           "url": "https://togetter.com/li/2762642",
@@ -6287,12 +6326,6 @@
           "title": "日曜日だからチョコレートサンデー食べよっと みたいな女性と結婚したい",
           "url": "https://anond.hatelabo.jp/20261024203605",
           "publisher": "はてな・生活",
-          "seenAt": "2026-10-26"
-        },
-        {
-          "title": "逆に海外ニキネキは外国に行って何を食べるんだ…？「折角ここまで来たし、現地の美味しいものを食べよう！」とはならないのか…？",
-          "url": "https://togetter.com/li/2762914",
-          "publisher": "はてな・综合",
           "seenAt": "2026-10-26"
         }
       ],
@@ -7409,20 +7442,27 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 3,
+      "docCount": 4,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 2,
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
         "社会・生活",
-        "娱乐・文化"
+        "娱乐・文化",
+        "科技・互联网"
       ],
       "kinds": [
         "freq"
       ],
       "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "｢あれほど空気の悪い職場は見たことがなかった｣…｢累損赤字540億円｣クールジャパン機構のカオスな投資会議（プレジデントオンライン） - Yahoo!ニュース",
           "url": "https://news.yahoo.co.jp/articles/8083adb8ffb954f12cd06fd228bdaaabfd146e35",
@@ -8261,11 +8301,11 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 2,
+      "docCount": 3,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 1,
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
         "社会・生活"
@@ -8274,6 +8314,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "トランプ氏がオバマ氏に反発、「頭の良い男ではない」　ホワイトハウス改装を皮肉られ",
+          "url": "https://www.cnn.co.jp/usa/35254004.html",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "トランプ氏、ノルウェーを「外便所のような国」と罵倒 ノーベル平和賞逃し",
           "url": "https://www.afpbb.com/articles/-/3659475",
@@ -8667,11 +8713,11 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 5,
+      "docCount": 6,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 3,
-        "2026-10-27": 2
+        "2026-10-27": 3
       },
       "categories": [
         "社会・生活",
@@ -8682,6 +8728,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "NECのルータ「Aterm」、PHP脆弱性の影響なし　設定画面URLの「.php」は無関係",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002614/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "OpenAI、「GPT-6.1 Terra」を発表 ～性能とコストのバランス型、API料金は先代の半額／画面を理解してアプリを操作、文章もより自然に",
           "url": "https://forest.watch.impress.co.jp/docs/news/2151338.html",
@@ -8697,12 +8749,6 @@
         {
           "title": "本物の銀行アプリを開いたのに「偽画面」 認証情報を盗む詐欺が発生、金融機関が相次ぎ注意喚起 | おたくま経済新聞",
           "url": "https://otakuma.net/archives/2026102604.html",
-          "publisher": "はてな・综合",
-          "seenAt": "2026-10-26"
-        },
-        {
-          "title": "クラックゲート？iPhone Duo、発売当日からヒンジ部の画面割れ報告相次ぐ | テクノエッジ TechnoEdge",
-          "url": "https://www.techno-edge.net/article/2026/10/26/5627.html",
           "publisher": "はてな・综合",
           "seenAt": "2026-10-26"
         }
@@ -9039,11 +9085,11 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 5,
+      "docCount": 6,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 3,
-        "2026-10-27": 2
+        "2026-10-27": 3
       },
       "categories": [
         "社会・生活",
@@ -9054,6 +9100,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "GMO、PCのバックアップと電源オフ呼びかけ　VPS利用者に　きょう正午の攻撃予告受け",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002616/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "GMO不正アクセス、犯人側は「27日に顧客のPC攻撃」予告　GMOが端末回収、ホワイトハッカーが解析中",
           "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002610/",
@@ -9070,12 +9122,6 @@
           "title": "『装甲騎兵ボトムズ 灰色の魔女』直前予告 2026.11.20劇場公開",
           "url": "https://www.youtube.com/watch?v=7NH-89IIBZ4",
           "publisher": "はてな・娱乐",
-          "seenAt": "2026-10-26"
-        },
-        {
-          "title": "Xの「いいね」長押しで1ドル送金　マスク氏が“投げ銭”機能を予告",
-          "url": "https://www.itmedia.co.jp/news/article/2610/26/2000002579/",
-          "publisher": "はてな・综合",
           "seenAt": "2026-10-26"
         }
       ],
@@ -13545,11 +13591,11 @@
       "verification": "词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 5,
+      "docCount": 6,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 2,
-        "2026-10-27": 3
+        "2026-10-27": 4
       },
       "categories": [
         "科技・互联网",
@@ -13560,6 +13606,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "偽アプリにトークンを渡す脆弱性、Android版Microsoft Authenticatorに",
+          "url": "https://pc.watch.impress.co.jp/docs/news/2151376.html",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "OpenAI、「GPT-6.1 Terra」を発表 ～性能とコストのバランス型、API料金は先代の半額／画面を理解してアプリを操作、文章もより自然に",
           "url": "https://forest.watch.impress.co.jp/docs/news/2151338.html",
@@ -13577,12 +13629,6 @@
           "url": "https://cocolog-nifty.hatenablog.com/entry/2026/10/26/124431",
           "publisher": "はてな・综合",
           "seenAt": "2026-10-27"
-        },
-        {
-          "title": "本物の銀行アプリを開いたのに「偽画面」 認証情報を盗む詐欺が発生、金融機関が相次ぎ注意喚起 | おたくま経済新聞",
-          "url": "https://otakuma.net/archives/2026102604.html",
-          "publisher": "はてな・综合",
-          "seenAt": "2026-10-26"
         }
       ],
       "qualityApproved": false
@@ -15133,11 +15179,11 @@
       "verification": "词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 7,
+      "docCount": 8,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 1,
-        "2026-10-27": 6
+        "2026-10-27": 7
       },
       "categories": [
         "生活・健康",
@@ -25429,19 +25475,27 @@
       "en": "talk (esp. by a talk-show host, or by a stage musician to the audience between songs)",
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
-      "lastSeen": "2026-10-26",
-      "docCount": 1,
+      "lastSeen": "2026-10-27",
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-26": 1
+        "2026-10-26": 1,
+        "2026-10-27": 1
       },
       "categories": [
-        "娱乐・文化"
+        "娱乐・文化",
+        "科技・互联网"
       ],
       "kinds": [
         "freq"
       ],
       "sources": [
+        {
+          "title": "偽アプリにトークンを渡す脆弱性、Android版Microsoft Authenticatorに",
+          "url": "https://pc.watch.impress.co.jp/docs/news/2151376.html",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "カラオケが結んだ縁…9年前に死去した伝説の“純音楽家\"を紅白歌手が悼む、命日前には盟友がトークイベント（よろず～ニュース） - Yahoo!ニュース",
           "url": "https://news.yahoo.co.jp/articles/c853d55aab4c5563bded6bd8749591b39daf1069",
@@ -28134,20 +28188,27 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-26",
       "lastSeen": "2026-10-27",
-      "docCount": 2,
+      "docCount": 3,
       "trendCount": 0,
       "daily": {
         "2026-10-26": 1,
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
         "生活・健康",
-        "科技・互联网"
+        "科技・互联网",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
       ],
       "sources": [
+        {
+          "title": "トランプ氏がオバマ氏に反発、「頭の良い男ではない」　ホワイトハウス改装を皮肉られ",
+          "url": "https://www.cnn.co.jp/usa/35254004.html",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "日本人は「ダサい」という理由でかな印字のないキーボードを買うが、海外の人はカッコ良くて読めないジャパニーズキーボードを買うという謎現象が起きている？",
           "url": "https://togetter.com/li/2696627",
@@ -32472,10 +32533,10 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 2,
+      "docCount": 3,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 2
+        "2026-10-27": 3
       },
       "categories": [
         "社会・生活",
@@ -32803,18 +32864,25 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "社会・生活"
+        "社会・生活",
+        "科技・互联网"
       ],
       "kinds": [
         "freq"
       ],
       "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "レアアースの輸入ルート、辿っていったら政府現職ステキ職員先にぶち当たる説｜山本一郎（やまもといちろう）",
           "url": "https://note.com/kirik/n/n8d03dc1ce205",
@@ -33470,18 +33538,25 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "科技・互联网"
+        "科技・互联网",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
       ],
       "sources": [
+        {
+          "title": "アメリカではキャンピングカーに住んでる人が珍しくないくらいにはいて、ホームレスではなくそれなりに受け入れられている生活の形らしい",
+          "url": "https://togetter.com/li/2763293",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "因習生活シム『ほの暮しの庭』、開発目標の「3倍以上」売れていた。開発は十数名、開発期間は2年、それでいてボリューム満点、“やりきった”ヒット作の裏側を開発者に訊く - AUTOMATON",
           "url": "https://automaton-media.com/articles/interviewsjp/honogura-20261026-475678/",
@@ -36978,10 +37053,10 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 4,
+      "docCount": 6,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 4
+        "2026-10-27": 6
       },
       "categories": [
         "生活・健康",
@@ -36992,6 +37067,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "外国人が「よう日本人、我が国でエボリューションしたこの寿司はどう？」って見せてくるヤツ、いまんところ、全部食べたい。食わせろ",
+          "url": "https://togetter.com/li/2763303",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "日本人は「ダサい」という理由でかな印字のないキーボードを買うが、海外の人はカッコ良くて読めないジャパニーズキーボードを買うという謎現象が起きている？",
           "url": "https://togetter.com/li/2696627",
@@ -37008,12 +37089,6 @@
           "title": "『日本人が知らないアメリカ』12年住んでもつかみきれないアメリカ - Thoughts and Notes from CA",
           "url": "https://ktdisk.hatenablog.com/entry/2026/10/26/080646",
           "publisher": "はてな・综合",
-          "seenAt": "2026-10-27"
-        },
-        {
-          "title": "どこかで聞いた「海外旅行先で訪れた国の料理よりも自国の料理を食べたがる人が多いが、日本人は例外でその土地の料理を食べたがる謎の存在だ」というのを思い出した",
-          "url": "https://togetter.com/li/2762642",
-          "publisher": "はてな・生活",
           "seenAt": "2026-10-27"
         }
       ],
@@ -37100,10 +37175,10 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 6,
+      "docCount": 7,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 6
+        "2026-10-27": 7
       },
       "categories": [
         "娱乐・文化",
@@ -37577,18 +37652,26 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 3,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 3
       },
       "categories": [
-        "娱乐・文化"
+        "娱乐・文化",
+        "社会・生活",
+        "生活・健康"
       ],
       "kinds": [
         "freq"
       ],
       "sources": [
+        {
+          "title": "外国人が「よう日本人、我が国でエボリューションしたこの寿司はどう？」って見せてくるヤツ、いまんところ、全部食べたい。食わせろ",
+          "url": "https://togetter.com/li/2763303",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "テレビに絵を流しっぱなしにして文化資本の格差を減らすアプリ「えをみる」がかなり興味深い…子どもに見せるのもいいし「なんかテレビついてると安心する」時にもおすすめ",
           "url": "https://togetter.com/li/2763072",
@@ -39264,18 +39347,25 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "社会・生活"
+        "社会・生活",
+        "科技・互联网"
       ],
       "kinds": [
         "freq"
       ],
       "sources": [
+        {
+          "title": "GMO、PCのバックアップと電源オフ呼びかけ　VPS利用者に　きょう正午の攻撃予告受け",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002616/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "母親が息子の大学に友達が1人もいないのはゲームばかりしてるからと怒り、36万円のゲーミングPCとNintendo Switch 2を風呂に沈めた…幸いデータのバックアップはあるものの",
           "url": "https://togetter.com/li/2763271",
@@ -39596,10 +39686,10 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 2,
+      "docCount": 3,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 2
+        "2026-10-27": 3
       },
       "categories": [
         "社会・生活",
@@ -41712,10 +41802,10 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
         "社会・生活"
@@ -41724,6 +41814,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "アメリカではキャンピングカーに住んでる人が珍しくないくらいにはいて、ホームレスではなくそれなりに受け入れられている生活の形らしい",
+          "url": "https://togetter.com/li/2763293",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "『日本人が知らないアメリカ』12年住んでもつかみきれないアメリカ - Thoughts and Notes from CA",
           "url": "https://ktdisk.hatenablog.com/entry/2026/10/26/080646",
@@ -42049,18 +42145,25 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 2,
+      "docCount": 3,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 2
+        "2026-10-27": 3
       },
       "categories": [
-        "社会・生活"
+        "社会・生活",
+        "科技・互联网"
       ],
       "kinds": [
         "freq"
       ],
       "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "細野大臣 全国民に「緊急要請」　食料・水・トイレの備えを - ライブドアニュース",
           "url": "https://news.livedoor.com/article/detail/32663156/",
@@ -45536,10 +45639,10 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 5,
+      "docCount": 6,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 5
+        "2026-10-27": 6
       },
       "categories": [
         "科技・互联网",
@@ -45550,6 +45653,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "自分の個人情報等が漏えいした際の「対処」と「日頃の対策」 | 情報セキュリティ | IPA 独立行政法人 情報処理推進機構",
           "url": "https://www.ipa.go.jp/security/anshin/attention/2026/mgdayori20261026.html",
@@ -45565,12 +45674,6 @@
         {
           "title": "自分の個人情報などが漏えいした際の「対処」と「日頃の対策」まとめ、IPAが公開",
           "url": "https://internet.watch.impress.co.jp/docs/news/2151185.html",
-          "publisher": "はてな・科技",
-          "seenAt": "2026-10-27"
-        },
-        {
-          "title": "「Python」に再び「eMudhra」問題への対策、「Python 3.15.2」など5バージョンを提供／侵害された鍵をブロックする“最後の砦”が「ssl」モジュールに",
-          "url": "https://forest.watch.impress.co.jp/docs/news/2151194.html",
           "publisher": "はてな・科技",
           "seenAt": "2026-10-27"
         }
@@ -46309,13 +46412,14 @@
       "verification": "词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "生活・健康"
+        "生活・健康",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
@@ -46339,13 +46443,14 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "生活・健康"
+        "生活・健康",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
@@ -46373,13 +46478,14 @@
       "verification": "词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "生活・健康"
+        "生活・健康",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
@@ -46403,13 +46509,14 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "生活・健康"
+        "生活・健康",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
@@ -46437,13 +46544,14 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "生活・健康"
+        "生活・健康",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
@@ -46471,13 +46579,14 @@
       "verification": "词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "生活・健康"
+        "生活・健康",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
@@ -46501,13 +46610,14 @@
       "verification": "词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "生活・健康"
+        "生活・健康",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
@@ -46531,13 +46641,14 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "生活・健康"
+        "生活・健康",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
@@ -46565,13 +46676,14 @@
       "verification": "词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "生活・健康"
+        "生活・健康",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
@@ -46595,13 +46707,14 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "生活・健康"
+        "生活・健康",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
@@ -46629,13 +46742,14 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "生活・健康"
+        "生活・健康",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
@@ -46663,13 +46777,14 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "生活・健康"
+        "生活・健康",
+        "社会・生活"
       ],
       "kinds": [
         "freq"
@@ -46963,18 +47078,25 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
-        "经济・商业"
+        "经济・商业",
+        "科技・互联网"
       ],
       "kinds": [
         "freq"
       ],
       "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "米MS 6万人に退職パッケージ提示",
           "url": "https://news.yahoo.co.jp/pickup/6600248?source=rss",
@@ -47385,10 +47507,10 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 2,
+      "docCount": 3,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 2
+        "2026-10-27": 3
       },
       "categories": [
         "社会・生活",
@@ -47398,6 +47520,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "GMO、PCのバックアップと電源オフ呼びかけ　VPS利用者に　きょう正午の攻撃予告受け",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002616/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "GMO「PC電源を切って」 正午の攻撃予告前に　セキュリティー会社から協力申し出も（テレビ朝日系（ANN）） - Yahoo!ニュース",
           "url": "https://news.yahoo.co.jp/articles/1fa990bde6be68596b35b779cbc8843279c01012",
@@ -47460,10 +47588,10 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 2,
+      "docCount": 3,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 2
+        "2026-10-27": 3
       },
       "categories": [
         "社会・生活",
@@ -47473,6 +47601,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "GMO、PCのバックアップと電源オフ呼びかけ　VPS利用者に　きょう正午の攻撃予告受け",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002616/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "GMO ハッカー集団の脅迫続くなか 注意呼びかけを一段と強化 | NHKニュース",
           "url": "https://news.web.nhk/newsweb/na/nd-20261027de66048",
@@ -47965,10 +48099,10 @@
       "verification": "日中/日英公开词典候选，未按语境人工核对",
       "firstSeen": "2026-10-27",
       "lastSeen": "2026-10-27",
-      "docCount": 1,
+      "docCount": 2,
       "trendCount": 0,
       "daily": {
-        "2026-10-27": 1
+        "2026-10-27": 2
       },
       "categories": [
         "科技・互联网"
@@ -47977,6 +48111,12 @@
         "freq"
       ],
       "sources": [
+        {
+          "title": "GMO、PCのバックアップと電源オフ呼びかけ　VPS利用者に　きょう正午の攻撃予告受け",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002616/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        },
         {
           "title": "GMO「PC電源を切って」 正午の攻撃予告前に　セキュリティー会社から協力申し出も（テレビ朝日系（ANN）） - Yahoo!ニュース",
           "url": "https://news.yahoo.co.jp/articles/1fa990bde6be68596b35b779cbc8843279c01012",
@@ -49184,18 +49324,15 @@
         }
       ],
       "kana": "めろい",
-      "zh": "令人心动；迷人到让人着迷（年轻人口语）",
-      "en": "heart-melting; swoon-worthy (youth slang)",
-      "qualityApproved": true,
+      "zh": "",
+      "en": "",
+      "qualityApproved": false,
       "trendVerified": true,
       "evidenceDate": "2026-10-02",
       "evidenceRank": 1,
       "evidencePublisher": "渋谷トレンドリサーチ／ING",
       "contextNote": "夸赞外貌、举动、气质或内在特质令人心动；常用于喜欢的偶像或他人",
-      "verification": "有近期流行语调查／研究出处；中英文为核对后的学习意译",
-      "translationSources": [
-        "报道释义人工整理（非官方译文）"
-      ],
+      "verification": "词典候选，未按语境人工核对",
       "lastSeen": "2026-10-27"
     },
     "ドパガキ": {
@@ -49220,18 +49357,15 @@
         }
       ],
       "kana": "どぱがき",
-      "zh": "沉迷短视频等高刺激内容的人（戏谑，可能带贬义）",
-      "en": "dopamine-chasing kid/person (teasing, potentially derogatory)",
-      "qualityApproved": true,
+      "zh": "",
+      "en": "",
+      "qualityApproved": false,
       "trendVerified": true,
       "evidenceDate": "2026-10-02",
       "evidenceRank": 2,
       "evidencePublisher": "渋谷トレンドリサーチ／ING",
       "contextNote": "由「ドーパミン中毒のガキ」缩写而来，口气视场合可能不礼貌",
-      "verification": "有近期流行语调查／研究出处；中英文为核对后的学习意译",
-      "translationSources": [
-        "报道释义人工整理（非官方译文）"
-      ],
+      "verification": "词典候选，未按语境人工核对",
       "lastSeen": "2026-10-27"
     },
     "フレネミー": {
@@ -49256,18 +49390,15 @@
         }
       ],
       "kana": "ふれねみー",
-      "zh": "表面友好、暗中敌对的人；伪朋友",
-      "en": "frenemy; a friend who is also an enemy",
-      "qualityApproved": true,
+      "zh": "",
+      "en": "",
+      "qualityApproved": false,
       "trendVerified": true,
       "evidenceDate": "2026-10-02",
       "evidenceRank": 3,
       "evidencePublisher": "渋谷トレンドリサーチ／ING",
       "contextNote": "源自 friend + enemy；在年轻人之间也可开玩笑使用",
-      "verification": "有近期流行语调查／研究出处；中英文为核对后的学习意译",
-      "translationSources": [
-        "报道释义人工整理（非官方译文）"
-      ],
+      "verification": "词典候选，未按语境人工核对",
       "lastSeen": "2026-10-27"
     },
     "シャバい": {
@@ -49292,18 +49423,15 @@
         }
       ],
       "kana": "しゃばい",
-      "zh": "不够酷、很逊、俗气（语境依赖）",
-      "en": "lame; uncool (slang, context-dependent)",
-      "qualityApproved": true,
+      "zh": "",
+      "en": "",
+      "qualityApproved": false,
       "trendVerified": true,
       "evidenceDate": "2026-10-02",
       "evidenceRank": 6,
       "evidencePublisher": "渋谷トレンドリサーチ／ING",
       "contextNote": "在 2026 年秋季流行语调查榜上；含义随说话者与语境改变",
-      "verification": "有近期流行语调查／研究出处；中英文为核对后的学习意译",
-      "translationSources": [
-        "报道释义人工整理（非官方译文）"
-      ],
+      "verification": "词典候选，未按语境人工核对",
       "lastSeen": "2026-10-27"
     },
     "ネ申": {
@@ -49328,18 +49456,15 @@
         }
       ],
       "kana": "かみ",
-      "zh": "神级、太厉害了（把「神」拆字的网络写法）",
-      "en": "god-tier; awesome (stylized spelling of 神)",
-      "qualityApproved": true,
+      "zh": "",
+      "en": "",
+      "qualityApproved": false,
       "trendVerified": true,
       "evidenceDate": "2026-10-02",
       "evidenceRank": 5,
       "evidencePublisher": "渋谷トレンドリサーチ／ING",
       "contextNote": "较早的网络写法在 2026 年被重新提及，不是 2026 年新创造的词",
-      "verification": "有近期流行语调查／研究出处；中英文为核对后的学习意译",
-      "translationSources": [
-        "报道释义人工整理（非官方译文）"
-      ],
+      "verification": "词典候选，未按语境人工核对",
       "lastSeen": "2026-10-27"
     },
     "セロ活": {
@@ -49364,18 +49489,15 @@
         }
       ],
       "kana": "せろかつ",
-      "zh": "以放松、舒缓压力和调节身心为目的的活动（关注血清素）",
-      "en": "serotonin-minded self-care; restorative activities",
-      "qualityApproved": true,
+      "zh": "",
+      "en": "",
+      "qualityApproved": false,
       "trendVerified": true,
       "evidenceDate": "2026-09-09",
       "evidenceRank": 0,
       "evidencePublisher": "SHIBUYA109 lab.",
       "contextNote": "2026 上半年趋势研究：散步、阅读、自然体验等舒缓身心的活动",
-      "verification": "有近期流行语调查／研究出处；中英文为核对后的学习意译",
-      "translationSources": [
-        "报道释义人工整理（非官方译文）"
-      ],
+      "verification": "词典候选，未按语境人工核对",
       "lastSeen": "2026-10-27"
     },
     "ファッションスピ活": {
@@ -49400,18 +49522,15 @@
         }
       ],
       "kana": "ふぁっしょんすぴかつ",
-      "zh": "把轻度参拜、护身符和能量景点融入日常出游的潮流",
-      "en": "casual spirituality as a lifestyle/fashion activity",
-      "qualityApproved": true,
+      "zh": "",
+      "en": "",
+      "qualityApproved": false,
       "trendVerified": true,
       "evidenceDate": "2026-09-09",
       "evidenceRank": 0,
       "evidencePublisher": "SHIBUYA109 lab.",
       "contextNote": "不是说年轻人一定有宗教信仰，而是把神社与护身符作为轻松的出游体验",
-      "verification": "有近期流行语调查／研究出处；中英文为核对后的学习意译",
-      "translationSources": [
-        "报道释义人工整理（非官方译文）"
-      ],
+      "verification": "词典候选，未按语境人工核对",
       "lastSeen": "2026-10-27"
     },
     "〇〇すぎて滅": {
@@ -49436,19 +49555,793 @@
         }
       ],
       "kana": "まるまるすぎてめつ",
-      "zh": "太……以至于“原地消失”——夸张形容情绪过强",
-      "en": "so ... I am literally done/gone (exaggerated meme phrase)",
-      "qualityApproved": true,
+      "zh": "",
+      "en": "",
+      "qualityApproved": false,
       "trendVerified": true,
       "evidenceDate": "2026-06-04",
       "evidenceRank": 1,
       "evidencePublisher": "αZ総研／マイナビニュース",
       "contextNote": "固定句式，〇〇可替换为「好き」「尊い」等，用于夸张表达强烈的喜欢或情绪",
-      "verification": "有近期流行语调查／研究出处；中英文为核对后的学习意译",
-      "translationSources": [
-        "报道释义人工整理（非官方译文）"
-      ],
+      "verification": "词典候选，未按语境人工核对",
       "lastSeen": "2026-10-27"
+    },
+    "我が国": {
+      "id": "fa1301e737b542684228",
+      "jp": "我が国",
+      "kana": "わがくに",
+      "zh": "(わがくに) 名词 我国",
+      "en": "our country",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 2,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 2
+      },
+      "categories": [
+        "社会・生活",
+        "生活・健康"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "外国人が「よう日本人、我が国でエボリューションしたこの寿司はどう？」って見せてくるヤツ、いまんところ、全部食べたい。食わせろ",
+          "url": "https://togetter.com/li/2763303",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
+    },
+    "エボリューション": {
+      "id": "53ca9ac87f3fa1480424",
+      "jp": "エボリューション",
+      "kana": "えぼりゅーしょん",
+      "zh": "",
+      "en": "",
+      "verification": "词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 2,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 2
+      },
+      "categories": [
+        "社会・生活",
+        "生活・健康"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "外国人が「よう日本人、我が国でエボリューションしたこの寿司はどう？」って見せてくるヤツ、いまんところ、全部食べたい。食わせろ",
+          "url": "https://togetter.com/li/2763303",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": false
+    },
+    "寿司": {
+      "id": "b66b04c2509a7c34f658",
+      "jp": "寿司",
+      "kana": "すし",
+      "zh": "(すし2) 名 寿司",
+      "en": " sushi",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 2,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 2
+      },
+      "categories": [
+        "社会・生活",
+        "生活・健康"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "外国人が「よう日本人、我が国でエボリューションしたこの寿司はどう？」って見せてくるヤツ、いまんところ、全部食べたい。食わせろ",
+          "url": "https://togetter.com/li/2763303",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
+    },
+    "ヤツ": {
+      "id": "010acd319d147682c95d",
+      "jp": "ヤツ",
+      "kana": "やつ",
+      "zh": "",
+      "en": "",
+      "verification": "词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 2,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 2
+      },
+      "categories": [
+        "社会・生活",
+        "生活・健康"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "外国人が「よう日本人、我が国でエボリューションしたこの寿司はどう？」って見せてくるヤツ、いまんところ、全部食べたい。食わせろ",
+          "url": "https://togetter.com/li/2763303",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": false
+    },
+    "食う": {
+      "id": "758e3e367369b3cbfd3b",
+      "jp": "食う",
+      "kana": "くう",
+      "zh": "(くう) 动1 吃；咬，叮；吃饭；侵占",
+      "en": "to eat",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 2,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 2
+      },
+      "categories": [
+        "社会・生活",
+        "生活・健康"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "外国人が「よう日本人、我が国でエボリューションしたこの寿司はどう？」って見せてくるヤツ、いまんところ、全部食べたい。食わせろ",
+          "url": "https://togetter.com/li/2763303",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
+    },
+    "キャンピング": {
+      "id": "8119573bf3c6ef831f6c",
+      "jp": "キャンピング",
+      "kana": "きゃんぴんぐ",
+      "zh": "",
+      "en": "",
+      "verification": "词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "社会・生活"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "アメリカではキャンピングカーに住んでる人が珍しくないくらいにはいて、ホームレスではなくそれなりに受け入れられている生活の形らしい",
+          "url": "https://togetter.com/li/2763293",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": false
+    },
+    "カー": {
+      "id": "3d132b5de7b85ac254b6",
+      "jp": "カー",
+      "kana": "かー",
+      "zh": "",
+      "en": "",
+      "verification": "词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "社会・生活"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "アメリカではキャンピングカーに住んでる人が珍しくないくらいにはいて、ホームレスではなくそれなりに受け入れられている生活の形らしい",
+          "url": "https://togetter.com/li/2763293",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": false
+    },
+    "珍しい": {
+      "id": "6a9f844517c417b1fba9",
+      "jp": "珍しい",
+      "kana": "めずらしい",
+      "zh": "（めずらしい）④【イ形】新奇的，新颖的；罕见的",
+      "en": "rare",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "社会・生活"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "アメリカではキャンピングカーに住んでる人が珍しくないくらいにはいて、ホームレスではなくそれなりに受け入れられている生活の形らしい",
+          "url": "https://togetter.com/li/2763293",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
+    },
+    "ホームレス": {
+      "id": "e6194690b493791d35d2",
+      "jp": "ホームレス",
+      "kana": "ほーむれす",
+      "zh": "（homeless）①【名】无家可归的人",
+      "en": "homeless",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "社会・生活"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "アメリカではキャンピングカーに住んでる人が珍しくないくらいにはいて、ホームレスではなくそれなりに受け入れられている生活の形らしい",
+          "url": "https://togetter.com/li/2763293",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
+    },
+    "それなり": {
+      "id": "eb0b123cee7fcef2e0a4",
+      "jp": "それなり",
+      "kana": "それなり",
+      "zh": "",
+      "en": "",
+      "verification": "词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "社会・生活"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "アメリカではキャンピングカーに住んでる人が珍しくないくらいにはいて、ホームレスではなくそれなりに受け入れられている生活の形らしい",
+          "url": "https://togetter.com/li/2763293",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": false
+    },
+    "受け入れる": {
+      "id": "ce5181a8c84a003495b4",
+      "jp": "受け入れる",
+      "kana": "うけいれる",
+      "zh": "(うけいれる) 动2 接受，采纳",
+      "en": "to accept",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "社会・生活"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "アメリカではキャンピングカーに住んでる人が珍しくないくらいにはいて、ホームレスではなくそれなりに受け入れられている生活の形らしい",
+          "url": "https://togetter.com/li/2763293",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
+    },
+    "反発": {
+      "id": "ff6fa34dcd0d1b256493",
+      "jp": "反発",
+      "kana": "はんぱつ",
+      "zh": "（はんぱつ）⓪【名·自他动3】排斥；反感，抗拒；（行情）回升",
+      "en": "opposition",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "社会・生活"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "トランプ氏がオバマ氏に反発、「頭の良い男ではない」　ホワイトハウス改装を皮肉られ",
+          "url": "https://www.cnn.co.jp/usa/35254004.html",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
+    },
+    "改装": {
+      "id": "07169a84ba15902a2349",
+      "jp": "改装",
+      "kana": "かいそう",
+      "zh": "（かいそう）⓪【名·他动3】改换包装；改换装潢",
+      "en": "remodelling",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "社会・生活"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "トランプ氏がオバマ氏に反発、「頭の良い男ではない」　ホワイトハウス改装を皮肉られ",
+          "url": "https://www.cnn.co.jp/usa/35254004.html",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
+    },
+    "皮肉る": {
+      "id": "fafd28c2b9fd68f4085a",
+      "jp": "皮肉る",
+      "kana": "ひにくる",
+      "zh": "",
+      "en": "",
+      "verification": "词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "社会・生活"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "トランプ氏がオバマ氏に反発、「頭の良い男ではない」　ホワイトハウス改装を皮肉られ",
+          "url": "https://www.cnn.co.jp/usa/35254004.html",
+          "publisher": "はてな・综合",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": false
+    },
+    "オフ": {
+      "id": "01c2df03fd3f553758a9",
+      "jp": "オフ",
+      "kana": "おふ",
+      "zh": "",
+      "en": "",
+      "verification": "词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "科技・互联网"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "GMO、PCのバックアップと電源オフ呼びかけ　VPS利用者に　きょう正午の攻撃予告受け",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002616/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": false
+    },
+    "ルータ": {
+      "id": "d86174f72fd884643127",
+      "jp": "ルータ",
+      "kana": "るーた",
+      "zh": "",
+      "en": "",
+      "verification": "词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "科技・互联网"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "NECのルータ「Aterm」、PHP脆弱性の影響なし　設定画面URLの「.php」は無関係",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002614/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": false
+    },
+    "設定": {
+      "id": "0d8619aae051ae343ea9",
+      "jp": "設定",
+      "kana": "せってい",
+      "zh": "(せってい) 名词 设定",
+      "en": "establishment",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "科技・互联网"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "NECのルータ「Aterm」、PHP脆弱性の影響なし　設定画面URLの「.php」は無関係",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002614/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
+    },
+    "無関係": {
+      "id": "a106019965e361c24fe3",
+      "jp": "無関係",
+      "kana": "むかんけい",
+      "zh": "",
+      "en": "",
+      "verification": "词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "科技・互联网"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "NECのルータ「Aterm」、PHP脆弱性の影響なし　設定画面URLの「.php」は無関係",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002614/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": false
+    },
+    "渡す": {
+      "id": "2b2da72322ae115bba34",
+      "jp": "渡す",
+      "kana": "わたす",
+      "zh": "（わたす）⓪【他动1】交给，转交",
+      "en": "to ferry across (e.g. a river)",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "科技・互联网"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "偽アプリにトークンを渡す脆弱性、Android版Microsoft Authenticatorに",
+          "url": "https://pc.watch.impress.co.jp/docs/news/2151376.html",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
+    },
+    "来週": {
+      "id": "1ea631f89910e9173826",
+      "jp": "来週",
+      "kana": "らいしゅう",
+      "zh": "（らいしゅう）⓪【名】下周",
+      "en": "next week",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "科技・互联网"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
+    },
+    "策定": {
+      "id": "6128c816bbf7792d0649",
+      "jp": "策定",
+      "kana": "さくてい",
+      "zh": "",
+      "en": "",
+      "verification": "词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "科技・互联网"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": false
+    },
+    "閣僚": {
+      "id": "09142cebc636ef78dec4",
+      "jp": "閣僚",
+      "kana": "かくりょう",
+      "zh": "",
+      "en": "",
+      "verification": "词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "科技・互联网"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": false
+    },
+    "会合": {
+      "id": "7ae3cbe199730a03127e",
+      "jp": "会合",
+      "kana": "かいごう",
+      "zh": "（かいごう）⓪【名·自动3】集会，聚会",
+      "en": "meeting",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "科技・互联网"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
+    },
+    "指示": {
+      "id": "fb3a4d745bf8b10c2148",
+      "jp": "指示",
+      "kana": "しじ",
+      "zh": "(しじ) 名词 指示，吩咐",
+      "en": "indication",
+      "verification": "日中/日英公开词典候选，未按语境人工核对",
+      "firstSeen": "2026-10-27",
+      "lastSeen": "2026-10-27",
+      "docCount": 1,
+      "trendCount": 0,
+      "daily": {
+        "2026-10-27": 1
+      },
+      "categories": [
+        "科技・互联网"
+      ],
+      "kinds": [
+        "freq"
+      ],
+      "sources": [
+        {
+          "title": "政府、サイバー攻撃の「緊急対策パッケージ」来週中に策定へ　高市首相がサイバー閣僚会議の初会合で指示",
+          "url": "https://www.itmedia.co.jp/news/article/2610/27/2000002620/",
+          "publisher": "はてな・科技",
+          "seenAt": "2026-10-27"
+        }
+      ],
+      "qualityApproved": true,
+      "translationSources": [
+        "Japanese-Chinese-thesaurus (Unlicense)",
+        "EDRDG EDICT2u (CC BY-SA)"
+      ]
     }
   },
   "seenDocs": {
@@ -49932,7 +50825,30 @@
     "26f380c29fa3813409cc26": "2026-10-27",
     "649d5be59fc4dd23775087": "2026-10-27",
     "02948cf51a9fa7978b3b85": "2026-10-27",
-    "4e5fb9501220e99bd3f510": "2026-10-27"
+    "4e5fb9501220e99bd3f510": "2026-10-27",
+    "1fe863da87510bceaf1395": "2026-10-27",
+    "4cc0f24116e6fe2f31b493": "2026-10-27",
+    "b6c644884cae1ca678fcba": "2026-10-27",
+    "a2b4b41a6d49eb2a3272ef": "2026-10-27",
+    "4c18c9948d6b90eaa93563": "2026-10-27",
+    "71f76af1b4289b9727fb19": "2026-10-27",
+    "74777c32548c5983c9ac4f": "2026-10-27",
+    "177f9e113fe3506af5bd7a": "2026-10-27",
+    "2667c158e06b5a5f2be096": "2026-10-27",
+    "ef4a8095e69e184976877b": "2026-10-27",
+    "b40dd59a1e1517ac420fb2": "2026-10-27",
+    "88b766e41b42fa5096507b": "2026-10-27",
+    "93b30746f95c98333019b3": "2026-10-27",
+    "71867135a14e7166408a7e": "2026-10-27",
+    "9c7d6b2730f0ab26442ad2": "2026-10-27",
+    "3c4c7b0b22bc1dddaab4df": "2026-10-27",
+    "c2c141b457a30acb33eca8": "2026-10-27",
+    "14ea3b377fb02ec0b1fe7e": "2026-10-27",
+    "dd9acb74f5cea0ba0ac243": "2026-10-27",
+    "b144b0836358dcad2cad7c": "2026-10-27",
+    "93a927f31826ed8c3decec": "2026-10-27",
+    "6fb3a0047fab0ab48364bf": "2026-10-27",
+    "5de6ac16b3500e0a15435a": "2026-10-27"
   },
   "slangReviewQueue": {
     "フレネミー": {
@@ -50050,8 +50966,13 @@
     "チョベリグ": {
       "jp": "チョベリグ",
       "firstSeen": "2026-10-27",
-      "mentions": 2,
+      "mentions": 3,
       "sources": [
+        {
+          "publisher": "Google 新闻・流行语线索",
+          "title": "「アベック」「チョベリグ」に「何言ってるかわからない」 かつて流行語、今は「死語」で若者は戸惑うばかり - J-CAST ニュース",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB0Rl9vSnh3NHhJV2JOOFZBd0FvdGxsUFRnbXRRZk9NR3BsajhwQkE3WTRuVmdtVm1FcUhpNW5CU0UtVXNrNjROZXg0R1dfN0twdk9SQXNkSllZbEJqeGY4?oc=5"
+        },
         {
           "publisher": "Google 新闻・流行语线索",
           "title": "「アベック」「チョベリグ」に「何言ってるかわからない」 かつて流行語、今は「死語」で若者は戸惑うばかり - ライブドアニュース",
@@ -50390,8 +51311,13 @@
     "死語": {
       "jp": "死語",
       "firstSeen": "2026-10-27",
-      "mentions": 3,
+      "mentions": 4,
       "sources": [
+        {
+          "publisher": "Google 新闻・流行语线索",
+          "title": "「アベック」「チョベリグ」に「何言ってるかわからない」 かつて流行語、今は「死語」で若者は戸惑うばかり - J-CAST ニュース",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB0Rl9vSnh3NHhJV2JOOFZBd0FvdGxsUFRnbXRRZk9NR3BsajhwQkE3WTRuVmdtVm1FcUhpNW5CU0UtVXNrNjROZXg0R1dfN0twdk9SQXNkSllZbEJqeGY4?oc=5"
+        },
         {
           "publisher": "Google 新闻・流行语线索",
           "title": "「アベック」「チョベリグ」に「何言ってるかわからない」 かつて流行語、今は「死語」で若者は戸惑うばかり - ライブドアニュース",
@@ -50657,8 +51583,13 @@
     "知らんけど": {
       "jp": "知らんけど",
       "firstSeen": "2026-10-27",
-      "mentions": 1,
+      "mentions": 2,
       "sources": [
+        {
+          "publisher": "Google 新闻・流行语线索",
+          "title": "10代女子が日常生活で使っている流行語TOP3、3位「あーね」、2位「知らんけど」、1位は？ - @DIME アットダイム",
+          "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE54elJRS01XTEZuTENPMjViYTRMQUNPdkFaWk4tUUFGTWFjYnIzem1JZUdiZGY4S2dnc09ONEVOSy1Qek5I?oc=5"
+        },
         {
           "publisher": "Google 新闻・流行语线索",
           "title": "高校生の流行語「しんどw」「知らんけど」はどんなときに使う？ [インターネットサービス] All About - All About（オールアバウト）",
@@ -51267,8 +52198,13 @@
     "あーね": {
       "jp": "あーね",
       "firstSeen": "2026-10-27",
-      "mentions": 1,
+      "mentions": 2,
       "sources": [
+        {
+          "publisher": "Google 新闻・流行语线索",
+          "title": "10代女子が日常生活で使っている流行語TOP3、3位「あーね」、2位「知らんけど」、1位は？ - @DIME アットダイム",
+          "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE54elJRS01XTEZuTENPMjViYTRMQUNPdkFaWk4tUUFGTWFjYnIzem1JZUdiZGY4S2dnc09ONEVOSy1Qek5I?oc=5"
+        },
         {
           "publisher": "Google 新闻・流行语线索",
           "title": "2013年女子中高生の流行語ランキング、「あーね」「今でしょ」…1位は？ - リセマム",
@@ -51379,8 +52315,13 @@
     "アベック": {
       "jp": "アベック",
       "firstSeen": "2026-10-27",
-      "mentions": 1,
+      "mentions": 2,
       "sources": [
+        {
+          "publisher": "Google 新闻・流行语线索",
+          "title": "「アベック」「チョベリグ」に「何言ってるかわからない」 かつて流行語、今は「死語」で若者は戸惑うばかり - J-CAST ニュース",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB0Rl9vSnh3NHhJV2JOOFZBd0FvdGxsUFRnbXRRZk9NR3BsajhwQkE3WTRuVmdtVm1FcUhpNW5CU0UtVXNrNjROZXg0R1dfN0twdk9SQXNkSllZbEJqeGY4?oc=5"
+        },
         {
           "publisher": "Google 新闻・流行语线索",
           "title": "「アベック」「チョベリグ」に「何言ってるかわからない」 かつて流行語、今は「死語」で若者は戸惑うばかり - ライブドアニュース",
@@ -51393,8 +52334,13 @@
     "何言ってるかわからない": {
       "jp": "何言ってるかわからない",
       "firstSeen": "2026-10-27",
-      "mentions": 1,
+      "mentions": 2,
       "sources": [
+        {
+          "publisher": "Google 新闻・流行语线索",
+          "title": "「アベック」「チョベリグ」に「何言ってるかわからない」 かつて流行語、今は「死語」で若者は戸惑うばかり - J-CAST ニュース",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB0Rl9vSnh3NHhJV2JOOFZBd0FvdGxsUFRnbXRRZk9NR3BsajhwQkE3WTRuVmdtVm1FcUhpNW5CU0UtVXNrNjROZXg0R1dfN0twdk9SQXNkSllZbEJqeGY4?oc=5"
+        },
         {
           "publisher": "Google 新闻・流行语线索",
           "title": "「アベック」「チョベリグ」に「何言ってるかわからない」 かつて流行語、今は「死語」で若者は戸惑うばかり - ライブドアニュース",
@@ -51932,6 +52878,76 @@
           "publisher": "Google 新闻・网络迷因线索",
           "title": "あのアニメのネットスラングの元ネタってなんなの？「これは…青酸カリ!!」編 - エンタのおはなし",
           "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE42Vk03cjhpUHpkN3R6SWllTG1oUEpnRzdwYVRVNTRpVFBuYmRHYlhWdVNjUjBVbG5tamVGUHRmdXRWQdIBR0FVX3lxTFBMY0tlLXI1dC00RnBuNkdkT2dkbVJ1RXpFZnFhOEhVaG9Jbldta2hOcnhPMTE2T01HSkxBWGluUmxEWlJ0X09r?oc=5"
+        }
+      ],
+      "status": "候选未核对（禁止自动发布）",
+      "lastSeen": "2026-10-27"
+    },
+    "第4次韓流ブーム": {
+      "jp": "第4次韓流ブーム",
+      "firstSeen": "2026-10-27",
+      "mentions": 1,
+      "sources": [
+        {
+          "publisher": "Google 新闻・流行语线索",
+          "title": "2021年JC・JK流行語大賞を総括する－「第4次韓流ブーム」と「推し活」という2つのキーワード - ニッセイ基礎研究所",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE8taVZkdG51Rzc3WVBUaGN4Sy1UTVBCVG5hbHJNODJYUk9lV0t4VGthX2EyZHJJWjR1cUFJOWxmMGdlOFQ2d1NNNDBrNWJPWHhLZUU2SEhYZGFxX3c5dGtha3ZTcTNNWEZhYXNVRklpd9IBf0FVX3lxTE83cmdvMXZENE1JQUQ1MVJidm10MEcyemNiVDZpM3dMdmY5Y05oT0V3ZnRyYTdpUFRkNmxzeVhzRVdqcm1DaFZKMEtVbG4tdE5sVUVpdjRUQWcydzhLczdFa1FwNWxuT0ZFQ2RPYzNSa2g0UjVwUHlONG5jSXRXTXM?oc=5"
+        }
+      ],
+      "status": "候选未核对（禁止自动发布）",
+      "lastSeen": "2026-10-27"
+    },
+    "推し活": {
+      "jp": "推し活",
+      "firstSeen": "2026-10-27",
+      "mentions": 1,
+      "sources": [
+        {
+          "publisher": "Google 新闻・流行语线索",
+          "title": "2021年JC・JK流行語大賞を総括する－「第4次韓流ブーム」と「推し活」という2つのキーワード - ニッセイ基礎研究所",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE8taVZkdG51Rzc3WVBUaGN4Sy1UTVBCVG5hbHJNODJYUk9lV0t4VGthX2EyZHJJWjR1cUFJOWxmMGdlOFQ2d1NNNDBrNWJPWHhLZUU2SEhYZGFxX3c5dGtha3ZTcTNNWEZhYXNVRklpd9IBf0FVX3lxTE83cmdvMXZENE1JQUQ1MVJidm10MEcyemNiVDZpM3dMdmY5Y05oT0V3ZnRyYTdpUFRkNmxzeVhzRVdqcm1DaFZKMEtVbG4tdE5sVUVpdjRUQWcydzhLczdFa1FwNWxuT0ZFQ2RPYzNSa2g0UjVwUHlONG5jSXRXTXM?oc=5"
+        }
+      ],
+      "status": "候选未核对（禁止自动发布）",
+      "lastSeen": "2026-10-27"
+    },
+    "チャッピー": {
+      "jp": "チャッピー",
+      "firstSeen": "2026-10-27",
+      "mentions": 1,
+      "sources": [
+        {
+          "publisher": "Google 新闻・流行语线索",
+          "title": "流行語大賞にノミネートされた「チャッピー」は誰が使ってる？ 相談相手はChatGPTな悩める若者たち #エキスパートトピ - Yahoo!ニュース",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQUXZxUlZLam5wdVZHOFZjeFVQTW5RdjVHS3kxcDFrZmlBemgwN0RkLTRMSmx3UWdyTXlPQ1ljb3dHYldEZllKeUJYTDF1X1hYQnFxZmhrZ1JucjRkSUpTc0lUY0xKbEw4VU5meG1GeWVON0N3NW1MbG95TXFiTGJKcmVzZXc0Zmxh?oc=5"
+        }
+      ],
+      "status": "候选未核对（禁止自动发布）",
+      "lastSeen": "2026-10-27"
+    },
+    "香具師": {
+      "jp": "香具師",
+      "firstSeen": "2026-10-27",
+      "mentions": 1,
+      "sources": [
+        {
+          "publisher": "Google 新闻・网络迷因线索",
+          "title": "《デスワード ～あの言葉はいま～》「香具師」なつかしい？ネットスラングです - イザ！",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBHUHdsdjk0TUhKR1R5c0JGbGh2aVo1bmtydTB2V0wtVFdVM1owRlZXelE4MUNDS1JwMEVyaUF4WElkMWd6eGRhVUgyb1pyX3UxZ201cVpNVnQtZjk3QkU2b21BXzdBVU0yY3g0MU1QTzdQWFUx0gGIAUFVX3lxTE1uTm12c2pRRXNtcl8teUFQQjdzcFJtV05EYWpFbVM3dWtFdUlQZ3ZSNXRMcUJUT3VySkhKcDA1VGV2UFc1TnQ1cHYxeGdKNGhZS2VTNVFTbG9ZX0RRVjhxb084QkgtTmJWZkU2UUxyZU1HVXFpc0lRSllrSUdjZXNCWVZnbE1tVUs?oc=5"
+        }
+      ],
+      "status": "候选未核对（禁止自动发布）",
+      "lastSeen": "2026-10-27"
+    },
+    "コロンビア": {
+      "jp": "コロンビア",
+      "firstSeen": "2026-10-27",
+      "mentions": 1,
+      "sources": [
+        {
+          "publisher": "Google 新闻・网络迷因线索",
+          "title": "平成ネットミームの代表格！ 「コロンビア」の由来と活用をおさらい - BCN Retail",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1pV2pXVVJvX2h1ZHhyMEM3S1R5OGpHRHVraHphWDNzZlFhZVBzTVNuX0tQX2lxY25zN003dFdJMzd3T21IWVpfYlpjejlJekVXNXhCWGlvdjNnT0NxZ2dncW1qYW1fS1E4RnBHVA?oc=5"
         }
       ],
       "status": "候选未核对（禁止自动发布）",
