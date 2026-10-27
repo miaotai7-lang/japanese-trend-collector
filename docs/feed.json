@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-internet-slang-only",
-  "generatedAt": "2026-10-27T13:48:11+09:00",
+  "generatedAt": "2026-10-28T01:37:36+09:00",
   "sourceDescription": "仅展示有近期流行语调查或专题出处、并人工编写日中英释义的网络用语；不收录新闻高频词或搜索热点。新增候选暂不自动发布，须核对释义。",
   "counts": {
     "words": 11,
@@ -44,7 +44,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 248,
+      "score": 246,
       "surveyRank": 1
     },
     {
@@ -74,7 +74,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 244,
+      "score": 242,
       "surveyRank": 2
     },
     {
@@ -104,7 +104,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 240,
+      "score": 238,
       "surveyRank": 3
     },
     {
@@ -134,7 +134,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 228,
+      "score": 226,
       "surveyRank": 6
     },
     {
@@ -164,7 +164,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 228,
+      "score": 226,
       "surveyRank": 6
     },
     {
@@ -194,7 +194,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 218,
+      "score": 216,
       "surveyRank": null
     },
     {
@@ -224,7 +224,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 218,
+      "score": 216,
       "surveyRank": null
     },
     {
@@ -254,7 +254,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 204,
+      "score": 202,
       "surveyRank": null
     },
     {
@@ -284,7 +284,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 204,
+      "score": 202,
       "surveyRank": null
     },
     {
@@ -314,7 +314,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 192,
+      "score": 190,
       "surveyRank": null
     },
     {
@@ -344,7 +344,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 148,
+      "score": 146,
       "surveyRank": null
     }
   ]
