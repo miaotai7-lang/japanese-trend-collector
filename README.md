@@ -65,7 +65,7 @@ python collector.py --root docs --no-network
 - 对符合基础审核条件的**公开候选词**，通过 MyMemory 公共翻译接口生成 `ja→zh-CN` 和 `ja→en` 机器草稿，写入 `docs/slang_pending.json` 的 `translationDraft`，附 `verified=false` 和 `approvedForPublication=false`。失败或不完整翻译保留待审核状态，不阻断正式词库。
 - 每次定时执行最多处理 8 个尚无有效草稿的新候选（最多 16 次翻译请求），完整草稿最长复用 14 天，部分草稿短期复用；避免重复调用和意外耗尽免费接口配额。
 - **隐私与公开范围**：翻译请求仅包含已经从公开调查取得的词条字符串，不上传任何 Firebase 用户信息；`docs/slang_pending.json` 本身通过 GitHub Pages 可公开访问，请勿放入密钥、个人记录或第三方长篇版权内容。
-- 生产 GitHub Actions 将通过 `python collector.py --root docs --translate-pending --translation-limit 8` 执行。手动离线检查用 `--no-network` 禁用翻译请求。新测试命令为 `python -m unittest discover -s tests -p 'test_*.py' -v`。
+- 生产 GitHub Actions 将通过 `python collector.py --root docs --translate-pending --translation-limit 8` 执行。手动离线检查用 `--no-network` 禁用翻译请求。回归测试依次运行 `python -m unittest discover -s tests -p 'test_slang_only.py' -v` 和 `python -m unittest discover -s tests -p 'test_translation_review.py' -v`。旧版 `tests/test_trend_signals.py` 依赖已经废弃的 `collector.build_feed` 接口，暂不纳入当前发布门槛，保留历史文件以供后续清理。
 - **尚待验证**：GitHub Actions 访问 MyMemory 的成功率、调用限制、真实日语网络语义准确度。即便中日英字形和长度检查通过，也不能判定翻译准确。
 
 该模块实现自动形成**翻译草稿＋自动初筛＋待审队列**，尚不是无人值守直接发布新词的最终系统。高可信自动发布机制必须在建立独立来源、译文交叉核验与审校基准后另外评估。
