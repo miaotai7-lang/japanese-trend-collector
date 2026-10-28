@@ -20,6 +20,7 @@ from pathlib import Path
 JST = timezone(timedelta(hours=9))
 CURRENT_DAYS = 120
 SOURCE_FEED = 'https://shibuya-trendresearch.jp/monthlytrendsurvey/feed/'
+SURVEY_INDEX = 'https://shibuya-trendresearch.jp/monthlytrendsurvey/'
 CURRENT_REPORT = 'https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/'
 BLACKLIST = {'情報','会社','見る','食べる','アクセス','記事','ニュース','日本','東京','今日','動画','人気','商品','アプリ','学校','2026','仕事',
              'いい','れる','する','ある','発表','公開','価格','最新','サービス','問題','社会','企業','発売'}
@@ -54,7 +55,10 @@ class PlainText(HTMLParser):
 
 
 def ranked_slang_from_report(page_html):
-    """Extract ONLY entries inside the publisher's '今流行っている言葉' section."""
+    """Extract numbered, percentage-backed rows in the publisher's slang section.
+
+    Inline HTML elements may join '1位' and a term without a space.
+    """
     parser=PlainText();parser.feed(page_html)
     text=parser.text()
     head=re.search(r'今\s*流行っている\s*言葉\s*は\s*[？?]?', text)
@@ -63,15 +67,15 @@ def ranked_slang_from_report(page_html):
     end=re.search(r'今\s*流行っている\s*(?:物事|食べ物|音楽|場所|芸能|アイドル)|次に来る|ネクストトレンド|※複数回答',section)
     if end:section=section[:end.start()]
     out=[];seen=set()
+    pattern=re.compile(r'(?:^|\s)(\d{1,2})\s*位\s*([^()（）\n]{1,45}?)\s*[（(]\s*\d+(?:[.．]\d+)?\s*[%％]\s*[)）]')
     for line in section.splitlines():
-        line=re.sub(r'\s+',' ',line).strip()
-        m=re.search(r'(?:^|\s)(\d{1,2})\s*位\s+([^\(（]{2,45}?)\s*\(\s*\d+(?:\.\d+)?\s*%\s*\)',line)
+        line=re.sub(r'[\s\u3000]+',' ',line).strip()
+        m=pattern.search(line)
         if not m:continue
         term=m.group(2).strip(' 「」『』\u3000')
         if not (2<=len(term)<=32) or term in BLACKLIST or norm(term) in seen:continue
         seen.add(norm(term));out.append({'jp':term,'rank':int(m.group(1))})
     return out[:25]
-
 
 def report_published_date(page_html):
     """Only use publisher-declared dates. Never substitute current run date."""
@@ -93,11 +97,33 @@ def read_survey_rss(xml_bytes):
     urls=[]
     for e in entries[:35]:
         title=(e.findtext('title') or e.findtext('{http://www.w3.org/2005/Atom}title') or '').strip()
-        if not any(t in title for t in ('トレンド','流行語','流行りの言葉','若者言葉')):continue
+        if not any(t in title for t in ('トレンド','特大号','流行語','流行りの言葉','若者言葉')):continue
         url=(e.findtext('link') or '').strip()
         if url and trusted_url(url) and '/monthlytrendsurvey/' in url and url not in urls:urls.append(url)
     return urls[:8]
 
+
+class SurveyLinks(HTMLParser):
+    """Read links from an official survey archive, never unrelated search results."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True);self.current=None;self.links=[]
+    def handle_starttag(self,tag,attrs):
+        if tag=='a':
+            href=dict(attrs).get('href','')
+            self.current=[urllib.parse.urljoin(SURVEY_INDEX,href),[]]
+    def handle_data(self,data):
+        if self.current is not None:self.current[1].append(data)
+    def handle_endtag(self,tag):
+        if tag=='a' and self.current is not None:
+            url,title=self.current[0],''.join(self.current[1])
+            if trusted_url(url) and re.fullmatch(r'/monthlytrendsurvey/\d+/',urllib.parse.urlsplit(url).path) and any(x in title for x in ('特大号','流行語','言葉','トレンド')):
+                if url not in self.links:self.links.append(url)
+            self.current=None
+
+
+def read_survey_index(page_html):
+    reader=SurveyLinks();reader.feed(page_html)
+    return reader.links[:10]
 
 def fetch_public(url, maxbytes=1_800_000, timeout=12):
     if not trusted_url(url):raise ValueError('Untrusted public source')
@@ -189,40 +215,53 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None):
         pages=[(CURRENT_REPORT,fixture)]
         status.append({'name':'权威流行语调查','status':'ok','articles':1})
     elif not no_network:
-        pages=[]
+        pages=[];urls=[CURRENT_REPORT]
+        # RSS and the official archive are independent discovery paths.
+        # An unavailable RSS must not silently freeze the collector at one URL.
         try:
-            rss=fetch_public(SOURCE_FEED)
-            urls=read_survey_rss(rss)
-            urls=[CURRENT_REPORT]+[u for u in urls if u!=CURRENT_REPORT]
-            for url in urls[:7]:
-                try:
-                    text=fetch_public(url).decode('utf-8',errors='replace')
-                    pages.append((url,text))
-                except Exception as e:status.append({'name':'流行语调查网页','status':'error','detail':str(e)[:120]})
-            status.append({'name':'渋谷トレンドリサーチ最新排名','status':'ok' if pages else 'error','articles':len(pages)})
+            archive_urls=read_survey_index(fetch_public(SURVEY_INDEX).decode('utf-8',errors='replace'))
+            urls.extend(u for u in archive_urls if u not in urls)
         except Exception as e:
-            status.append({'name':'流行语调查来源','status':'error','detail':str(e)[:120]})
-            # Keep human-verified catalog in feed even if report site times out.
+            status.append({'name':'流行语调查档案索引','status':'error','detail':str(e)[:120]})
+        try:
+            rss_urls=read_survey_rss(fetch_public(SOURCE_FEED))
+            urls.extend(u for u in rss_urls if u not in urls)
+        except Exception as e:
+            status.append({'name':'流行语调查 RSS','status':'error','detail':str(e)[:120]})
+        for url in urls[:10]:
             try:
-                pages=[(CURRENT_REPORT,fetch_public(CURRENT_REPORT).decode('utf8',errors='replace'))]
-                status.append({'name':'流行语官方参考页','status':'ok','articles':1})
-            except Exception as exc:status.append({'name':'流行语官方参考页','status':'error','detail':str(exc)[:120]})
+                page=fetch_public(url).decode('utf-8',errors='replace')
+                pages.append((url,page))
+            except Exception as e:
+                status.append({'name':'流行语调查网页','status':'error','detail':url+' '+str(e)[:90]})
+        status.append({'name':'流行语调查页面读取','status':'fetched' if pages else 'error','articles':len(pages)})
+
     else:
         pages=[];status.append({'name':'离线质量检查','status':'skipped'})
+    parsed_reports=0
+    parsed_words=0
     for url,page in pages:
         ranked=ranked_slang_from_report(page)
-        if not ranked:continue
+        if not ranked:
+            status.append({'name':'调查排名解析','status':'no_matches','detail':url[:115]})
+            continue
         published=report_published_date(page)
         if not published and url==CURRENT_REPORT: published='2026-10-02'  # verified publisher record
         if not published:
             status.append({'name':'缺少来源发布日期','status':'skipped','detail':url[:110]})
             continue
         if date.fromisoformat(published)>now.date():continue
+        parsed_reports+=1;parsed_words+=len(ranked)
         if url not in [v.get('url') for v in state['reports']]:
             state['reports'].append({'url':url,'ranked':ranked,'date':published,'publisher':'渋谷トレンドリサーチ'})
         else:
             for row in state['reports']:
                 if row.get('url')==url:row['ranked']=ranked;row['date']=published
+    if pages:
+        status.append({'name':'有效流行语调查解析','status':'ok' if parsed_reports else 'error',
+            'articles':parsed_reports,'rankedWords':parsed_words,
+            'detail':'' if parsed_reports else '网页可读取，但未能解析出带名次和百分比的流行语表格'})
+
     state['reports']=state['reports'][-35:]
     pending=report_evidence(catalog,state,now)
     feed=build_slang_feed(catalog,state,now,status)
