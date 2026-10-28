@@ -59,6 +59,48 @@ class SlangOnlyTest(unittest.TestCase):
             b=s.run(d,CATALOG,no_network=True,now=NOW)
             self.assertEqual([w['id'] for w in a['items']],[w['id'] for w in b['items']])
             self.assertTrue(all(w['sources'] and w['sources'][0]['url'].startswith('https://') for w in a['items']))
+    def test_publisher_html_without_spaces_and_fullwidth_percent(self):
+        page = """<h3>❚ 今流行っている言葉は？</h3>
+        <p>1位<span>メロい</span><span>(20.3%)</span></p>
+        <p>2位<strong>ドパガキ</strong>（14.0％）</p>
+        <h3>❚ 今流行っている物事は？</h3><p>1位商品（99.0%）</p>"""
+        self.assertEqual([x['jp'] for x in s.ranked_slang_from_report(page)],['メロい','ドパガキ'])
+
+    def test_archive_discovers_new_surveys_without_ordinary_articles(self):
+        page = """<a href="/monthlytrendsurvey/4800/">2026 冬の特大号 最新トレンド</a>
+        <a href="/monthlytrendsurvey/4700/">若者言葉ランキング</a>
+        <a href="/monthlytrendsurvey/4600/">父の日の調査</a>
+        <a href="https://evil.example.com/monthlytrendsurvey/6000/">最新トレンド</a>"""
+        self.assertEqual(s.read_survey_index(page),[
+            'https://shibuya-trendresearch.jp/monthlytrendsurvey/4800/',
+            'https://shibuya-trendresearch.jp/monthlytrendsurvey/4700/'])
+
+    def test_source_success_requires_parsed_rankings_not_just_http_200(self):
+        from unittest.mock import patch
+        bogus='<h3>今流行っている言葉は？</h3><p>不是榜单</p>'.encode('utf-8')
+        with tempfile.TemporaryDirectory() as d, patch.object(s,'fetch_public',return_value=bogus):
+            feed=s.run(d,CATALOG,now=NOW)
+            self.assertEqual(feed['counts']['sourceSucceeded'],0)
+            self.assertTrue(any(x['name']=='有效流行语调查解析' and x['status']=='error' for x in feed['sourceStatus']))
+
+    def test_new_ranking_from_archive_enters_pending_without_publication(self):
+        from unittest.mock import patch
+        archive='<a href="/monthlytrendsurvey/4800/">2026 冬の特大号 最新トレンド</a>'.encode('utf-8')
+        official='''<meta property="article:published_time" content="2026-10-10"><h3>今流行っている言葉は？</h3>
+        <p>1位<span>新しいネット梗</span>(20.0%)</p><h3>今流行っている物事は？</h3>'''.encode('utf-8')
+        def fake_fetch(url,*args,**kw):
+            if url==s.SURVEY_INDEX:return archive
+            if url==s.SOURCE_FEED:raise TimeoutError('RSS unavailable')
+            if url.endswith('/4800/'):return official
+            raise TimeoutError('old report failed')
+        with tempfile.TemporaryDirectory() as d, patch.object(s,'fetch_public',side_effect=fake_fetch):
+            feed=s.run(d,CATALOG,now=NOW)
+            pending=json.loads((Path(d)/'slang_pending.json').read_text(encoding='utf-8'))['items']
+            self.assertIn('新しいネット梗',[x['jp'] for x in pending])
+            self.assertEqual(feed['counts']['pendingReview'],1)
+            self.assertEqual(feed['counts']['sourceSucceeded'],1)
+            self.assertNotIn('新しいネット梗',[x['jp'] for x in feed['items']])
+
     def test_rss_only_discovers_trend_survey_pages(self):
         feed='''<?xml version="1.0"?><rss><channel>
         <item><title>2026 秋のトレンド調査</title><link>https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/</link></item>
