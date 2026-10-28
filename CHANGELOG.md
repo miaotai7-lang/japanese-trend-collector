@@ -11,3 +11,5 @@
 - 未修改已审核的 11 条原有词汇、Firebase 网站或私人数据。
 
 **安全约束**：机器翻译始终标记未经审核，禁止直接自动发布；`reviewPriority` 不是可信度概率。
+
+- GitHub 全文件名扫描暴露遗留 `tests/test_trend_signals.py` 仍依赖已移除的 `collector.build_feed`；正式 PR/定时 CI 改为明确运行当前两套有效的严格采集与翻译质量测试，共 26 项。遗留测试未删除。
