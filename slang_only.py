@@ -55,27 +55,34 @@ class PlainText(HTMLParser):
 
 
 def ranked_slang_from_report(page_html):
-    """Extract numbered, percentage-backed rows in the publisher's slang section.
+    """Find ranked slang in the report BODY, not in its table of contents.
 
-    Inline HTML elements may join '1位' and a term without a space.
+    Reports repeat the exact '今流行っている言葉は？' heading in the
+    navigation/TOC and again in the article. Only a block with actual
+    ranking rows is accepted. The next category heading is the boundary.
     """
     parser=PlainText();parser.feed(page_html)
     text=parser.text()
-    head=re.search(r'今\s*流行っている\s*言葉\s*は\s*[？?]?', text)
-    if not head:return []
-    section=text[head.end():]
-    end=re.search(r'今\s*流行っている\s*(?:物事|食べ物|音楽|場所|芸能|アイドル)|次に来る|ネクストトレンド|※複数回答',section)
-    if end:section=section[:end.start()]
-    out=[];seen=set()
+    heads=list(re.finditer(r'今[^\S\n]*流行っている[^\S\n]*言葉[^\S\n]*は[^\S\n]*[？?]?', text))
     pattern=re.compile(r'(?:^|\s)(\d{1,2})\s*位\s*([^()（）\n]{1,45}?)\s*[（(]\s*\d+(?:[.．]\d+)?\s*[%％]\s*[)）]')
-    for line in section.splitlines():
-        line=re.sub(r'[\s\u3000]+',' ',line).strip()
-        m=pattern.search(line)
-        if not m:continue
-        term=m.group(2).strip(' 「」『』\u3000')
-        if not (2<=len(term)<=32) or term in BLACKLIST or norm(term) in seen:continue
-        seen.add(norm(term));out.append({'jp':term,'rank':int(m.group(1))})
-    return out[:25]
+    for head in heads:
+        section=text[head.end():]
+        end=re.search(
+            r'今\s*流行っている\s*(?:物事|食べ物|音楽|場所|芸能|アイドル)'
+            r'|次に来る|ネクストトレンド|※複数回答', section)
+        if end:section=section[:end.start()]
+        out=[];seen=set()
+        for line in section.splitlines():
+            line=re.sub(r'[\s\u3000]+',' ',line).strip()
+            m=pattern.search(line)
+            if not m:continue
+            term=m.group(2).strip(' 「」『』\u3000')
+            if not (2<=len(term)<=32) or term in BLACKLIST or norm(term) in seen:continue
+            seen.add(norm(term));out.append({'jp':term,'rank':int(m.group(1))})
+        if out:
+            return out[:25]
+    return []
+
 
 def report_published_date(page_html):
     """Only use publisher-declared dates. Never substitute current run date."""
