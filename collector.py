@@ -12,10 +12,13 @@ def main(argv=None):
     p.add_argument('--root',default='docs')
     p.add_argument('--catalog',default='slang_terms.json')
     p.add_argument('--no-network',action='store_true',help='Offline audit; keep catalog and existing reports')
+    p.add_argument('--translate-pending',action='store_true',help='Generate unverified Chinese and English drafts for new public slang candidates (never auto-publish)')
+    p.add_argument('--translation-limit',type=int,default=8,help='Maximum draft candidates per run (0-8)')
     args=p.parse_args(argv)
-    feed=run(args.root,args.catalog,no_network=args.no_network)
+    feed=run(args.root,args.catalog,no_network=args.no_network,
+        translate_pending=args.translate_pending,translation_limit=args.translation_limit)
     print('STRICT INTERNET SLANG ONLY: {} published; {} pending review'.format(len(feed['items']),feed['counts']['pendingReview']))
-    print('No general news-headline token frequency or machine translation is used.')
+    print('No general-news token frequency is used; machine translations, when enabled, are unverified pending drafts only.')
     if not feed['items']:
         print('NOTICE: no currently documented slang entries; do not recycle expired rankings.')
     return 0

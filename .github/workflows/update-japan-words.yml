@@ -25,10 +25,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Strict slang-only regression tests (no network)
-        run: python -m unittest discover -s tests -p 'test_slang_only.py' -v
-      - name: Discover evidence-based internet slang; publish only curated bilingual entries
-        run: python collector.py --root docs
+      - name: Strict slang and translation-quality regression tests (no network)
+        run: |
+          python -m unittest discover -s tests -p 'test_slang_only.py' -v
+          python -m unittest discover -s tests -p 'test_translation_review.py' -v
+      - name: Discover sourced slang, draft translations, publish curated entries only
+        run: python collector.py --root docs --translate-pending --translation-limit 8
       - name: Save reviewed-feed state (never modify personal Firebase)
         shell: bash
         run: |

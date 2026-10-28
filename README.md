@@ -47,7 +47,7 @@ python collector.py --root docs --no-network
 
 ## 候选修复：流行语调查自动发现与解析（2026-10-28）
 
-> 此段为待审核 PR 的技术说明；修复未合并并经真实 GitHub Actions 验证前，不代表生产采集已修好。
+> 2026-10-28 自动发现修复已通过 PR #5 合并；真实定时采集的结果仍需另行核查。
 
 - 同时读取流行语调查索引与官方 RSS，降低单一 RSS 不可用导致持续重复旧报告的风险。
 - 识别无空格排名行（如 `1位メロい(20.3%)`）及全角括号/百分号，限定于原出版者的“今流行っている言葉”排名区域。
@@ -55,3 +55,17 @@ python collector.py --root docs --no-network
 - 离线回归测试增加至 13 项，涵盖索引发现、网页排版、解析失败和未审候选词隔离。
 - **新词不会直接公开**：自动发现仅进入 `docs/slang_pending.json`；人工审核假名、中文、英文、出处之后才纳入 `slang_terms.json`。这次没有引入机器生成的假释义。
 - 单一调查网站并不能覆盖全部日本网络流行语，实际采集范围、来源日期与排名格式仍需在真实 GitHub Actions 环境确认，之后再逐步扩展可信来源。
+
+## 自动翻译候选与质量审核模块（候选，2026-10-28）
+
+**核心边界**：自动翻译提供待审核草稿，绝不能当作网络流行语的准确释义；正式 `docs/feed.json` 仍只消费经过整理的 `slang_terms.json`，并非从草稿直接构建。
+
+- `translation_review.py` 结合近期调查的真实日期、排名、来源、日文文本和普通词黑名单，对候选给出审核优先级。`reviewPriority` 不是翻译准确率，也不保证一定是网络流行语。
+- 仅将可确定的片假名转换成平假名；含汉字、存在歧义的读音不作自动猜测。
+- 对符合基础审核条件的**公开候选词**，通过 MyMemory 公共翻译接口生成 `ja→zh-CN` 和 `ja→en` 机器草稿，写入 `docs/slang_pending.json` 的 `translationDraft`，附 `verified=false` 和 `approvedForPublication=false`。失败或不完整翻译保留待审核状态，不阻断正式词库。
+- 每次定时执行最多处理 8 个尚无有效草稿的新候选（最多 16 次翻译请求），完整草稿最长复用 14 天，部分草稿短期复用；避免重复调用和意外耗尽免费接口配额。
+- **隐私与公开范围**：翻译请求仅包含已经从公开调查取得的词条字符串，不上传任何 Firebase 用户信息；`docs/slang_pending.json` 本身通过 GitHub Pages 可公开访问，请勿放入密钥、个人记录或第三方长篇版权内容。
+- 生产 GitHub Actions 将通过 `python collector.py --root docs --translate-pending --translation-limit 8` 执行。手动离线检查用 `--no-network` 禁用翻译请求。回归测试依次运行 `python -m unittest discover -s tests -p 'test_slang_only.py' -v` 和 `python -m unittest discover -s tests -p 'test_translation_review.py' -v`。旧版 `tests/test_trend_signals.py` 依赖已经废弃的 `collector.build_feed` 接口，暂不纳入当前发布门槛，保留历史文件以供后续清理。
+- **尚待验证**：GitHub Actions 访问 MyMemory 的成功率、调用限制、真实日语网络语义准确度。即便中日英字形和长度检查通过，也不能判定翻译准确。
+
+该模块实现自动形成**翻译草稿＋自动初筛＋待审队列**，尚不是无人值守直接发布新词的最终系统。高可信自动发布机制必须在建立独立来源、译文交叉核验与审校基准后另外评估。
