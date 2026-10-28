@@ -161,8 +161,12 @@ def report_evidence(catalog,state,now):
             text=str(term.get('jp','')).strip();key=norm(text)
             if text in BLACKLIST or not 2<=len(text)<=35:continue
             if key in byname:continue
-            rec=new_pending.setdefault(key,{'jp':text,'sources':[],'status':'needs_human_definition_and_bilingual_review'})
+            rec=new_pending.setdefault(key,{'jp':text,'sources':[],'evidence':[],
+                'status':'needs_human_definition_and_bilingual_review'})
             if report['url'] not in rec['sources']:rec['sources'].append(report['url'])
+            if not any(e['url']==report['url'] for e in rec['evidence']):
+                rec['evidence'].append({'url':report['url'],'date':report['date'],
+                    'rank':term.get('rank')})
     return sorted(new_pending.values(),key=lambda x:x['jp'])
 
 
@@ -202,7 +206,8 @@ def build_slang_feed(catalog,state,now,source_status):
         'sourceStatus':source_status,'items':rows}
 
 
-def run(root, catalog_path, fixture=None, no_network=False, now=None):
+def run(root, catalog_path, fixture=None, no_network=False, now=None,
+        translate_pending=False, translator=None, translation_limit=8):
     now=now or datetime.now(JST);root=Path(root)
     catalog=load_catalog(catalog_path)
     state_path=root/'slang_state.json';prior={}
@@ -264,6 +269,20 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None):
 
     state['reports']=state['reports'][-35:]
     pending=report_evidence(catalog,state,now)
+    # Translation drafts belong ONLY to the pending-review file; the
+    # public feed is always constructed from the manually curated catalog.
+    from translation_review import enrich_review_queue
+    prior_pending=[]
+    review_path=root/'slang_pending.json'
+    if review_path.exists():
+        try:
+            old=json.loads(review_path.read_text(encoding='utf8'))
+            if isinstance(old.get('items'),list):prior_pending=old['items']
+        except (ValueError, TypeError, OSError):
+            pass
+    pending=enrich_review_queue(pending,prior_pending,now,BLACKLIST,
+        enable_translation=bool(translate_pending and not no_network),
+        translator=translator,max_items=translation_limit)
     feed=build_slang_feed(catalog,state,now,status)
     # Never read or transfer old generic docs/state.json; replacing docs/feed.json
     # drops old meaningless news-frequency entries by design.
