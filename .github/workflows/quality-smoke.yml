@@ -18,6 +18,18 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_slang_only.py' -v
           python -m unittest discover -s tests -p 'test_translation_review.py' -v
+      - name: Diagnose live public survey ranking parser (read-only)
+        run: |
+          python - <<'PY'
+          from slang_only import fetch_public, CURRENT_REPORT, PlainText, ranked_slang_from_report
+          src=fetch_public(CURRENT_REPORT).decode('utf-8',errors='replace')
+          p=PlainText();p.feed(src);plain=p.text()
+          print('raw-html-chars:',len(src),'plain-chars:',len(plain))
+          for needle in ('今流行っている言葉','メロい','ドパガキ','1位'):
+              pos=plain.find(needle)
+              print('marker:',needle,'pos:',pos,'context:',repr(plain[max(pos-100,0):pos+400]) if pos>=0 else 'N/A')
+          print('extracted:',ranked_slang_from_report(src))
+          PY
       - name: Publish to temporary directory only; audit slang and bilingual content
         run: |
           python - <<'PY'
