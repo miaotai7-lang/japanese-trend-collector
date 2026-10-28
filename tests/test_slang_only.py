@@ -66,6 +66,31 @@ class SlangOnlyTest(unittest.TestCase):
         <h3>❚ 今流行っている物事は？</h3><p>1位商品（99.0%）</p>"""
         self.assertEqual([x['jp'] for x in s.ranked_slang_from_report(page)],['メロい','ドパガキ'])
 
+    def test_contents_heading_does_not_hide_real_ranking(self):
+        """The publisher repeats the same heading in its TOC and article."""
+        page = """<nav><p>目次</p>
+        <p>2 ❚ 今流行っている言葉は？</p>
+        <p>3 ❚ 今流行っている物事は？</p>
+        </nav><article>
+        <h3>❚ 今流行っている言葉は？</h3>
+        <p>1位 メロい (20.3%)</p>
+        <p>2位 ドパガキ (14.0%)</p>
+        <p>4位 滅 (6.8%)</p>
+        <p>5位 ネ申 (2.7%)</p>
+        <h3>❚ 今流行っている物事は？</h3>
+        <p>1位 商品 (99.9%)</p>
+        </article>"""
+        names=[x['jp'] for x in s.ranked_slang_from_report(page)]
+        self.assertEqual(names,['メロい','ドパガキ','ネ申'])
+        self.assertNotIn('商品',names)
+
+    def test_contents_only_cannot_generate_fake_slang(self):
+        page="""<div>目次</div>
+        <p>2 ❚ 今流行っている言葉は？</p>
+        <p>3 ❚ 今流行っている物事は？</p>
+        <p>1位 商品 (33.9%)</p>"""
+        self.assertEqual(s.ranked_slang_from_report(page),[])
+
     def test_archive_discovers_new_surveys_without_ordinary_articles(self):
         page = """<a href="/monthlytrendsurvey/4800/">2026 冬の特大号 最新トレンド</a>
         <a href="/monthlytrendsurvey/4700/">若者言葉ランキング</a>
