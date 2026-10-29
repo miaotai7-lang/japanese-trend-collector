@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T11:26:43+09:00",
+  "generatedAt": "2026-10-30T02:25:38+09:00",
   "items": [
     {
       "jp": "アツい",
@@ -24,7 +24,7 @@
         "evidenceSources": 1
       },
       "kanaSuggestion": "あつい",
-      "translationStatus": "draft_unverified",
+      "translationStatus": "cached_unverified",
       "translationDraft": {
         "zh": "热",
         "en": "Hot",
@@ -58,7 +58,7 @@
         "evidenceSources": 1
       },
       "kanaSuggestion": "しょーとすりーぱー",
-      "translationStatus": "draft_unverified",
+      "translationStatus": "cached_unverified",
       "translationDraft": {
         "zh": "短睡眠者",
         "en": "Short Sleeper",
@@ -92,7 +92,7 @@
         "evidenceSources": 1
       },
       "kanaSuggestion": "",
-      "translationStatus": "partial_unverified",
+      "translationStatus": "cached_unverified",
       "translationDraft": {
         "zh": "",
         "en": "Neshen",
@@ -101,9 +101,6 @@
         "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
       },
       "draftGeneratedAt": "2026-10-29",
-      "translationWarnings": [
-        "未取得有效的 zh-CN 机器翻译；候选继续待审核"
-      ],
       "approvedForPublication": false
     },
     {
@@ -129,7 +126,7 @@
         "evidenceSources": 1
       },
       "kanaSuggestion": "",
-      "translationStatus": "draft_unverified",
+      "translationStatus": "cached_unverified",
       "translationDraft": {
         "zh": "嘲笑",
         "en": "Scorn",
