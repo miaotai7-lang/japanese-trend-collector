@@ -1,3 +1,145 @@
 {
-  "reports": []
+  "reports": [
+    {
+      "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+      "ranked": [
+        {
+          "jp": "メロい",
+          "rank": 1
+        },
+        {
+          "jp": "ドパガキ",
+          "rank": 2
+        },
+        {
+          "jp": "フレネミー",
+          "rank": 3
+        },
+        {
+          "jp": "ネ申",
+          "rank": 5
+        },
+        {
+          "jp": "シャバい",
+          "rank": 6
+        },
+        {
+          "jp": "ワッサー",
+          "rank": 6
+        },
+        {
+          "jp": "ショートスリーパー",
+          "rank": 8
+        },
+        {
+          "jp": "冷笑",
+          "rank": 8
+        },
+        {
+          "jp": "アツい",
+          "rank": 9
+        }
+      ],
+      "date": "2026-10-02",
+      "publisher": "渋谷トレンドリサーチ"
+    },
+    {
+      "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4480/",
+      "ranked": [
+        {
+          "jp": "めろい",
+          "rank": 1
+        },
+        {
+          "jp": "わほー",
+          "rank": 2
+        },
+        {
+          "jp": "フレネミー",
+          "rank": 4
+        },
+        {
+          "jp": "ほんまやで",
+          "rank": 4
+        },
+        {
+          "jp": "67",
+          "rank": 6
+        },
+        {
+          "jp": "しゃばい",
+          "rank": 6
+        },
+        {
+          "jp": "爆裂",
+          "rank": 6
+        },
+        {
+          "jp": "21歳キャバ嬢",
+          "rank": 9
+        },
+        {
+          "jp": "ドパガキ",
+          "rank": 9
+        }
+      ],
+      "date": "2026-06-30",
+      "publisher": "渋谷トレンドリサーチ"
+    },
+    {
+      "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4271/",
+      "ranked": [
+        {
+          "jp": "〇〇で滅",
+          "rank": 1
+        },
+        {
+          "jp": "めろい",
+          "rank": 2
+        },
+        {
+          "jp": "好きすぎて滅",
+          "rank": 3
+        },
+        {
+          "jp": "しゃばい",
+          "rank": 4
+        },
+        {
+          "jp": "爆裂",
+          "rank": 4
+        },
+        {
+          "jp": "〇〇で今これ",
+          "rank": 6
+        },
+        {
+          "jp": "〇〇界隈",
+          "rank": 6
+        },
+        {
+          "jp": "チャッピー構文",
+          "rank": 6
+        },
+        {
+          "jp": "〇〇で神",
+          "rank": 9
+        },
+        {
+          "jp": "うす",
+          "rank": 9
+        },
+        {
+          "jp": "スピキ",
+          "rank": 9
+        },
+        {
+          "jp": "ちゃむ",
+          "rank": 9
+        }
+      ],
+      "date": "2026-03-18",
+      "publisher": "渋谷トレンドリサーチ"
+    }
+  ]
 }

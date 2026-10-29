@@ -1,4 +1,144 @@
 {
-  "generatedAt": "2026-10-29T02:09:51+09:00",
-  "items": []
+  "generatedAt": "2026-10-29T11:26:43+09:00",
+  "items": [
+    {
+      "jp": "アツい",
+      "sources": [
+        "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/"
+      ],
+      "evidence": [
+        {
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+          "date": "2026-10-02",
+          "rank": 9
+        }
+      ],
+      "status": "needs_human_definition_and_bilingual_review",
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 80,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 1
+      },
+      "kanaSuggestion": "あつい",
+      "translationStatus": "draft_unverified",
+      "translationDraft": {
+        "zh": "热",
+        "en": "Hot",
+        "provider": "MyMemory / machine translation",
+        "verified": false,
+        "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
+      },
+      "draftGeneratedAt": "2026-10-29",
+      "approvedForPublication": false
+    },
+    {
+      "jp": "ショートスリーパー",
+      "sources": [
+        "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/"
+      ],
+      "evidence": [
+        {
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+          "date": "2026-10-02",
+          "rank": 8
+        }
+      ],
+      "status": "needs_human_definition_and_bilingual_review",
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 80,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 1
+      },
+      "kanaSuggestion": "しょーとすりーぱー",
+      "translationStatus": "draft_unverified",
+      "translationDraft": {
+        "zh": "短睡眠者",
+        "en": "Short Sleeper",
+        "provider": "MyMemory / machine translation",
+        "verified": false,
+        "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
+      },
+      "draftGeneratedAt": "2026-10-29",
+      "approvedForPublication": false
+    },
+    {
+      "jp": "ネ申",
+      "sources": [
+        "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/"
+      ],
+      "evidence": [
+        {
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+          "date": "2026-10-02",
+          "rank": 5
+        }
+      ],
+      "status": "needs_human_definition_and_bilingual_review",
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 80,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 1
+      },
+      "kanaSuggestion": "",
+      "translationStatus": "partial_unverified",
+      "translationDraft": {
+        "zh": "",
+        "en": "Neshen",
+        "provider": "MyMemory / machine translation",
+        "verified": false,
+        "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
+      },
+      "draftGeneratedAt": "2026-10-29",
+      "translationWarnings": [
+        "未取得有效的 zh-CN 机器翻译；候选继续待审核"
+      ],
+      "approvedForPublication": false
+    },
+    {
+      "jp": "冷笑",
+      "sources": [
+        "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/"
+      ],
+      "evidence": [
+        {
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+          "date": "2026-10-02",
+          "rank": 8
+        }
+      ],
+      "status": "needs_human_definition_and_bilingual_review",
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 80,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 1
+      },
+      "kanaSuggestion": "",
+      "translationStatus": "draft_unverified",
+      "translationDraft": {
+        "zh": "嘲笑",
+        "en": "Scorn",
+        "provider": "MyMemory / machine translation",
+        "verified": false,
+        "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
+      },
+      "draftGeneratedAt": "2026-10-29",
+      "approvedForPublication": false
+    }
+  ]
 }

@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-internet-slang-only",
-  "generatedAt": "2026-10-29T02:09:51+09:00",
+  "generatedAt": "2026-10-29T11:26:43+09:00",
   "sourceDescription": "仅展示有近期流行语调查或专题出处、并人工编写日中英释义的网络用语；不收录新闻高频词或搜索热点。新增候选暂不自动发布，须核对释义。",
   "counts": {
     "words": 11,
-    "candidateWords": 0,
-    "pendingReview": 0,
-    "sourceSucceeded": 0
+    "candidateWords": 4,
+    "pendingReview": 4,
+    "sourceSucceeded": 1
   },
   "sourceStatus": [
     {
@@ -18,22 +18,12 @@
     {
       "name": "调查排名解析",
       "status": "no_matches",
-      "detail": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/"
-    },
-    {
-      "name": "调查排名解析",
-      "status": "no_matches",
       "detail": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4579/"
     },
     {
       "name": "调查排名解析",
       "status": "no_matches",
       "detail": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4522/"
-    },
-    {
-      "name": "调查排名解析",
-      "status": "no_matches",
-      "detail": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4480/"
     },
     {
       "name": "调查排名解析",
@@ -53,11 +43,6 @@
     {
       "name": "调查排名解析",
       "status": "no_matches",
-      "detail": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4271/"
-    },
-    {
-      "name": "调查排名解析",
-      "status": "no_matches",
       "detail": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4220/"
     },
     {
@@ -67,10 +52,10 @@
     },
     {
       "name": "有效流行语调查解析",
-      "status": "error",
-      "articles": 0,
-      "rankedWords": 0,
-      "detail": "网页可读取，但未能解析出带名次和百分比的流行语表格"
+      "status": "ok",
+      "articles": 3,
+      "rankedWords": 30,
+      "detail": ""
     }
   ],
   "items": [
@@ -100,7 +85,7 @@
       "last7": 0,
       "previous7": 0,
       "docCount": 1,
-      "trendCount": 0,
+      "trendCount": 1,
       "score": 244,
       "surveyRank": 1
     },
@@ -125,12 +110,18 @@
           "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
           "publisher": "渋谷トレンドリサーチ",
           "seenAt": "2026-10-02"
+        },
+        {
+          "title": "近期网络流行语调查排名",
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4480/",
+          "publisher": "渋谷トレンドリサーチ",
+          "seenAt": "2026-06-30"
         }
       ],
       "last7": 0,
       "previous7": 0,
-      "docCount": 1,
-      "trendCount": 0,
+      "docCount": 2,
+      "trendCount": 2,
       "score": 240,
       "surveyRank": 2
     },
@@ -155,12 +146,18 @@
           "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
           "publisher": "渋谷トレンドリサーチ",
           "seenAt": "2026-10-02"
+        },
+        {
+          "title": "近期网络流行语调查排名",
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4480/",
+          "publisher": "渋谷トレンドリサーチ",
+          "seenAt": "2026-06-30"
         }
       ],
       "last7": 0,
       "previous7": 0,
-      "docCount": 1,
-      "trendCount": 0,
+      "docCount": 2,
+      "trendCount": 2,
       "score": 236,
       "surveyRank": 3
     },
@@ -190,7 +187,7 @@
       "last7": 0,
       "previous7": 0,
       "docCount": 1,
-      "trendCount": 0,
+      "trendCount": 1,
       "score": 224,
       "surveyRank": 6
     },
@@ -220,7 +217,7 @@
       "last7": 0,
       "previous7": 0,
       "docCount": 1,
-      "trendCount": 0,
+      "trendCount": 1,
       "score": 224,
       "surveyRank": 6
     },
