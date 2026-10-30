@@ -133,7 +133,12 @@ def read_feed(raw, source, now):
 
 def extract_claimed_slang(post, blacklist):
     """Take only explicitly described slang in quote marks, not arbitrary tokens."""
-    text=(post.get('title','')+'。'+post.get('summary','')).strip()
+    # Community aggregators often quote unrelated snippets in descriptions.
+    # For Hatena, examine the explicit article title only; for Mastodon, the
+    # public RSS post body is supplied in its description without a title.
+    title=post.get('title','').strip()
+    text=(title if post.get('platform','').startswith('hatena_') and title
+          else title+'。'+post.get('summary','')).strip()
     if not TRIGGERS.search(text):return []
     seen=set();names=[]
     for match in QUOTED.finditer(text):
@@ -208,6 +213,12 @@ def merge_pending(survey, community, known, norm):
     for row in community:
         key=norm(row['jp'])
         if key in known:continue
+        # A single public post is an unverified lead. Keep it in the bounded
+        # community state for later comparison but do not promote it into the
+        # active translation/review queue unless independently repeated or
+        # already supported by an actual official survey.
+        independent_links={e.get('url') for e in row.get('evidence',[]) if isinstance(e,dict)}
+        if key not in byname and len(independent_links)<2:continue
         rec=byname.setdefault(key,{'jp':row['jp'],'sources':[],'evidence':[],
              'status':'community_signal_needs_independent_meaning_review'})
         for ev in row['evidence']:
