@@ -24,11 +24,12 @@ jobs:
         run: |
           python - <<'PY'
           from datetime import datetime
-          from community_sources import SOURCES, JST, fetch_feed, read_feed
+          from community_sources import SOURCES, JST, fetch_feed, read_feed, extract_claimed_slang
+          from slang_only import BLACKLIST
           for source,url in SOURCES:
               try:
                   posts=read_feed(fetch_feed(url),source,datetime.now(JST))
-                  print(source,'reachable; recent posts:',len(posts))
+                  print(source,'reachable; recent posts:',len(posts), 'explicit-slang-mentions:', sum(len(extract_claimed_slang(post,BLACKLIST)) for post in posts))
               except Exception as exc:
                   print(source,'unavailable:',type(exc).__name__,str(exc)[:110])
           PY
