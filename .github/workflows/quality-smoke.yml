@@ -21,22 +21,6 @@ jobs:
           python -m unittest discover -s tests -p 'test_auto_publish.py' -v
           python -m unittest discover -s tests -p 'test_community_sources.py' -v
           python -m unittest discover -s tests -p 'test_blog_sources.py' -v
-      - name: Probe selected creator RSS feeds (read-only, temporary diagnostics)
-        run: |
-          python - <<'PY'
-          from blog_sources import CREATORS,fetch_blogger,collect_blogs
-          from slang_only import JST,BLACKLIST
-          from datetime import datetime
-          for slug,name,url in CREATORS:
-              try:
-                  rows,state,status=collect_blogs(datetime.now(JST),{},BLACKLIST,set(),
-                    fetcher=lambda u:fetch_blogger(u) if u==url else b'<rss><channel/></rss>')
-                  source=next(x for x in status if x['name']=='知识博主RSS:'+slug)
-                  print(slug,'articles:',source.get('articles',0),
-                        'mentions:',source.get('candidateMentions',0),
-                        'signal_words:',len(rows),'status:',source['status'])
-              except Exception as e:print(slug,type(e).__name__,str(e)[:100])
-          PY
       - name: Publish to temporary directory only; audit slang and bilingual content
         run: |
           python - <<'PY'
