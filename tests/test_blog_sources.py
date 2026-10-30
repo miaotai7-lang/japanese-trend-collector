@@ -129,6 +129,28 @@ class BloggerTests(unittest.TestCase):
         self.assertEqual(len(rows[0]['evidence']),1)
         self.assertEqual(c.merge_pending([],rows,set(),s.norm),[])
 
+    def test_parenthetical_translation_is_not_mistaken_for_a_new_word(self):
+        post={'title':'ネットスラング「Friend（友達）」を説明',
+              'summary':'ネットスラング「Friend（友達）」は友人という意味'}
+        self.assertEqual(b.extract_blog_terms(post,s.BLACKLIST),[])
+
+    def test_existing_exclamation_mark_variant_is_not_collected(self):
+        self.assertEqual(b._norm('〇〇すぎて滅！'),b._norm('〇〇すぎて滅'))
+        def fresh(url):
+            return note_feed('50s_lab',term='〇〇すぎて滅')
+        rows,_,_=b.collect_blogs(NOW,{},s.BLACKLIST,
+            {s.norm('〇〇すぎて滅！')},fetcher=fresh)
+        self.assertEqual(rows,[])
+
+    def test_stored_false_positive_is_removed_on_next_run(self):
+        prior={'items':[{'jp':'Friend（友達）',
+             'evidence':[{'url':'https://note.com/open_fairy44/n/nabcdef012345',
+                          'date':'2026-10-20','platform':'blogger:open_fairy44'}]}]}
+        empty=lambda url:b'<rss><channel/></rss>'
+        rows,state,_=b.collect_blogs(NOW,prior,s.BLACKLIST,set(),fetcher=empty)
+        self.assertEqual(rows,[])
+        self.assertEqual(state['items'],[])
+
     def test_bad_source_url_rejected_without_outbound_request(self):
         class Redirect:
             def geturl(self):return 'http://example.net/private.xml'
