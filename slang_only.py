@@ -375,7 +375,8 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
     feed['counts']['sourceSucceeded']=survey_succeeded  # Historical survey-only meaning
     feed['counts']['candidateWords']=len(pending)
     feed['counts']['pendingReview']=len(pending)
-    feed['counts']['communityCandidateWords']=sum(bool(x.get('communityEvidenceCount')) for x in pending)
+    community_names={norm(x['jp']) for x in community}
+    feed['counts']['communityCandidateWords']=sum(norm(x['jp']) in community_names for x in pending)
     feed['counts']['communitySignals']=len(community)  # raw leads, not approved words
     feed['counts']['bloggerSignals']=len(bloggers)
     active={norm(p['jp']) for p in pending}
