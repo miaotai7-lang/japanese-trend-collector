@@ -19,6 +19,8 @@ from pathlib import Path
 
 JST = timezone(timedelta(hours=9))
 CURRENT_DAYS = 120
+REVIEWED_AUTO_PATH = Path(__file__).resolve().parent / 'data' / 'reviewed_auto_publish.json'
+VERIFIED_ONE_CHARACTER_SLANG = {'滅'}
 SOURCE_FEED = 'https://shibuya-trendresearch.jp/monthlytrendsurvey/feed/'
 SURVEY_INDEX = 'https://shibuya-trendresearch.jp/monthlytrendsurvey/'
 CURRENT_REPORT = 'https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/'
@@ -77,7 +79,7 @@ def ranked_slang_from_report(page_html):
             m=pattern.search(line)
             if not m:continue
             term=m.group(2).strip(' 「」『』\u3000')
-            if not (2<=len(term)<=32) or term in BLACKLIST or norm(term) in seen:continue
+            if not (1<=len(term)<=32) or (len(term)==1 and term not in VERIFIED_ONE_CHARACTER_SLANG) or term in BLACKLIST or norm(term) in seen:continue
             seen.add(norm(term));out.append({'jp':term,'rank':int(m.group(1))})
         if out:
             return out[:25]
@@ -152,6 +154,51 @@ def load_catalog(path):
     return valid
 
 
+def reviewed_auto_terms(catalog, state, now, path=REVIEWED_AUTO_PATH):
+    """Permit only editor-checked meanings that match a live, dated ranking.
+
+    The independent glossary is a pre-reviewed language source, NOT an
+    automated translation approval. Missing, stale or mismatching survey
+    evidence fails closed and publishes nothing new.
+    """
+    if not Path(path).exists():
+        return []
+    approved=load_catalog(path)
+    known={norm(t['jp']) for t in catalog}
+    records=[]
+    for item in approved:
+        key=norm(item['jp'])
+        if key in known:
+            continue
+        if item.get('reviewStatus')!='editor-reviewed':
+            continue
+        if not item.get('meaningReferences') or len(item['meaningReferences'])<2:
+            continue
+        if any(not str(url).startswith('https://') for url in item['meaningReferences']):
+            continue
+        try:
+            original=date.fromisoformat(item['referenceDate'])
+        except (ValueError,TypeError):
+            continue
+        if not (0 <= (now.date()-original).days <= CURRENT_DAYS):
+            continue
+        for report in state.get('reports',[]):
+            if report.get('url')!=item['source'] or not trusted_url(report.get('url','')):
+                continue
+            try:
+                published=date.fromisoformat(report.get('date',''))
+            except (ValueError,TypeError):
+                continue
+            if published!=original or not (0 <= (now.date()-published).days <= CURRENT_DAYS):
+                continue
+            if not any(norm(row.get('jp',''))==key for row in report.get('ranked',[]) if isinstance(row,dict)):
+                continue
+            records.append(dict(item,autoPublished=True))
+            known.add(key)
+            break
+    return records
+
+
 def existing_rank(state, item):
     return next((x for x in state.get('reports',[]) if x.get('url')==item['source'] and any(y.get('jp')==item['jp'] for y in x.get('ranked',[]))),None)
 
@@ -200,7 +247,7 @@ def build_slang_feed(catalog,state,now,source_status):
         # slang mode score is recency + cited survey rank; NOT headline frequency.
         rows.append({'id':hashlib.sha256(norm(e['jp']).encode('utf8')).hexdigest()[:20],
             'jp':e['jp'],'kana':e['kana'],'zh':e['zh'],'en':e['en'],
-            'verification':'来源有据；日中英学习释义待人工复核',
+            'verification':'事先独立核对日中英释义，自动匹配近期调查后发布' if e.get('autoPublished') else '来源有据；日中英学习释义待人工复核',
             'firstSeen':e['referenceDate'],'lastSeen':when.isoformat(),
             'kinds':['trend'],'categories':[e['category']],
             'sources':sources[:4],'last7':0,'previous7':0,'docCount':len(sources),'trendCount':len(reports),
@@ -275,7 +322,9 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
             'detail':'' if parsed_reports else '网页可读取，但未能解析出带名次和百分比的流行语表格'})
 
     state['reports']=state['reports'][-35:]
-    pending=report_evidence(catalog,state,now)
+    eligible_auto=reviewed_auto_terms(catalog,state,now)
+    effective_catalog=catalog+eligible_auto
+    pending=report_evidence(effective_catalog,state,now)
     # Translation drafts belong ONLY to the pending-review file; the
     # public feed is always constructed from the manually curated catalog.
     from translation_review import enrich_review_queue
@@ -290,7 +339,10 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
     pending=enrich_review_queue(pending,prior_pending,now,BLACKLIST,
         enable_translation=bool(translate_pending and not no_network),
         translator=translator,max_items=translation_limit)
-    feed=build_slang_feed(catalog,state,now,status)
+    feed=build_slang_feed(effective_catalog,state,now,status)
+    feed['counts']['autoPublishedReviewed']=len(eligible_auto)
+    feed['counts']['reviewedCatalog']=len(catalog)
+    feed['sourceDescription'] += ' 自动加入新条目仅限事先审校释义且再次匹配近期正式调查的词；机器翻译仍只存待审核队列。'
     # Never read or transfer old generic docs/state.json; replacing docs/feed.json
     # drops old meaningless news-frequency entries by design.
     root.mkdir(exist_ok=True,parents=True)

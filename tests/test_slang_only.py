@@ -81,7 +81,7 @@ class SlangOnlyTest(unittest.TestCase):
         <p>1位 商品 (99.9%)</p>
         </article>"""
         names=[x['jp'] for x in s.ranked_slang_from_report(page)]
-        self.assertEqual(names,['メロい','ドパガキ','ネ申'])
+        self.assertEqual(names,['メロい','ドパガキ','滅','ネ申'])
         self.assertNotIn('商品',names)
 
     def test_contents_only_cannot_generate_fake_slang(self):

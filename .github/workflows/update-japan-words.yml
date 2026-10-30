@@ -4,6 +4,15 @@ on:
     # Japan time 08:15 / 20:15 = UTC 23:15 / 11:15
     - cron: '15 23,11 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'slang_only.py'
+      - 'translation_review.py'
+      - 'collector.py'
+      - 'slang_terms.json'
+      - 'data/reviewed_auto_publish.json'
+      - '.github/workflows/update-japan-words.yml'
 permissions:
   contents: write
   pages: write
@@ -29,8 +38,24 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_slang_only.py' -v
           python -m unittest discover -s tests -p 'test_translation_review.py' -v
+          python -m unittest discover -s tests -p 'test_auto_publish.py' -v
       - name: Discover sourced slang, draft translations, publish curated entries only
         run: python collector.py --root docs --translate-pending --translation-limit 8
+      - name: Validate output is actual fresh parsing, not just successful download
+        run: |
+          python - <<'PY'
+          import json
+          feed=json.load(open('docs/feed.json',encoding='utf-8'))
+          status=feed.get('sourceStatus',[])
+          matches=[x for x in status if x.get('name')=='有效流行语调查解析' and x.get('status')=='ok' and x.get('rankedWords',0)>0]
+          assert matches, 'No valid live survey rankings parsed; refuse to publish a misleading success feed'
+          assert feed['counts']['words']>=1
+          assert all(x.get('jp') and x.get('kana') and x.get('zh') and x.get('en') for x in feed['items'])
+          print('Real parsed ranking words:',matches[-1]['rankedWords'])
+          print('Published reviewed words:',feed['counts']['words'])
+          print('Auto-published editor-reviewed:',feed['counts'].get('autoPublishedReviewed',0))
+          print('Pending not yet approved:',feed['counts'].get('pendingReview',0))
+          PY
       - name: Save reviewed-feed state (never modify personal Firebase)
         shell: bash
         run: |
