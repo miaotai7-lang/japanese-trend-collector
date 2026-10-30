@@ -364,6 +364,7 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
     feed['counts']['pendingReview']=len(pending)
     feed['counts']['communityCandidateWords']=sum(bool(x.get('communityEvidenceCount')) for x in pending)
     feed['counts']['communitySourceSucceeded']=sum(s.get('status')=='ok' for s in community_status)
+    feed['counts']['communitySourceReadable']=sum(s.get('status') in ('ok','empty') for s in community_status)
     feed['counts']['autoPublishedReviewed']=len(eligible_auto)
     feed['counts']['reviewedCatalog']=len(catalog)
     feed['sourceDescription'] += ' 自动加入新条目仅限事先审校释义且再次匹配近期正式调查的词；机器翻译仍只存待审核队列。'
