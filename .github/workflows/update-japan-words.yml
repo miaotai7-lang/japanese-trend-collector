@@ -14,6 +14,7 @@ on:
       - 'collector.py'
       - 'tests/test_community_sources.py'
       - 'tests/test_blog_sources.py'
+      - 'tests/test_chat_curation.py'
       - 'slang_terms.json'
       - 'data/reviewed_auto_publish.json'
       - '.github/workflows/update-japan-words.yml'
@@ -45,6 +46,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_auto_publish.py' -v
           python -m unittest discover -s tests -p 'test_community_sources.py' -v
           python -m unittest discover -s tests -p 'test_blog_sources.py' -v
+          python -m unittest discover -s tests -p 'test_chat_curation.py' -v
       - name: Discover sourced slang, draft translations, publish curated entries only
         run: python collector.py --root docs --translate-pending --translation-limit 8
       - name: Validate output is actual fresh parsing, not just successful download
