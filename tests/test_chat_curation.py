@@ -57,6 +57,7 @@ class ChatCurationTests(unittest.TestCase):
         report='''<meta property="article:published_time" content="2026-10-02">
             <h3>今流行っている言葉は？</h3>
             <p>1位 わほー (23.0%)</p><p>2位 メロい (14.0%)</p>
+            <p>3位 滅 (7.0%)</p><p>4位 ネ申 (6.0%)</p>
             <h3>今流行っている物事は？</h3>'''
         with tempfile.TemporaryDirectory() as d:
             f=s.run(d,CATALOG,fixture=report,now=NOW)
