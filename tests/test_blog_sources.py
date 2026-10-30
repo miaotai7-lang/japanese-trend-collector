@@ -45,6 +45,11 @@ class BloggerTests(unittest.TestCase):
         self.assertEqual(b.extract_blog_terms({'title':'最近の学校の「授業」','summary':'流行語の紹介'},s.BLACKLIST),[])
         self.assertEqual(b.extract_blog_terms({'title':'2026ネットスラング「情報」','summary':''},s.BLACKLIST),[])
 
+    def test_general_tiktok_trend_articles_are_not_slang_articles(self):
+        post={'title':'TikTokトレンドレポート vol.56',
+              'summary':'「上海蟹たべたい」が人気。ネットミーム「GONミーム」も注目。'}
+        self.assertEqual(b.extract_blog_terms(post,s.BLACKLIST),[])
+
     def test_article_body_not_copied_into_state(self):
         rows,state,status=b.collect_blogs(NOW,{},s.BLACKLIST,set(),fetcher=fake_rss)
         self.assertEqual(len(rows),1)
@@ -81,6 +86,7 @@ class BloggerTests(unittest.TestCase):
             self.assertEqual(feed['counts']['words'],11)
             self.assertEqual(feed['counts']['bloggerSignals'],1)
             self.assertEqual(feed['counts']['bloggerCandidateWords'],1)
+            self.assertEqual(feed['counts']['communityCandidateWords'],0)
             self.assertEqual(pending[0]['jp'],'チルる')
             self.assertFalse(pending[0]['approvedForPublication'])
             self.assertNotIn('チルる',{x['jp'] for x in feed['items']})
