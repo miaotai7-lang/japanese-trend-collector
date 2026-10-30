@@ -226,6 +226,9 @@ def merge_pending(survey, community, known, norm):
             if not any(x.get('url')==ev['url'] for x in rec['evidence']):
                 rec['evidence'].append({'url':ev['url'],'date':ev['date'],
                     'platform':ev['platform'],'rank':None})
-        rec['communitySources']=sorted(set(e['platform'] for e in row['evidence']))
-        rec['communityEvidenceCount']=len(row['evidence'])
+        rec['communitySources']=sorted(set(e['platform'] for e in row['evidence'] if not e['platform'].startswith('blogger:')))
+        rec['bloggerSources']=sorted(set(e['platform'] for e in row['evidence'] if e['platform'].startswith('blogger:')))
+        rec['bloggerEvidenceCount']=sum(e['platform'].startswith('blogger:') for e in row['evidence'])
+        rec['independentEvidenceCount']=len(row['evidence'])
+        rec['communityEvidenceCount']=len(row['evidence'])  # legacy cross-source total
     return sorted(byname.values(),key=lambda x:x['jp'])
