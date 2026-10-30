@@ -104,7 +104,7 @@ class SlangOnlyTest(unittest.TestCase):
         from unittest.mock import patch
         bogus='<h3>今流行っている言葉は？</h3><p>不是榜单</p>'.encode('utf-8')
         with tempfile.TemporaryDirectory() as d, patch.object(s,'fetch_public',return_value=bogus):
-            feed=s.run(d,CATALOG,now=NOW)
+            feed=s.run(d,CATALOG,now=NOW,community_enabled=False)
             self.assertEqual(feed['counts']['sourceSucceeded'],0)
             self.assertTrue(any(x['name']=='有效流行语调查解析' and x['status']=='error' for x in feed['sourceStatus']))
 
@@ -119,7 +119,7 @@ class SlangOnlyTest(unittest.TestCase):
             if url.endswith('/4800/'):return official
             raise TimeoutError('old report failed')
         with tempfile.TemporaryDirectory() as d, patch.object(s,'fetch_public',side_effect=fake_fetch):
-            feed=s.run(d,CATALOG,now=NOW)
+            feed=s.run(d,CATALOG,now=NOW,community_enabled=False)
             pending=json.loads((Path(d)/'slang_pending.json').read_text(encoding='utf-8'))['items']
             self.assertIn('新しいネット梗',[x['jp'] for x in pending])
             self.assertEqual(feed['counts']['pendingReview'],1)
