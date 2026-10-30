@@ -19,6 +19,19 @@ jobs:
           python -m unittest discover -s tests -p 'test_slang_only.py' -v
           python -m unittest discover -s tests -p 'test_translation_review.py' -v
           python -m unittest discover -s tests -p 'test_auto_publish.py' -v
+          python -m unittest discover -s tests -p 'test_community_sources.py' -v
+      - name: Probe public Hatena / Mastodon RSS (best effort, no publication)
+        run: |
+          python - <<'PY'
+          from datetime import datetime
+          from community_sources import SOURCES, JST, fetch_feed, read_feed
+          for source,url in SOURCES:
+              try:
+                  posts=read_feed(fetch_feed(url),source,datetime.now(JST))
+                  print(source,'reachable; recent posts:',len(posts))
+              except Exception as exc:
+                  print(source,'unavailable:',type(exc).__name__,str(exc)[:110])
+          PY
       - name: Publish to temporary directory only; audit slang and bilingual content
         run: |
           python - <<'PY'
