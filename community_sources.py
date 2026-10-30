@@ -107,7 +107,7 @@ def _child_text(node, local):
     return ''
 
 
-def read_feed(raw, source, now):
+def read_feed(raw, source, now, lookback_days=LOOKBACK_DAYS):
     """Parse RSS1/RSS2/Atom; keep only title, short contextual snippet, URL, date."""
     root=ET.fromstring(raw)
     nodes=[n for n in root.iter() if n.tag.rsplit('}',1)[-1] in ('item','entry')]
@@ -115,7 +115,7 @@ def read_feed(raw, source, now):
     for item in nodes[:MAX_ITEMS]:
         published=(_published(_child_text(item,'pubDate')) or _published(_child_text(item,'published'))
                    or _published(_child_text(item,'updated')) or _published(_child_text(item,'date')))
-        if published is None or not (0 <= (now.date()-published).days <= LOOKBACK_DAYS):continue
+        if published is None or not (0 <= (now.date()-published).days <= lookback_days):continue
         link=_child_text(item,'link')
         if not link:
             for sub in item:
@@ -226,6 +226,9 @@ def merge_pending(survey, community, known, norm):
             if not any(x.get('url')==ev['url'] for x in rec['evidence']):
                 rec['evidence'].append({'url':ev['url'],'date':ev['date'],
                     'platform':ev['platform'],'rank':None})
-        rec['communitySources']=sorted(set(e['platform'] for e in row['evidence']))
-        rec['communityEvidenceCount']=len(row['evidence'])
+        rec['communitySources']=sorted(set(e['platform'] for e in row['evidence'] if not e['platform'].startswith('blogger:')))
+        rec['bloggerSources']=sorted(set(e['platform'] for e in row['evidence'] if e['platform'].startswith('blogger:')))
+        rec['bloggerEvidenceCount']=sum(e['platform'].startswith('blogger:') for e in row['evidence'])
+        rec['independentEvidenceCount']=len(row['evidence'])
+        rec['communityEvidenceCount']=len(row['evidence'])  # legacy cross-source total
     return sorted(byname.values(),key=lambda x:x['jp'])

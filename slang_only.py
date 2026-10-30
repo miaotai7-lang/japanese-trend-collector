@@ -262,7 +262,7 @@ def build_slang_feed(catalog,state,now,source_status):
 
 def run(root, catalog_path, fixture=None, no_network=False, now=None,
         translate_pending=False, translator=None, translation_limit=8,
-        community_enabled=True):
+        community_enabled=True,blog_enabled=True):
     now=now or datetime.now(JST);root=Path(root)
     catalog=load_catalog(catalog_path)
     state_path=root/'slang_state.json';prior={}
@@ -339,9 +339,22 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
     community,community_state,community_status=collect_community(
         now,old_community,BLACKLIST,{norm(x['jp']) for x in effective_catalog},
         enabled=community_enabled and not no_network and fixture is None)
-    pending=merge_pending(pending,community,
+    # A curated creator RSS is a secondary language-context signal; it is
+    # never a survey rank, nor a proof that a machine translation is right.
+    from blog_sources import collect_blogs,combine_signals
+    blogger_path=root/'blog_state.json'
+    prior_blogs={}
+    if blogger_path.exists():
+        try:prior_blogs=json.loads(blogger_path.read_text(encoding='utf8'))
+        except (OSError,ValueError,TypeError):prior_blogs={}
+    bloggers,blogger_state,blogger_status=collect_blogs(
+        now,prior_blogs,BLACKLIST,{norm(x['jp']) for x in effective_catalog},
+        enabled=blog_enabled and not no_network and fixture is None)
+    combined_signals=combine_signals(community,bloggers)
+    pending=merge_pending(pending,combined_signals,
         {norm(x['jp']) for x in effective_catalog},norm)
     status.extend(community_status)
+    status.extend(blogger_status)
     # Translation drafts belong ONLY to the pending-review file; the
     # public feed is always constructed from the manually curated catalog.
     from translation_review import enrich_review_queue
@@ -362,8 +375,15 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
     feed['counts']['sourceSucceeded']=survey_succeeded  # Historical survey-only meaning
     feed['counts']['candidateWords']=len(pending)
     feed['counts']['pendingReview']=len(pending)
-    feed['counts']['communityCandidateWords']=sum(bool(x.get('communityEvidenceCount')) for x in pending)
+    community_names={norm(x['jp']) for x in community}
+    feed['counts']['communityCandidateWords']=sum(norm(x['jp']) in community_names for x in pending)
     feed['counts']['communitySignals']=len(community)  # raw leads, not approved words
+    feed['counts']['bloggerSignals']=len(bloggers)
+    active={norm(p['jp']) for p in pending}
+    feed['counts']['bloggerCandidateWords']=sum(norm(x['jp']) in active for x in bloggers)
+    feed['counts']['bloggerHeldForCorroboration']=sum(norm(x['jp']) not in active for x in bloggers)
+    feed['counts']['bloggerSourceSucceeded']=sum(s.get('status')=='ok' for s in blogger_status)
+    feed['counts']['bloggerSourceReadable']=sum(s.get('status') in ('ok','empty') for s in blogger_status)
     feed['counts']['communityHeldForCorroboration']=sum(
         norm(x['jp']) not in {norm(p['jp']) for p in pending} for x in community)
     feed['counts']['communitySourceSucceeded']=sum(s.get('status')=='ok' for s in community_status)
@@ -376,6 +396,7 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
     root.mkdir(exist_ok=True,parents=True)
     (root/'slang_state.json').write_text(json.dumps(state,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     community_path.write_text(json.dumps(community_state,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    blogger_path.write_text(json.dumps(blogger_state,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     (root/'slang_pending.json').write_text(json.dumps({'generatedAt':now.isoformat(timespec='seconds'),'items':pending},ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     (root/'feed.json').write_text(json.dumps(feed,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     return feed
