@@ -78,8 +78,9 @@ def fetch_feed(url):
     req=urllib.request.Request(url,headers={'User-Agent':'JapaneseTrendCollector/1.4 (public-RSS-research; twice daily)',
         'Accept':'application/rss+xml,application/atom+xml,application/xml'})
     with urllib.request.urlopen(req,timeout=9) as response:
-        if response.geturl().split('?')[0].split('/')[2] not in ('b.hatena.ne.jp','mastodon.social'):
-            raise ValueError('unapproved redirect')
+        redirected=urllib.parse.urlsplit(response.geturl())
+        if redirected.scheme!='https' or redirected.hostname not in ('b.hatena.ne.jp','mastodon.social'):
+            raise ValueError('unapproved or insecure redirect')
         raw=response.read(MAX_BYTES+1)
         if len(raw)>MAX_BYTES:raise ValueError('feed too large')
         return raw
@@ -186,8 +187,8 @@ def collect_community(now, prior, blacklist, known, fetcher=None, enabled=True):
                     if not any(x['url']==ev['url'] for x in bucket):
                         if len(bucket)<MAX_EVIDENCE_PER_WORD:bucket.append(ev)
                         matches+=1
-            telemetry.append({'name':'社区RSS:'+source,'status':'ok','articles':len(posts),
-                              'candidateMentions':matches})
+            telemetry.append({'name':'社区RSS:'+source,'status':'ok' if posts else 'empty',
+                              'articles':len(posts), 'candidateMentions':matches})
         except Exception as exc:
             telemetry.append({'name':'社区RSS:'+source,'status':'error',
                               'detail':(type(exc).__name__+': '+str(exc))[:140]})
