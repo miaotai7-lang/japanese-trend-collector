@@ -135,6 +135,40 @@ class CommunitySourceTests(unittest.TestCase):
             self.assertFalse(pending[0]['approvedForPublication'])
             self.assertEqual(len(s.load_catalog(CATALOG)),11)
 
+    def test_single_post_signal_is_held_outside_active_queue(self):
+        signal=[{'jp':'行った','evidence':[{'url':'https://example.org/post',
+              'date':'2026-10-29','platform':'hatena_title_trends'}]}]
+        self.assertEqual(c.merge_pending([],signal,set(),s.norm),[])
+
+    def test_two_independent_links_allow_review_but_not_publication(self):
+        signal=[{'jp':'新しいネット語','evidence':[
+              {'url':'https://example.org/post/1','date':'2026-10-29','platform':'hatena_title_slang'},
+              {'url':'https://mastodon.social/@public/2','date':'2026-10-29','platform':'mastodon_nihongo'}]}]
+        pending=c.merge_pending([],signal,set(),s.norm)
+        self.assertEqual(len(pending),1)
+        self.assertEqual(pending[0]['communityEvidenceCount'],2)
+        self.assertEqual(pending[0]['status'],'community_signal_needs_independent_meaning_review')
+
+    def test_hatena_summary_cannot_smuggle_unrelated_quotes(self):
+        post={'title':'若者言葉「本物の新語」がSNSで話題',
+              'summary':'ネットスラング「行った」「普通の引用」などがあります',
+              'platform':'hatena_title_slang'}
+        self.assertEqual(c.extract_claimed_slang(post,s.BLACKLIST),['本物の新語'])
+
+    def test_end_to_end_single_lead_is_not_promoted(self):
+        with tempfile.TemporaryDirectory() as d:
+            single={'schemaVersion':1,'items':[{'jp':'行った','evidence':[{
+                'url':'https://example.org/post',
+                'date':'2026-10-29','platform':'hatena_title_trends'}]}]}
+            Path(d,'community_state.json').write_text(json.dumps(single,ensure_ascii=False),encoding='utf8')
+            feed=s.run(d,CATALOG,no_network=True,now=NOW)
+            pending=json.loads(Path(d,'slang_pending.json').read_text(encoding='utf8'))['items']
+            self.assertEqual(feed['counts']['communitySignals'],1)
+            self.assertEqual(feed['counts']['communityHeldForCorroboration'],1)
+            self.assertEqual(feed['counts']['communityCandidateWords'],0)
+            self.assertFalse(any(x['jp']=='行った' for x in pending))
+            self.assertEqual(feed['counts']['words'],11)
+
     def test_community_merge_with_survey_deduplicates(self):
         a=[{'jp':'新ドパ構文','sources':['https://example.org/r'],
             'evidence':[{'url':'https://example.org/r','date':'2026-10-29','rank':1}],
