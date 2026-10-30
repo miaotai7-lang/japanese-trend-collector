@@ -20,40 +20,6 @@ jobs:
           python -m unittest discover -s tests -p 'test_translation_review.py' -v
           python -m unittest discover -s tests -p 'test_auto_publish.py' -v
           python -m unittest discover -s tests -p 'test_community_sources.py' -v
-      - name: Probe public Hatena / Mastodon RSS (best effort, no publication)
-        run: |
-          python - <<'PY'
-          from datetime import datetime
-          from community_sources import SOURCES, JST, fetch_feed, read_feed, extract_claimed_slang
-          from slang_only import BLACKLIST
-          for source,url in SOURCES:
-              try:
-                  posts=read_feed(fetch_feed(url),source,datetime.now(JST))
-                  print(source,'reachable; recent posts:',len(posts), 'explicit-slang-mentions:', sum(len(extract_claimed_slang(post,BLACKLIST)) for post in posts))
-              except Exception as exc:
-                  print(source,'unavailable:',type(exc).__name__,str(exc)[:110])
-          PY
-      - name: Diagnose public RSS structure only (no user content)
-        run: |
-          python - <<'PY'
-          import xml.etree.ElementTree as ET
-          from collections import Counter
-          from community_sources import SOURCES,fetch_feed,_child_text,_published
-          for name,url in SOURCES:
-              try:
-                  root=ET.fromstring(fetch_feed(url))
-                  nodes=[n for n in root.iter() if n.tag.rsplit('}',1)[-1] in ('item','entry')]
-                  sample=[]
-                  for node in nodes[:2]:
-                      date_value=(_child_text(node,'pubDate') or _child_text(node,'published')
-                         or _child_text(node,'updated') or _child_text(node,'date'))
-                      sample.append({'date_present':bool(date_value),'date_parsed':str(_published(date_value)),
-                          'has_title':bool(_child_text(node,'title')),'has_link':bool(_child_text(node,'link')),
-                          'field_names':[x.tag.rsplit('}',1)[-1] for x in list(node)[:8]]})
-                  print(name,{'root':root.tag.rsplit('}',1)[-1],
-                    'node_count':len(nodes),'sample_metadata':sample})
-              except Exception as exc:print(name,'error',type(exc).__name__,str(exc)[:130])
-          PY
       - name: Publish to temporary directory only; audit slang and bilingual content
         run: |
           python - <<'PY'
