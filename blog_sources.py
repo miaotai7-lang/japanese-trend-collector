@@ -33,7 +33,7 @@ SKIP = {'紹介','まとめ','最新版','最新','流行','トレンド','言�
         '知っておきたい','これ','それ','私','今日','あなた','話題','日本語'}
 
 def _norm(word):
-    return re.sub(r'[\s\u3000]','',str(word)).casefold()
+    return re.sub(r'[\s\u3000]','',str(word)).rstrip('!！?？。．.').casefold()
 
 def _creator_slug(raw):
     parts=urllib.parse.urlsplit(raw)
@@ -68,6 +68,9 @@ def extract_blog_terms(article, blacklist):
     for match in QUOTED.finditer(text):
         word=(match.group(1) or match.group(2)).strip()
         if not 2<=len(word)<=25 or len(word.encode('utf-8'))>110:continue
+        # Glossaries often put an English source word followed by its Japanese
+        # translation in parentheses: e.g. Friend（友達）. It is NOT a new slang.
+        if any(ch in word for ch in '（）()'):continue
         if not JAPANESE.search(word) or NOISE.search(word):continue
         if word in blacklist or word in GENERIC or word in SKIP:continue
         if re.search(r'[、。，,：:？?!！]|^\d',word):continue
@@ -85,11 +88,12 @@ def extract_blog_terms(article, blacklist):
 def collect_blogs(now, previous, blacklist, known, *, fetcher=None, enabled=True):
     """Read selected creator RSS, keep bounded citation-only leads and status."""
     if fetcher is None:fetcher=fetch_blogger
+    known={_norm(word) for word in known}
     evidence={}
     for old in (previous.get('items',[]) if isinstance(previous,dict) else []):
         if not isinstance(old,dict):continue
         term=str(old.get('jp','')).strip()
-        if len(term)<2 or _norm(term) in known or term in blacklist:continue
+        if len(term)<2 or _norm(term) in known or term in blacklist or any(ch in term for ch in '（）()'):continue
         for src in old.get('evidence',[]):
             if not isinstance(src,dict):continue
             platform=src.get('platform','')
