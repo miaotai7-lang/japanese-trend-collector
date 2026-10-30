@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "description": "Independent editorially verified meanings eligible for evidence-gated automatic publication. Never use machine translation drafts here.",
+  "terms": [
+    {
+      "jp": "ネ申",
+      "kana": "かみ",
+      "zh": "神级、太厉害了；把“神”拆写成“ネ申”的网络赞美用语",
+      "en": "god-tier; incredible; fantastic (a playful split-character spelling of 神)",
+      "category": "网络文化",
+      "source": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+      "referenceDate": "2026-10-02",
+      "publisher": "渋谷トレンドリサーチ",
+      "meaningReferences": [
+        "https://www.edrdg.org/jmdemo/entr.py?g=2223620.1~2316870&svc=jmdemo",
+        "https://netyougo.com/slang/846.html"
+      ],
+      "reviewStatus": "editor-reviewed",
+      "reviewedOn": "2026-10-30"
+    },
+    {
+      "jp": "滅",
+      "kana": "めつ",
+      "zh": "喜欢或情绪强烈到仿佛要消失；用于夸张表达心动、兴奋等感受",
+      "en": "I'm deceased; overwhelmed by strong emotion (exaggerated fandom slang)",
+      "category": "梗与固定表达",
+      "source": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+      "referenceDate": "2026-10-02",
+      "publisher": "渋谷トレンドリサーチ",
+      "meaningReferences": [
+        "https://hiraganatimes.com/new-expressions-buzzwords/too-xx-to-survive",
+        "https://fomo-fomo.com/sns/trend/metsu-social-slang-2026/"
+      ],
+      "reviewStatus": "editor-reviewed",
+      "reviewedOn": "2026-10-30"
+    }
+  ]
+}
