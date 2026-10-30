@@ -148,18 +148,20 @@ def extract_claimed_slang(post, blacklist):
     return names[:5]
 
 
-def collect_community(now, prior, blacklist, known, fetcher=fetch_feed):
+def collect_community(now, prior, blacklist, known, fetcher=None, enabled=True):
     """Return candidate evidence, safely bounded state, per-source telemetry.
 
     The state contains no raw post bodies, display names, or personal IDs.
     """
+    if fetcher is None:fetcher=fetch_feed
     today=now.date()
+    norm=lambda s:re.sub(r'\s+','',s).casefold()
     states={}
     if isinstance(prior,dict):
         for old in prior.get('items',[]):
             if not isinstance(old,dict):continue
             name=str(old.get('jp',''))
-            if not 2<=len(name)<=25 or name in blacklist or name in known:continue
+            if not 2<=len(name)<=25 or name in blacklist or norm(name) in known:continue
             evidence=[]
             for e in old.get('evidence',[]):
                 if not isinstance(e,dict) or not safe_link(e.get('url','')):continue
@@ -170,13 +172,13 @@ def collect_community(now, prior, blacklist, known, fetcher=fetch_feed):
                     evidence.append({'url':e['url'],'date':e['date'],'platform':e['platform']})
             if evidence:states[name]=evidence[:MAX_EVIDENCE_PER_WORD]
     telemetry=[]
-    for source,url in SOURCES:
+    for source,url in (SOURCES if enabled else ()):
         try:
             posts=read_feed(fetcher(url),source,now)
             matches=0
             for post in posts:
                 for word in extract_claimed_slang(post,blacklist):
-                    if word in known:continue
+                    if norm(word) in known:continue
                     ev={'url':post['url'],'date':post['date'],'platform':source}
                     bucket=states.setdefault(word,[])
                     if not any(x['url']==ev['url'] for x in bucket):
