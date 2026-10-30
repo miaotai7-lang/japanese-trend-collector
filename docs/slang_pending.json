@@ -1,6 +1,37 @@
 {
-  "generatedAt": "2026-10-30T09:27:07+09:00",
+  "generatedAt": "2026-10-30T09:49:51+09:00",
   "items": [
+    {
+      "jp": "みいちゃんと山田さん",
+      "sources": [
+        "https://anond.hatelabo.jp/20260929051627"
+      ],
+      "evidence": [
+        {
+          "url": "https://anond.hatelabo.jp/20260929051627",
+          "date": "2026-09-29",
+          "platform": "hatena_title_trends",
+          "rank": null
+        }
+      ],
+      "status": "community_signal_needs_independent_meaning_review",
+      "communitySources": [
+        "hatena_title_trends"
+      ],
+      "communityEvidenceCount": 1,
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 47,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 1
+      },
+      "kanaSuggestion": "",
+      "translationStatus": "awaiting_independent_community_evidence",
+      "approvedForPublication": false
+    },
     {
       "jp": "アツい",
       "sources": [
@@ -70,6 +101,99 @@
       "approvedForPublication": false
     },
     {
+      "jp": "プログラマーの脳みそ",
+      "sources": [
+        "https://www.nikkei.com/article/DGXZQOUC181F60Y6A810C2000000/"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.nikkei.com/article/DGXZQOUC181F60Y6A810C2000000/",
+          "date": "2026-10-10",
+          "platform": "hatena_title_slang",
+          "rank": null
+        }
+      ],
+      "status": "community_signal_needs_independent_meaning_review",
+      "communitySources": [
+        "hatena_title_slang"
+      ],
+      "communityEvidenceCount": 1,
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 60,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 1
+      },
+      "kanaSuggestion": "",
+      "translationStatus": "awaiting_independent_community_evidence",
+      "approvedForPublication": false
+    },
+    {
+      "jp": "マウンティング",
+      "sources": [
+        "https://www.nikkei.com/article/DGXZQOUC181F60Y6A810C2000000/"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.nikkei.com/article/DGXZQOUC181F60Y6A810C2000000/",
+          "date": "2026-10-10",
+          "platform": "hatena_title_slang",
+          "rank": null
+        }
+      ],
+      "status": "community_signal_needs_independent_meaning_review",
+      "communitySources": [
+        "hatena_title_slang"
+      ],
+      "communityEvidenceCount": 1,
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 60,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 1
+      },
+      "kanaSuggestion": "まうんてぃんぐ",
+      "translationStatus": "awaiting_independent_community_evidence",
+      "approvedForPublication": false
+    },
+    {
+      "jp": "マウンティングの語源調査の仕方",
+      "sources": [
+        "https://www.nikkei.com/article/DGXZQOUC181F60Y6A810C2000000/"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.nikkei.com/article/DGXZQOUC181F60Y6A810C2000000/",
+          "date": "2026-10-10",
+          "platform": "hatena_title_slang",
+          "rank": null
+        }
+      ],
+      "status": "community_signal_needs_independent_meaning_review",
+      "communitySources": [
+        "hatena_title_slang"
+      ],
+      "communityEvidenceCount": 1,
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 60,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 1
+      },
+      "kanaSuggestion": "",
+      "translationStatus": "awaiting_independent_community_evidence",
+      "approvedForPublication": false
+    },
+    {
       "jp": "冷笑",
       "sources": [
         "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/"
@@ -101,6 +225,68 @@
         "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
       },
       "draftGeneratedAt": "2026-10-29",
+      "approvedForPublication": false
+    },
+    {
+      "jp": "行った",
+      "sources": [
+        "https://anond.hatelabo.jp/20260929051627"
+      ],
+      "evidence": [
+        {
+          "url": "https://anond.hatelabo.jp/20260929051627",
+          "date": "2026-09-29",
+          "platform": "hatena_title_trends",
+          "rank": null
+        }
+      ],
+      "status": "community_signal_needs_independent_meaning_review",
+      "communitySources": [
+        "hatena_title_trends"
+      ],
+      "communityEvidenceCount": 1,
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 47,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 1
+      },
+      "kanaSuggestion": "",
+      "translationStatus": "awaiting_independent_community_evidence",
+      "approvedForPublication": false
+    },
+    {
+      "jp": "頭みいちゃん",
+      "sources": [
+        "https://anond.hatelabo.jp/20260929051627"
+      ],
+      "evidence": [
+        {
+          "url": "https://anond.hatelabo.jp/20260929051627",
+          "date": "2026-09-29",
+          "platform": "hatena_title_trends",
+          "rank": null
+        }
+      ],
+      "status": "community_signal_needs_independent_meaning_review",
+      "communitySources": [
+        "hatena_title_trends"
+      ],
+      "communityEvidenceCount": 1,
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 47,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 1
+      },
+      "kanaSuggestion": "",
+      "translationStatus": "awaiting_independent_community_evidence",
       "approvedForPublication": false
     }
   ]

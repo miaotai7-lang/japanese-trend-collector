@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "jp": "マウンティングの語源調査の仕方",
+      "evidence": [
+        {
+          "url": "https://www.nikkei.com/article/DGXZQOUC181F60Y6A810C2000000/",
+          "date": "2026-10-10",
+          "platform": "hatena_title_slang"
+        }
+      ]
+    },
+    {
+      "jp": "マウンティング",
+      "evidence": [
+        {
+          "url": "https://www.nikkei.com/article/DGXZQOUC181F60Y6A810C2000000/",
+          "date": "2026-10-10",
+          "platform": "hatena_title_slang"
+        }
+      ]
+    },
+    {
+      "jp": "プログラマーの脳みそ",
+      "evidence": [
+        {
+          "url": "https://www.nikkei.com/article/DGXZQOUC181F60Y6A810C2000000/",
+          "date": "2026-10-10",
+          "platform": "hatena_title_slang"
+        }
+      ]
+    },
+    {
+      "jp": "頭みいちゃん",
+      "evidence": [
+        {
+          "url": "https://anond.hatelabo.jp/20260929051627",
+          "date": "2026-09-29",
+          "platform": "hatena_title_trends"
+        }
+      ]
+    },
+    {
+      "jp": "行った",
+      "evidence": [
+        {
+          "url": "https://anond.hatelabo.jp/20260929051627",
+          "date": "2026-09-29",
+          "platform": "hatena_title_trends"
+        }
+      ]
+    },
+    {
+      "jp": "みいちゃんと山田さん",
+      "evidence": [
+        {
+          "url": "https://anond.hatelabo.jp/20260929051627",
+          "date": "2026-09-29",
+          "platform": "hatena_title_trends"
+        }
+      ]
+    }
+  ]
+}
