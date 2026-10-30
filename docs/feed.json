@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-internet-slang-only",
-  "generatedAt": "2026-10-30T09:53:06+09:00",
+  "generatedAt": "2026-10-30T10:24:31+09:00",
   "sourceDescription": "仅展示有近期流行语调查或专题出处、并人工编写日中英释义的网络用语；不收录新闻高频词或搜索热点。新增候选暂不自动发布，须核对释义。 自动加入新条目仅限事先审校释义且再次匹配近期正式调查的词；机器翻译仍只存待审核队列。",
   "counts": {
     "words": 13,
@@ -10,6 +10,11 @@
     "sourceSucceeded": 1,
     "communityCandidateWords": 0,
     "communitySignals": 6,
+    "bloggerSignals": 5,
+    "bloggerCandidateWords": 0,
+    "bloggerHeldForCorroboration": 5,
+    "bloggerSourceSucceeded": 6,
+    "bloggerSourceReadable": 6,
     "communityHeldForCorroboration": 6,
     "communitySourceSucceeded": 3,
     "communitySourceReadable": 6,
@@ -98,6 +103,42 @@
       "name": "社区RSS:mastodon_nihongo",
       "status": "ok",
       "articles": 20,
+      "candidateMentions": 0
+    },
+    {
+      "name": "知识博主RSS:nihon_5",
+      "status": "ok",
+      "articles": 25,
+      "candidateMentions": 0
+    },
+    {
+      "name": "知识博主RSS:open_fairy44",
+      "status": "ok",
+      "articles": 25,
+      "candidateMentions": 1
+    },
+    {
+      "name": "知识博主RSS:50s_lab",
+      "status": "ok",
+      "articles": 25,
+      "candidateMentions": 4
+    },
+    {
+      "name": "知识博主RSS:hokeminomura",
+      "status": "ok",
+      "articles": 3,
+      "candidateMentions": 0
+    },
+    {
+      "name": "知识博主RSS:weiden_haus_lab",
+      "status": "ok",
+      "articles": 1,
+      "candidateMentions": 0
+    },
+    {
+      "name": "知识博主RSS:nizi_to_mangetsu",
+      "status": "ok",
+      "articles": 14,
       "candidateMentions": 0
     }
   ],
