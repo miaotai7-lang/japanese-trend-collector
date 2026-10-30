@@ -56,3 +56,11 @@
 - `community_sources.extract_claimed_slang` 对 Hatena 只从相关文章标题抽取引号词，避免文章摘要中的无关引用造成污染；Mastodon 仍从公开帖子文本抽取。
 - 单篇社区帖子只保存到独立 `docs/community_state.json` 作为弱线索；至少出现两个不同公开来源 URL，或与原有真实调查候选合并时才进入 `docs/slang_pending.json` 的审核队列。无论多少帖子都不能直接进入正式 Feed。
 - 添加 `counts.communitySignals`（未经确认的所有线索）与 `counts.communityHeldForCorroboration`（未达独立证据门槛）以区分“发现线索”和“可供审核的候选”。
+
+## 2026-10-30 — 引入知识博主流行语解说 RSS（待验收）
+
+- 新建 `blog_sources.py`，选择 6 个有可核对相关内容的 note 创作者账号，读取其**公开 RSS**、从近期语言解说标题与短摘要中提取显式引号词，并校验作者与文章 URL。
+- `slang_only.py` 合并博主弱线索与社区弱线索，再按照既有双来源门槛生成待审核词，单篇博文不能直接写入公开 Feed；独立保存 `docs/blog_state.json`，不存博客全文、评论和作者私人数据。
+- `community_sources.py` 支持为知识博客配置更长的 90 天有效窗口，不更改论坛 35 天过期规则。
+- 新增 `tests/test_blog_sources.py`，工作流新增测试与博客代码更新触发。实际连通性及新候选须看真实 GitHub Actions 日志，不预设成功数量。
+- 继续保留 13 条现有已审核流行语与全部 Firebase 功能；未经核实的中/英机器翻译不允许自动上架。
