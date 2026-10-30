@@ -104,7 +104,7 @@ def collect_blogs(now, previous, blacklist, known, *, fetcher=None, enabled=True
     status=[]
     for slug,creator,url in (CREATORS if enabled else ()):
         try:
-            all_posts=read_feed(fetcher(url),'blogger:'+slug,now)
+            all_posts=read_feed(fetcher(url),'blogger:'+slug,now,lookback_days=LOOKBACK_DAYS)
             recent=[p for p in all_posts if 0<=(now.date()-date.fromisoformat(p['date'])).days<=LOOKBACK_DAYS]
             matches=0
             for post in recent:
