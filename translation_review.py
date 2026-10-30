@@ -149,6 +149,9 @@ def enrich_review_queue(pending: list, previous: list, now: datetime, blacklist:
             rec['translationDraft']=old['translationDraft']
             rec['draftGeneratedAt']=old['draftGeneratedAt']
             rec['translationStatus']='cached_unverified'
+        elif rec.get('status')=='community_signal_needs_independent_meaning_review' and rec.get('communityEvidenceCount',0)<2:
+            # A single social mention is a lead, not a meaning signal.
+            rec['translationStatus']='awaiting_independent_community_evidence'
         elif budget and rec['quality']['status']=='needs_human_review':
             budget-=1
             suggestions={}
