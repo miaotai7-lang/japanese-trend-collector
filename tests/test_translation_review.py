@@ -117,7 +117,7 @@ class QualityReviewTest(unittest.TestCase):
             self.assertFalse(pending[0]['approvedForPublication'])
             self.assertFalse(any(i['jp']=='ネットミーム' for i in feed['items']))
             self.assertEqual(feed['counts']['pendingReview'],1)
-            self.assertEqual(len(s.load_catalog(CATALOG)),11)
+            self.assertEqual(len(s.load_catalog(CATALOG)),14)
             s.run(d,CATALOG,fixture=fixture,now=NOW,translate_pending=True,translator=provider)
             self.assertEqual(len(provider.calls),2)
 
