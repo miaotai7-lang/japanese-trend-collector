@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-internet-slang-only",
-  "generatedAt": "2026-10-30T13:41:20+09:00",
+  "generatedAt": "2026-10-31T02:00:42+09:00",
   "sourceDescription": "仅展示有近期流行语调查或专题出处、并人工编写日中英释义的网络用语；不收录新闻高频词或搜索热点。新增候选暂不自动发布，须核对释义。 自动加入新条目仅限事先审校释义且再次匹配近期正式调查的词；机器翻译仍只存待审核队列。",
   "counts": {
     "words": 16,
@@ -85,7 +85,7 @@
       "name": "社区RSS:hatena_title_trends",
       "status": "ok",
       "articles": 4,
-      "candidateMentions": 2
+      "candidateMentions": 0
     },
     {
       "name": "社区RSS:mastodon_slang",
@@ -182,7 +182,7 @@
       "previous7": 0,
       "docCount": 3,
       "trendCount": 3,
-      "score": 242,
+      "score": 240,
       "surveyRank": 1
     },
     {
@@ -218,7 +218,7 @@
       "previous7": 0,
       "docCount": 2,
       "trendCount": 2,
-      "score": 238,
+      "score": 236,
       "surveyRank": 2
     },
     {
@@ -254,7 +254,7 @@
       "previous7": 0,
       "docCount": 2,
       "trendCount": 2,
-      "score": 234,
+      "score": 232,
       "surveyRank": 3
     },
     {
@@ -284,7 +284,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 228,
+      "score": 226,
       "surveyRank": 30
     },
     {
@@ -326,7 +326,7 @@
       "previous7": 0,
       "docCount": 3,
       "trendCount": 3,
-      "score": 222,
+      "score": 220,
       "surveyRank": 6
     },
     {
@@ -356,7 +356,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 1,
-      "score": 222,
+      "score": 220,
       "surveyRank": 6
     },
     {
@@ -386,7 +386,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 1,
-      "score": 214,
+      "score": 212,
       "surveyRank": 8
     },
     {
@@ -416,7 +416,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 212,
+      "score": 210,
       "surveyRank": null
     },
     {
@@ -446,7 +446,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 212,
+      "score": 210,
       "surveyRank": null
     },
     {
@@ -482,7 +482,7 @@
       "previous7": 0,
       "docCount": 2,
       "trendCount": 1,
-      "score": 200,
+      "score": 198,
       "surveyRank": null
     },
     {
@@ -512,7 +512,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 198,
+      "score": 196,
       "surveyRank": null
     },
     {
@@ -542,7 +542,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 198,
+      "score": 196,
       "surveyRank": null
     },
     {
@@ -572,7 +572,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 186,
+      "score": 184,
       "surveyRank": null
     },
     {
@@ -602,7 +602,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 1,
-      "score": 186,
+      "score": 184,
       "surveyRank": null
     },
     {
@@ -638,7 +638,7 @@
       "previous7": 0,
       "docCount": 2,
       "trendCount": 2,
-      "score": 186,
+      "score": 184,
       "surveyRank": null
     },
     {
@@ -668,7 +668,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 142,
+      "score": 140,
       "surveyRank": null
     }
   ]

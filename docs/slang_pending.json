@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T13:41:20+09:00",
+  "generatedAt": "2026-10-31T02:00:42+09:00",
   "items": [
     {
       "jp": "アツい",
@@ -109,7 +109,7 @@
         "evidenceSources": 2
       },
       "kanaSuggestion": "",
-      "translationStatus": "draft_unverified",
+      "translationStatus": "cached_unverified",
       "translationDraft": {
         "zh": "Chappie语法",
         "en": "Chappie Syntax",
