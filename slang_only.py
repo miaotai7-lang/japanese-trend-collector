@@ -12,6 +12,7 @@ import json
 import re
 import urllib.request
 import urllib.parse
+import unicodedata
 import xml.etree.ElementTree as ET
 from datetime import datetime, date, timedelta, timezone
 from html.parser import HTMLParser
@@ -30,6 +31,17 @@ BLACKLIST = {'情報','会社','見る','食べる','アクセス','記事','ニ
 
 def norm(s):
     return re.sub(r'[\s\u3000]', '', str(s)).casefold()
+
+
+def kana_equivalent(s):
+    """Comparison-only normalization; never use for persisted stable word IDs.
+
+    Treat hiragana / katakana spellings as identical when checking duplicates.
+    For example: ワホー↔わほー, メロい↔めろい.
+    """
+    raw=unicodedata.normalize('NFKC',str(s))
+    hiragana=''.join(chr(ord(ch)-96) if 'ァ'<=ch<='ヶ' else ch for ch in raw)
+    return norm(hiragana)
 
 
 def trusted_url(raw):
@@ -205,14 +217,14 @@ def existing_rank(state, item):
 
 def report_evidence(catalog,state,now):
     new_pending={}
-    byname={norm(x['jp']):x for x in catalog}
+    byname={kana_equivalent(x['jp']):x for x in catalog}
     for report in state.get('reports',[]):
         if not isinstance(report,dict) or not trusted_url(report.get('url','')):continue
         try:when=date.fromisoformat(report.get('date',''))
         except ValueError:continue
         if (now.date()-when).days> CURRENT_DAYS:continue
         for term in report.get('ranked',[]):
-            text=str(term.get('jp','')).strip();key=norm(text)
+            text=str(term.get('jp','')).strip();key=kana_equivalent(text)
             if text in BLACKLIST or not 2<=len(text)<=35:continue
             if key in byname:continue
             rec=new_pending.setdefault(key,{'jp':text,'sources':[],'evidence':[],
@@ -231,7 +243,7 @@ def build_slang_feed(catalog,state,now,source_status):
         reports=[]
         for report in state.get('reports',[]):
             for x in report.get('ranked',[]):
-                if norm(x.get('jp',''))==norm(e['jp']):
+                if kana_equivalent(x.get('jp',''))==kana_equivalent(e['jp']):
                     try:rdate=date.fromisoformat(report.get('date',''))
                     except ValueError:continue
                     if rdate>when:when=rdate
