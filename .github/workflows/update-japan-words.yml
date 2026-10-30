@@ -74,3 +74,37 @@ jobs:
           path: docs
       - id: pages
         uses: actions/deploy-pages@v4
+      - name: Verify public GitHub Pages serves the exact new Feed
+        run: |
+          python - <<'PY'
+          import json, time, urllib.request
+          expected=json.load(open('docs/feed.json',encoding='utf-8'))
+          expected_pairs={(x['id'],x['jp']) for x in expected['items']}
+          url='https://miaotai7-lang.github.io/japanese-trend-collector/feed.json'
+          last_error=''
+          for attempt in range(12):
+              try:
+                  req=urllib.request.Request(
+                      url+'?verify='+str(time.time_ns()),
+                      headers={'Accept':'application/json','Cache-Control':'no-cache',
+                               'User-Agent':'JapaneseTrendCollector-PagesVerifier/1.0'})
+                  with urllib.request.urlopen(req,timeout=14) as response:
+                      live=json.load(response)
+                  pairs={(x['id'],x['jp']) for x in live.get('items',[])}
+                  if (live.get('feedType')==expected.get('feedType') and
+                      live.get('generatedAt')==expected.get('generatedAt') and
+                      live.get('counts',{}).get('words')==expected['counts']['words'] and
+                      pairs==expected_pairs):
+                      print('Verified PUBLIC Pages feed:',
+                            live['generatedAt'],'words:',live['counts']['words'],
+                            'reviewed auto-published:',
+                            live['counts'].get('autoPublishedReviewed',0))
+                      break
+                  last_error='Pages still serves another version (timestamp/word IDs/count differ)'
+              except Exception as exc:
+                  last_error=type(exc).__name__+': '+str(exc)[:160]
+              print('Pages verification attempt',attempt+1,'of 12:',last_error)
+              if attempt<11:time.sleep(10)
+          else:
+              raise SystemExit('PUBLIC Pages feed NOT verified after deployment: '+last_error)
+          PY
