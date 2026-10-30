@@ -102,3 +102,15 @@ python collector.py --root docs --no-network
 ### 社区线索复核与双来源门槛
 
 2026-10-30 首次多来源运行实际找到了 6 个社区短语，但有普通口语和文章片段混入，因此**单次提及暂时只能作为弱线索**；它只保存在 `docs/community_state.json`，不会计入活跃审核队列、更不会进入网站正式词库。至少两条不同公开来源链接支持的短语，或原调查同样发现的词，才进入 `slang_pending.json` 待审；仍不代表词义已可信，必须经过人工或独立词义资料核实。新增 `communitySignals` / `communityHeldForCorroboration` 计数以防误报。
+
+## 2026-10-30：知识博主及日语解说博客来源（首次接入）
+
+除原有流行语调查与 Hatena/Mastodon 社区 RSS 外，新建 `blog_sources.py` 定期查询**经明确筛选的 note 创作者 RSS**，先选择 Real Japanese Guide、月良アル、夏川秋、はるか、若者研究所及周度 TikTok 趋势研究者等 6 个发布过相关内容的账号。note 官方提供创作者 RSS；真实 RSS 连通性和新词数量以 GitHub Actions 检查/正式 `sourceStatus` 为准。
+
+- 只读取公开 RSS 中最新文章标题、简短开头和日期，从有关 `若者言葉/ネットスラング/ネットミーム/流行語` 的标题或引号词中生成**候选线索**；绝不复制整篇文章、自动认定作者释义正确或收集评论私信。
+- 每个来源每次最多使用现有解析器默认 35 条、限定近 90 天的相关文章，状态保留最多 90 个短语及每词最多 6 条独立出处；重复 URL 去重，过时清理，失败与空结果单独记录。
+- 原始线索存于 `docs/blog_state.json`，能与其他独立社区出处交叉印证时进入 `docs/slang_pending.json`；单篇博主文章中的词不会直接被收录。只有**另行核实的日中英定义**且符合正式调查证据的词，才符合既有公开入库机制。
+- 正式 `docs/feed.json` 增加 `counts.bloggerSignals`、`counts.bloggerCandidateWords`、`counts.bloggerHeldForCorroboration`、`counts.bloggerSourceSucceeded`、`counts.bloggerSourceReadable`。旧的词条 Schema、专业词库、PWA、Firebase/Firestore 均不变。
+- 本次先实现有边界的官方 RSS 发现。未授权全网爬取、登录墙、付费文章或对整篇博文的转载均不在范围内。知识博主文章里可能存在 AI 生成内容和过时榜单，语义可靠性要再结合调查和多来源核对。
+
+例子：`note.com/nihon_5`、`note.com/open_fairy44`、`note.com/50s_lab`；如后续发现持续更新且结构稳定的日语解释作者，可再加入受控来源白名单。
