@@ -261,7 +261,8 @@ def build_slang_feed(catalog,state,now,source_status):
 
 
 def run(root, catalog_path, fixture=None, no_network=False, now=None,
-        translate_pending=False, translator=None, translation_limit=8):
+        translate_pending=False, translator=None, translation_limit=8,
+        community_enabled=True):
     now=now or datetime.now(JST);root=Path(root)
     catalog=load_catalog(catalog_path)
     state_path=root/'slang_state.json';prior={}
@@ -325,6 +326,7 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
     eligible_auto=reviewed_auto_terms(catalog,state,now)
     effective_catalog=catalog+eligible_auto
     pending=report_evidence(effective_catalog,state,now)
+    survey_succeeded=sum(s.get('status')=='ok' for s in status)
 
     # Community RSS is independent evidence for REVIEW ONLY. Never synthesize
     # survey rankings or append community candidates to effective_catalog.
@@ -336,7 +338,7 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
         except (OSError,ValueError,TypeError):old_community={}
     community,community_state,community_status=collect_community(
         now,old_community,BLACKLIST,{norm(x['jp']) for x in effective_catalog},
-        enabled=not no_network and fixture is None)
+        enabled=community_enabled and not no_network and fixture is None)
     pending=merge_pending(pending,community,
         {norm(x['jp']) for x in effective_catalog},norm)
     status.extend(community_status)
@@ -357,6 +359,7 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
     feed=build_slang_feed(effective_catalog,state,now,status)
     # The public list remains editor-curated; pending counts describe both
     # survey and community discovery without altering existing feed items.
+    feed['counts']['sourceSucceeded']=survey_succeeded  # Historical survey-only meaning
     feed['counts']['candidateWords']=len(pending)
     feed['counts']['pendingReview']=len(pending)
     feed['counts']['communityCandidateWords']=sum(bool(x.get('communityEvidenceCount')) for x in pending)
