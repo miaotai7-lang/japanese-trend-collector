@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-internet-slang-only",
-  "generatedAt": "2026-10-30T11:36:27+09:00",
+  "generatedAt": "2026-10-30T13:41:20+09:00",
   "sourceDescription": "仅展示有近期流行语调查或专题出处、并人工编写日中英释义的网络用语；不收录新闻高频词或搜索热点。新增候选暂不自动发布，须核对释义。 自动加入新条目仅限事先审校释义且再次匹配近期正式调查的词；机器翻译仍只存待审核队列。",
   "counts": {
-    "words": 13,
+    "words": 16,
     "candidateWords": 3,
     "pendingReview": 3,
     "sourceSucceeded": 1,
-    "communityCandidateWords": 0,
-    "communitySignals": 6,
+    "communityCandidateWords": 1,
+    "communitySignals": 8,
     "bloggerSignals": 3,
-    "bloggerCandidateWords": 0,
-    "bloggerHeldForCorroboration": 3,
+    "bloggerCandidateWords": 1,
+    "bloggerHeldForCorroboration": 2,
     "bloggerSourceSucceeded": 6,
     "bloggerSourceReadable": 6,
-    "communityHeldForCorroboration": 6,
+    "communityHeldForCorroboration": 7,
     "communitySourceSucceeded": 3,
     "communitySourceReadable": 6,
     "autoPublishedReviewed": 2,
-    "reviewedCatalog": 11
+    "reviewedCatalog": 14
   },
   "sourceStatus": [
     {
@@ -84,8 +84,8 @@
     {
       "name": "社区RSS:hatena_title_trends",
       "status": "ok",
-      "articles": 3,
-      "candidateMentions": 0
+      "articles": 4,
+      "candidateMentions": 2
     },
     {
       "name": "社区RSS:mastodon_slang",
@@ -164,12 +164,24 @@
           "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
           "publisher": "渋谷トレンドリサーチ",
           "seenAt": "2026-10-02"
+        },
+        {
+          "title": "近期网络流行语调查排名",
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4480/",
+          "publisher": "渋谷トレンドリサーチ",
+          "seenAt": "2026-06-30"
+        },
+        {
+          "title": "近期网络流行语调查排名",
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4271/",
+          "publisher": "渋谷トレンドリサーチ",
+          "seenAt": "2026-03-18"
         }
       ],
       "last7": 0,
       "previous7": 0,
-      "docCount": 1,
-      "trendCount": 1,
+      "docCount": 3,
+      "trendCount": 3,
       "score": 242,
       "surveyRank": 1
     },
@@ -246,6 +258,36 @@
       "surveyRank": 3
     },
     {
+      "id": "e253bf655ec741ce62ab",
+      "jp": "良かったこの距離で",
+      "kana": "よかったこのきょりで",
+      "zh": "“幸好隔着这段距离！”——从旧综艺台词衍生的网络梗，用于调侃离得够远、躲过麻烦等情境",
+      "en": "Glad I was this far away!; a revived comedy catchphrase used jokingly when distance saves the day",
+      "verification": "来源有据；日中英学习释义待人工复核",
+      "firstSeen": "2026-10-23",
+      "lastSeen": "2026-10-23",
+      "kinds": [
+        "trend"
+      ],
+      "categories": [
+        "直播与评论区网络梗"
+      ],
+      "sources": [
+        {
+          "title": "近期流行语报道／释义参考（2026-10-23）",
+          "url": "https://prtimes.jp/main/html/rd/p/000001827.000129774.html",
+          "publisher": "LINEヤフー（LINEリサーチ）",
+          "seenAt": "2026-10-23"
+        }
+      ],
+      "last7": 0,
+      "previous7": 0,
+      "docCount": 1,
+      "trendCount": 0,
+      "score": 228,
+      "surveyRank": 30
+    },
+    {
       "id": "e30ea17d3dc07da883e6",
       "jp": "シャバい",
       "kana": "しゃばい",
@@ -266,12 +308,24 @@
           "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
           "publisher": "渋谷トレンドリサーチ",
           "seenAt": "2026-10-02"
+        },
+        {
+          "title": "近期网络流行语调查排名",
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4480/",
+          "publisher": "渋谷トレンドリサーチ",
+          "seenAt": "2026-06-30"
+        },
+        {
+          "title": "近期网络流行语调查排名",
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4271/",
+          "publisher": "渋谷トレンドリサーチ",
+          "seenAt": "2026-03-18"
         }
       ],
       "last7": 0,
       "previous7": 0,
-      "docCount": 1,
-      "trendCount": 1,
+      "docCount": 3,
+      "trendCount": 3,
       "score": 222,
       "surveyRank": 6
     },
@@ -304,6 +358,36 @@
       "trendCount": 1,
       "score": 222,
       "surveyRank": 6
+    },
+    {
+      "id": "708cecc53ee6f730e5f7",
+      "jp": "冷笑",
+      "kana": "れいしょう",
+      "zh": "对别人认真、热情或投入的表现冷眼嘲讽；网络语境中的“冷笑”态度",
+      "en": "sneering cynicism; mocking people for being earnest or enthusiastic online",
+      "verification": "来源有据；日中英学习释义待人工复核",
+      "firstSeen": "2026-10-02",
+      "lastSeen": "2026-10-02",
+      "kinds": [
+        "trend"
+      ],
+      "categories": [
+        "网络态度与表达"
+      ],
+      "sources": [
+        {
+          "title": "近期流行语报道／释义参考（2026-10-02）",
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+          "publisher": "渋谷トレンドリサーチ",
+          "seenAt": "2026-10-02"
+        }
+      ],
+      "last7": 0,
+      "previous7": 0,
+      "docCount": 1,
+      "trendCount": 1,
+      "score": 214,
+      "surveyRank": 8
     },
     {
       "id": "56372cb3e67041e47e69",
@@ -363,6 +447,42 @@
       "docCount": 1,
       "trendCount": 0,
       "score": 212,
+      "surveyRank": null
+    },
+    {
+      "id": "8a964a3ccc19b84b7a60",
+      "jp": "ワホー",
+      "kana": "わほー",
+      "zh": "“哇哦！”“好耶！”——表达兴奋或高涨情绪的网络感叹梗；来自 SEIKIN 旧视频片段在 2026 年再度流行",
+      "en": "Wahoo!; an excited exclamation revived as a 2026 Japanese internet meme from a SEIKIN video",
+      "verification": "来源有据；日中英学习释义待人工复核",
+      "firstSeen": "2026-10-09",
+      "lastSeen": "2026-10-09",
+      "kinds": [
+        "trend"
+      ],
+      "categories": [
+        "网络梗与感叹语"
+      ],
+      "sources": [
+        {
+          "title": "近期流行语报道／释义参考（2026-10-09）",
+          "url": "https://fomo-fomo.com/sns/trend/wahoo-seikin-revival-meme-2026/",
+          "publisher": "FOMO²",
+          "seenAt": "2026-10-09"
+        },
+        {
+          "title": "近期网络流行语调查排名",
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4480/",
+          "publisher": "渋谷トレンドリサーチ",
+          "seenAt": "2026-06-30"
+        }
+      ],
+      "last7": 0,
+      "previous7": 0,
+      "docCount": 2,
+      "trendCount": 1,
+      "score": 200,
       "surveyRank": null
     },
     {
