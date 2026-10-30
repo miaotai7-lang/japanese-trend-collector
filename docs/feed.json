@@ -1,13 +1,15 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-internet-slang-only",
-  "generatedAt": "2026-10-30T02:25:38+09:00",
-  "sourceDescription": "仅展示有近期流行语调查或专题出处、并人工编写日中英释义的网络用语；不收录新闻高频词或搜索热点。新增候选暂不自动发布，须核对释义。",
+  "generatedAt": "2026-10-30T09:23:38+09:00",
+  "sourceDescription": "仅展示有近期流行语调查或专题出处、并人工编写日中英释义的网络用语；不收录新闻高频词或搜索热点。新增候选暂不自动发布，须核对释义。 自动加入新条目仅限事先审校释义且再次匹配近期正式调查的词；机器翻译仍只存待审核队列。",
   "counts": {
-    "words": 11,
-    "candidateWords": 4,
-    "pendingReview": 4,
-    "sourceSucceeded": 1
+    "words": 13,
+    "candidateWords": 3,
+    "pendingReview": 3,
+    "sourceSucceeded": 1,
+    "autoPublishedReviewed": 2,
+    "reviewedCatalog": 11
   },
   "sourceStatus": [
     {
@@ -54,7 +56,7 @@
       "name": "有效流行语调查解析",
       "status": "ok",
       "articles": 3,
-      "rankedWords": 30,
+      "rankedWords": 32,
       "detail": ""
     }
   ],
@@ -368,6 +370,72 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
+      "score": 186,
+      "surveyRank": null
+    },
+    {
+      "id": "8fde2b3279cdd597e36a",
+      "jp": "ネ申",
+      "kana": "かみ",
+      "zh": "神级、太厉害了；把“神”拆写成“ネ申”的网络赞美用语",
+      "en": "god-tier; incredible; fantastic (a playful split-character spelling of 神)",
+      "verification": "事先独立核对日中英释义，自动匹配近期调查后发布",
+      "firstSeen": "2026-10-02",
+      "lastSeen": "2026-10-02",
+      "kinds": [
+        "trend"
+      ],
+      "categories": [
+        "网络文化"
+      ],
+      "sources": [
+        {
+          "title": "近期流行语报道／释义参考（2026-10-02）",
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+          "publisher": "渋谷トレンドリサーチ",
+          "seenAt": "2026-10-02"
+        }
+      ],
+      "last7": 0,
+      "previous7": 0,
+      "docCount": 1,
+      "trendCount": 1,
+      "score": 186,
+      "surveyRank": null
+    },
+    {
+      "id": "321f56a6dc7e09bc537e",
+      "jp": "滅",
+      "kana": "めつ",
+      "zh": "喜欢或情绪强烈到仿佛要消失；用于夸张表达心动、兴奋等感受",
+      "en": "I'm deceased; overwhelmed by strong emotion (exaggerated fandom slang)",
+      "verification": "事先独立核对日中英释义，自动匹配近期调查后发布",
+      "firstSeen": "2026-10-02",
+      "lastSeen": "2026-10-02",
+      "kinds": [
+        "trend"
+      ],
+      "categories": [
+        "梗与固定表达"
+      ],
+      "sources": [
+        {
+          "title": "近期流行语报道／释义参考（2026-10-02）",
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+          "publisher": "渋谷トレンドリサーチ",
+          "seenAt": "2026-10-02"
+        },
+        {
+          "title": "近期网络流行语调查排名",
+          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4480/",
+          "publisher": "渋谷トレンドリサーチ",
+          "seenAt": "2026-06-30"
+        }
+      ],
+      "last7": 0,
+      "previous7": 0,
+      "docCount": 2,
+      "trendCount": 2,
       "score": 186,
       "surveyRank": null
     },

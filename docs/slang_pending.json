@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T02:25:38+09:00",
+  "generatedAt": "2026-10-30T09:23:38+09:00",
   "items": [
     {
       "jp": "アツい",
@@ -62,40 +62,6 @@
       "translationDraft": {
         "zh": "短睡眠者",
         "en": "Short Sleeper",
-        "provider": "MyMemory / machine translation",
-        "verified": false,
-        "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
-      },
-      "draftGeneratedAt": "2026-10-29",
-      "approvedForPublication": false
-    },
-    {
-      "jp": "ネ申",
-      "sources": [
-        "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/"
-      ],
-      "evidence": [
-        {
-          "url": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
-          "date": "2026-10-02",
-          "rank": 5
-        }
-      ],
-      "status": "needs_human_definition_and_bilingual_review",
-      "quality": {
-        "status": "needs_human_review",
-        "reviewPriority": 80,
-        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
-        "reasons": [
-          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
-        ],
-        "evidenceSources": 1
-      },
-      "kanaSuggestion": "",
-      "translationStatus": "cached_unverified",
-      "translationDraft": {
-        "zh": "",
-        "en": "Neshen",
         "provider": "MyMemory / machine translation",
         "verified": false,
         "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
