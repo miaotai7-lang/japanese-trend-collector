@@ -83,7 +83,7 @@ class BloggerTests(unittest.TestCase):
             Path(d,'blog_state.json').write_text(json.dumps(prior,ensure_ascii=False),encoding='utf8')
             feed=s.run(d,CATALOG,no_network=True,now=NOW)
             pending=json.loads(Path(d,'slang_pending.json').read_text(encoding='utf8'))['items']
-            self.assertEqual(feed['counts']['words'],11)
+            self.assertEqual(feed['counts']['words'],14)
             self.assertEqual(feed['counts']['bloggerSignals'],1)
             self.assertEqual(feed['counts']['bloggerCandidateWords'],1)
             self.assertEqual(feed['counts']['communityCandidateWords'],0)
