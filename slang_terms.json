@@ -116,6 +116,59 @@
       "referenceDate": "2026-09-10",
       "source": "https://media.asahiconnect-o.com/colum/post-4586/",
       "publisher": "朝日コネクト大阪"
+    },
+    {
+      "jp": "ワホー",
+      "kana": "わほー",
+      "zh": "“哇哦！”“好耶！”——表达兴奋或高涨情绪的网络感叹梗；来自 SEIKIN 旧视频片段在 2026 年再度流行",
+      "en": "Wahoo!; an excited exclamation revived as a 2026 Japanese internet meme from a SEIKIN video",
+      "category": "网络梗与感叹语",
+      "referenceDate": "2026-10-09",
+      "source": "https://fomo-fomo.com/sns/trend/wahoo-seikin-revival-meme-2026/",
+      "publisher": "FOMO²",
+      "meaningReferences": [
+        "https://www.oricon.co.jp/pressrelease/2919698/",
+        "https://mery.jp/2495697"
+      ],
+      "reviewStatus": "editor-reviewed",
+      "reviewedOn": "2026-10-30",
+      "reviewNote": "人工检索核对：Sony Life 中高生调查、MERY 2026-09-15 说明与 FOMO² 2026-10-09 解说。日语感叹并非逐字英语翻译。"
+    },
+    {
+      "jp": "冷笑",
+      "kana": "れいしょう",
+      "zh": "对别人认真、热情或投入的表现冷眼嘲讽；网络语境中的“冷笑”态度",
+      "en": "sneering cynicism; mocking people for being earnest or enthusiastic online",
+      "category": "网络态度与表达",
+      "referenceDate": "2026-10-02",
+      "rank": 8,
+      "source": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4622/",
+      "publisher": "渋谷トレンドリサーチ",
+      "meaningReferences": [
+        "https://www.haradaeigo.com/slang/ja/%E5%86%B7%E7%AC%91",
+        "https://www.haradaeigo.com/slang/ja/%E5%86%B7%E7%AC%91%E7%B3%BB"
+      ],
+      "reviewStatus": "editor-reviewed",
+      "reviewedOn": "2026-10-30",
+      "reviewNote": "高校生流行语调查八位，结合独立语义解说；区别于普通字典中的冷淡嘲笑。"
+    },
+    {
+      "jp": "良かったこの距離で",
+      "kana": "よかったこのきょりで",
+      "zh": "“幸好隔着这段距离！”——从旧综艺台词衍生的网络梗，用于调侃离得够远、躲过麻烦等情境",
+      "en": "Glad I was this far away!; a revived comedy catchphrase used jokingly when distance saves the day",
+      "category": "直播与评论区网络梗",
+      "referenceDate": "2026-10-23",
+      "rank": 30,
+      "source": "https://prtimes.jp/main/html/rd/p/000001827.000129774.html",
+      "publisher": "LINEヤフー（LINEリサーチ）",
+      "meaningReferences": [
+        "https://vivitrend.net/konokyoride/",
+        "https://note.com/fond_clam2634/n/na8e31a7dd9b3"
+      ],
+      "reviewStatus": "editor-reviewed",
+      "reviewedOn": "2026-10-30",
+      "reviewNote": "2026-10-23 LINE Research 调查列为30位网络梗，结合 2026-08-09 来源文章及日语知识博主解说核实；电视节目原句与2026网络再流行相区别。"
     }
   ]
 }

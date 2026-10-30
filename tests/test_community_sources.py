@@ -127,13 +127,13 @@ class CommunitySourceTests(unittest.TestCase):
               <h3>今流行っている言葉は？</h3><p>1位 メロい (23%)</p>
               <h3>今流行っている物事は？</h3>'''
             feed=s.run(d,CATALOG,fixture=html,now=NOW)
-            self.assertEqual(feed['counts']['words'],11)
+            self.assertEqual(feed['counts']['words'],14)
             self.assertEqual(feed['counts']['communityCandidateWords'],1)
             pending=json.loads(Path(d,'slang_pending.json').read_text(encoding='utf-8'))['items']
             self.assertEqual(len(pending),1)
             self.assertEqual(pending[0]['jp'],'新ドパ構文')
             self.assertFalse(pending[0]['approvedForPublication'])
-            self.assertEqual(len(s.load_catalog(CATALOG)),11)
+            self.assertEqual(len(s.load_catalog(CATALOG)),14)
 
     def test_single_post_signal_is_held_outside_active_queue(self):
         signal=[{'jp':'行った','evidence':[{'url':'https://example.org/post',
@@ -167,7 +167,7 @@ class CommunitySourceTests(unittest.TestCase):
             self.assertEqual(feed['counts']['communityHeldForCorroboration'],1)
             self.assertEqual(feed['counts']['communityCandidateWords'],0)
             self.assertFalse(any(x['jp']=='行った' for x in pending))
-            self.assertEqual(feed['counts']['words'],11)
+            self.assertEqual(feed['counts']['words'],14)
 
     def test_community_merge_with_survey_deduplicates(self):
         a=[{'jp':'新ドパ構文','sources':['https://example.org/r'],

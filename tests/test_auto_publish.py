@@ -42,8 +42,8 @@ class AutoPublishTests(unittest.TestCase):
             feed=run(d,CATALOG,fixture=REPORT,now=NOW)
             terms={x['jp']:x for x in feed['items']}
             self.assertEqual(feed['counts']['autoPublishedReviewed'],2)
-            self.assertEqual(feed['counts']['reviewedCatalog'],11)
-            self.assertEqual(len(terms),13)
+            self.assertEqual(feed['counts']['reviewedCatalog'],14)
+            self.assertEqual(len(terms),16)
             self.assertEqual(terms['滅']['kana'],'めつ')
             self.assertEqual(terms['ネ申']['kana'],'かみ')
             self.assertIn('独立核对',terms['ネ申']['verification'])
@@ -64,7 +64,7 @@ class AutoPublishTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             feed=run(d,CATALOG,no_network=True,now=NOW)
             self.assertEqual(feed['counts']['autoPublishedReviewed'],0)
-            self.assertEqual(feed['counts']['words'],11)
+            self.assertEqual(feed['counts']['words'],14)
 
     def test_wrong_report_url_cannot_authorize_word(self):
         catalog=load_catalog(CATALOG)
@@ -83,7 +83,7 @@ class AutoPublishTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             run(d,CATALOG,fixture=REPORT,now=NOW)
         self.assertEqual(before,CATALOG.read_bytes())
-        self.assertEqual(len(load_catalog(CATALOG)),11)
+        self.assertEqual(len(load_catalog(CATALOG)),14)
 
     def test_previous_feed_item_ids_stable(self):
         with tempfile.TemporaryDirectory() as d:
