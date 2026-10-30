@@ -26,9 +26,11 @@ MAX_EVIDENCE_PER_WORD = 6
 JST = timezone(timedelta(hours=9))
 SOURCES = (
     ('hatena_slang', 'https://b.hatena.ne.jp/search/tag?q=%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0&mode=rss'),
-    ('hatena_youth', 'https://b.hatena.ne.jp/search/tag?q=%E8%8B%A5%E8%80%85%E8%A8%80%E8%91%89&mode=rss'),
+    ('hatena_title_slang', 'https://b.hatena.ne.jp/search/title?q=%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0&mode=rss'),
+    ('hatena_title_trends', 'https://b.hatena.ne.jp/search/title?q=%E6%B5%81%E8%A1%8C%E8%AA%9E&mode=rss'),
     ('mastodon_slang', 'https://mastodon.social/tags/%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0.rss'),
     ('mastodon_trends', 'https://mastodon.social/tags/%E6%B5%81%E8%A1%8C%E8%AA%9E.rss'),
+    ('mastodon_nihongo', 'https://mastodon.social/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E.rss'),
 )
 TRIGGERS = re.compile(r'流行語|若者言葉|ネットスラング|ネットミーム|ネット用語|バズワード|新語|流行りの言葉|ミーム')
 QUOTED = re.compile(r'「([^「」]{2,28})」|『([^『』]{2,28})』')
