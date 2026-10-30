@@ -73,3 +73,6 @@
 - [ ] 正式生产首次执行后核对 `docs/blog_state.json`、`docs/slang_pending.json`、`docs/feed.json` 的一致性，误提取样本须校正。
 - [ ] 持续评估博主是否引用同一调查或相互复制；不能把相同原始信息误当两个独立来源。
 - [ ] 评估可加入的 Hatena Blog/个人站点 RSS，优先稳定、近期且内容可核实的知识作者；遵守网站的访问规则。
+
+- [x] 真实 GitHub Actions 探测 6 个 note 创作者 RSS 均可读；两位博主分别有 4/5 次明确提及，未把这些提及数误认作 9 个已审词。
+- [ ] 生产采集后检查 `docs/blog_state.json` 的不重复词、独立来源数、是否有普通表达误判，并再次检查正式 13 词与 Firebase 原功能不变。
