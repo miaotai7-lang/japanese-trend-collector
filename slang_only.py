@@ -363,6 +363,9 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
     feed['counts']['candidateWords']=len(pending)
     feed['counts']['pendingReview']=len(pending)
     feed['counts']['communityCandidateWords']=sum(bool(x.get('communityEvidenceCount')) for x in pending)
+    feed['counts']['communitySignals']=len(community)  # raw leads, not approved words
+    feed['counts']['communityHeldForCorroboration']=sum(
+        norm(x['jp']) not in {norm(p['jp']) for p in pending} for x in community)
     feed['counts']['communitySourceSucceeded']=sum(s.get('status')=='ok' for s in community_status)
     feed['counts']['communitySourceReadable']=sum(s.get('status') in ('ok','empty') for s in community_status)
     feed['counts']['autoPublishedReviewed']=len(eligible_auto)
