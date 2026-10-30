@@ -50,9 +50,9 @@ def fake_feed(url):
 
 class CommunitySourceTests(unittest.TestCase):
     def test_configured_urls_are_bounded_and_known(self):
-        self.assertEqual(len(c.SOURCES),4)
+        self.assertEqual(len(c.SOURCES),6)
         self.assertTrue(all(u.startswith('https://') for _,u in c.SOURCES))
-        self.assertEqual(len(set(u for _,u in c.SOURCES)),4)
+        self.assertEqual(len(set(u for _,u in c.SOURCES)),6)
 
     def test_rdf_rss_and_atom_parser(self):
         self.assertEqual(len(c.read_feed(HATENA_RDF,'hatena_slang',NOW)),2)
@@ -71,7 +71,7 @@ class CommunitySourceTests(unittest.TestCase):
         rows,state,status=c.collect_community(NOW,{},s.BLACKLIST,set(),fetcher=fake_feed)
         self.assertEqual({r['jp'] for r in rows},{'新ドパ構文'})
         self.assertEqual(len(rows[0]['evidence']),2)
-        self.assertEqual(len(status),4)
+        self.assertEqual(len(status),6)
         data=json.dumps(state,ensure_ascii=False)
         self.assertNotIn('description',data)
         self.assertNotIn('summary',data)
@@ -89,7 +89,7 @@ class CommunitySourceTests(unittest.TestCase):
         def broken(_):raise TimeoutError('test')
         rows,state,status=c.collect_community(NOW,{},s.BLACKLIST,set(),fetcher=broken)
         self.assertEqual(rows,[])
-        self.assertEqual(sum(x['status']=='error' for x in status),4)
+        self.assertEqual(sum(x['status']=='error' for x in status),6)
 
     def test_stale_dates_and_unsafe_links_are_excluded(self):
         old=HATENA_RDF.replace(b'2026-10-29',b'2026-08-01')
