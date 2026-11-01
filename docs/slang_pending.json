@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T11:13:46+09:00",
+  "generatedAt": "2026-11-02T02:07:50+09:00",
   "items": [
     {
       "jp": "アツい",
@@ -16,7 +16,7 @@
       "status": "needs_human_definition_and_bilingual_review",
       "quality": {
         "status": "needs_human_review",
-        "reviewPriority": 80,
+        "reviewPriority": 67,
         "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
         "reasons": [
           "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
@@ -50,7 +50,7 @@
       "status": "needs_human_definition_and_bilingual_review",
       "quality": {
         "status": "needs_human_review",
-        "reviewPriority": 80,
+        "reviewPriority": 67,
         "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
         "reasons": [
           "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"

@@ -2,6 +2,16 @@
   "schemaVersion": 1,
   "items": [
     {
+      "jp": "今年の漢字",
+      "evidence": [
+        {
+          "url": "https://ichizo.hatenablog.com/entry/kanji-buzzword-2026",
+          "date": "2026-11-01",
+          "platform": "hatena_title_trends"
+        }
+      ]
+    },
+    {
       "jp": "結論から言うね",
       "evidence": [
         {
