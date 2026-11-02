@@ -22,6 +22,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_community_sources.py' -v
           python -m unittest discover -s tests -p 'test_blog_sources.py' -v
           python -m unittest discover -s tests -p 'test_chat_curation.py' -v
+          python -m unittest discover -s tests -p 'test_discovery_feed.py' -v
       - name: Publish to temporary directory only; audit slang and bilingual content
         run: |
           python - <<'PY'
