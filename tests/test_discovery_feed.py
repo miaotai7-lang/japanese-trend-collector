@@ -52,12 +52,16 @@ class DiscoveryFeedTests(unittest.TestCase):
         self.assertEqual(nf['counts']['verifiedAddedThisRun'],0)
         self.assertEqual(b['newCandidatesThisRun'],[])
         self.assertIsNone(b['lastVerifiedChangeAt'])
+        self.assertIsNone(b['items'][0]['firstObservedAt'],
+                          'Second scan cannot invent a historical first discovery timestamp')
 
     def test_second_snapshot_with_new_candidate_is_explicit(self):
         initial=d.snapshot(feed(),pending(),feed(),{},NOW)
         again=d.snapshot(feed(),pending()+pending('新的网络词'),feed(),initial,NOW+timedelta(hours=2))
         self.assertEqual(again['newCandidatesThisRun'],['新的网络词'])
         self.assertEqual(again['candidateCount'],2)
+        self.assertEqual(next(x for x in again['items'] if x['jp']=='新的网络词')['firstObservedAt'],
+                         (NOW+timedelta(hours=2)).isoformat(timespec='seconds'))
 
     def test_actual_verified_word_add_sets_real_change(self):
         previous=feed()
