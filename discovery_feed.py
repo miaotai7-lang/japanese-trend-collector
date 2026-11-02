@@ -82,10 +82,15 @@ def snapshot(verified_feed, pending, old_feed, old_discovery, now):
         prior=previous_by_id.get(identifier,{})
         # Existing evidence publication date is not equivalent to first
         # discovery in this collector. Expose firstObservedAt only if known.
-        first_observed=prior.get('firstObservedAt')
         if not old_discovery:
+            # Existing candidates at rollout are historical, not new today.
             first_observed=None
-        elif not isinstance(first_observed,str):
+        elif identifier in previous_by_id:
+            # Preserve unknown historical first-observed dates indefinitely;
+            # a second polling run must not invent a discovery time.
+            first_observed=prior.get('firstObservedAt')
+            if not isinstance(first_observed,str):first_observed=None
+        else:
             first_observed=now_stamp
         entries=sorted(evidence,key=lambda e:(e['date'],e['url']),reverse=True)[:MAX_LINKS_PER_CANDIDATE]
         candidate={'id':identifier,'jp':jp,
