@@ -135,3 +135,17 @@ python collector.py --root docs --no-network
 新增 `slang_only.kana_equivalent()` 只在候选去重/报告匹配时将片假名与平假名归一，如 `ワホー/わほー`、`メロい/めろい`；正式词条 ID 的原始 `norm()`/SHA 算法不变，以保留原有收藏等前端数据关联。
 
 本次词库与既有 2 条自动核实词配合时，预计正式 Feed 由 13 增至 16 条；**以 GitHub Actions 生产执行与 Pages 对外校验为最终验收**。未修改 Firebase、Firestore、建筑专业词汇或日本网络词采集器的独立部署配置。
+
+## 2026-11-02：为什么每天运行仍停留在 16 条？自动更新的两层状态
+
+生产采集在 2026-10-31 02:00/11:22、2026-11-01 01:06/11:13、2026-11-02 02:07（日本时间）连续更新 `docs/feed.json`，但每次都是 **16 条已审词 + 3 条待审词**。这证明定时任务并非完全停摆，**正式词条没有变动**。截至 11-02 的 16 条是 14 条 `slang_terms.json` 手动核实词与 2 条 `reviewed_auto_publish.json` 预先核实词；目前没有新的来源驱动的自主语义审核程序能安全把未知流行梗自动生成准确日中英并上架。
+
+为避免让“每次重写 `generatedAt`”冒充“每天新增词”，现增加独立、**零付费**的观察通道：
+
+- `docs/feed.json` 仍是原来的**已核实正式学习词典**，新增 `counts.verifiedChangedThisRun`、`counts.verifiedAddedThisRun`、`counts.discoveryAddedThisRun` 和 `lastVerifiedChangeAt`。首次记录无法从旧代码推导确切内容最后修改时间时会如实保持 `null`，不伪造日期。
+- `docs/discovery_feed.json` 是**未审核候选的独立公开列表**，只提供日语词形、可确定的假名建议、原始公开链接和真实来源日期。不提供中英机器翻译草稿，**不会混入 `feed.json`**；持续运行能比较本次与上次候选的变化。首次建立基线时，不把旧候选当作今天新发现。
+- `docs/discovery.html` 是无需 Firebase 部署的 GitHub Pages **新词发现雷达**。显示当前正式词条数、待审词、当次新发现的候选、最后实际审核词汇变化和原始出处。浏览器可直接刷新。
+- 正式 GitHub Actions 对两份 JSON 进行单元测试和公网 GitHub Pages 同版回读验证；代码提交/定时采集仍不收集任何私人 Firebase/Firestore 数据。
+- 不新增 OpenAI API 或收费服务。**该修复解决状态透明度与自动候选发布，不保证未知的新词能够自动产生准确中英释义。**要进一步无人审核自动上架，仍需要新的可靠、可自动解析的释义数据和交叉验证策略。
+
+观察页：`https://miaotai7-lang.github.io/japanese-trend-collector/discovery.html`。
