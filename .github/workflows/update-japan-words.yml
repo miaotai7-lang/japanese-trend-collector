@@ -8,6 +8,9 @@ on:
     branches: [main]
     paths:
       - 'slang_only.py'
+      - 'discovery_feed.py'
+      - 'tests/test_discovery_feed.py'
+      - 'docs/discovery.html'
       - 'community_sources.py'
       - 'blog_sources.py'
       - 'translation_review.py'
@@ -47,6 +50,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_community_sources.py' -v
           python -m unittest discover -s tests -p 'test_blog_sources.py' -v
           python -m unittest discover -s tests -p 'test_chat_curation.py' -v
+          python -m unittest discover -s tests -p 'test_discovery_feed.py' -v
       - name: Discover sourced slang, draft translations, publish curated entries only
         run: python collector.py --root docs --translate-pending --translation-limit 8
       - name: Validate output is actual fresh parsing, not just successful download
@@ -59,6 +63,14 @@ jobs:
           assert matches, 'No valid live survey rankings parsed; refuse to publish a misleading success feed'
           assert feed['counts']['words']>=1
           assert all(x.get('jp') and x.get('kana') and x.get('zh') and x.get('en') for x in feed['items'])
+          discovery=json.load(open('docs/discovery_feed.json',encoding='utf-8'))
+          assert discovery['feedType']=='japanese-slang-discovery-unverified'
+          assert discovery['verifiedWordCount']==feed['counts']['words']
+          assert discovery['generatedAt']==feed['generatedAt']
+          assert all('translationDraft' not in x and 'zh' not in x and 'en' not in x
+                     for x in discovery['items']), 'Never expose unverified machine translations'
+          print('Automatically tracked, unverified discovery signals:',discovery['candidateCount'])
+          print('Actual verified words newly added:',feed['counts']['verifiedAddedThisRun'])
           print('Real parsed ranking words:',matches[-1]['rankedWords'])
           print('Published reviewed words:',feed['counts']['words'])
           print('Auto-published editor-reviewed:',feed['counts'].get('autoPublishedReviewed',0))
@@ -88,6 +100,8 @@ jobs:
           import json, time, urllib.request
           expected=json.load(open('docs/feed.json',encoding='utf-8'))
           expected_pairs={(x['id'],x['jp']) for x in expected['items']}
+          expected_discovery=json.load(open('docs/discovery_feed.json',encoding='utf-8'))
+          expected_candidate_pairs={(x['id'],x['jp']) for x in expected_discovery['items']}
           url='https://miaotai7-lang.github.io/japanese-trend-collector/feed.json'
           last_error=''
           for attempt in range(12):
@@ -99,10 +113,20 @@ jobs:
                   with urllib.request.urlopen(req,timeout=14) as response:
                       live=json.load(response)
                   pairs={(x['id'],x['jp']) for x in live.get('items',[])}
+                  other=urllib.request.Request(
+                      'https://miaotai7-lang.github.io/japanese-trend-collector/discovery_feed.json'
+                      +'?verify='+str(time.time_ns()),
+                      headers={'Accept':'application/json','Cache-Control':'no-cache',
+                               'User-Agent':'JapaneseTrendCollector-PagesVerifier/1.0'})
+                  with urllib.request.urlopen(other,timeout=14) as response:
+                      live_discovery=json.load(response)
+                  candidate_pairs={(x['id'],x['jp']) for x in live_discovery.get('items',[])}
                   if (live.get('feedType')==expected.get('feedType') and
                       live.get('generatedAt')==expected.get('generatedAt') and
                       live.get('counts',{}).get('words')==expected['counts']['words'] and
-                      pairs==expected_pairs):
+                      pairs==expected_pairs and
+                      live_discovery.get('generatedAt')==expected_discovery['generatedAt'] and
+                      candidate_pairs==expected_candidate_pairs):
                       print('Verified PUBLIC Pages feed:',
                             live['generatedAt'],'words:',live['counts']['words'],
                             'reviewed auto-published:',
