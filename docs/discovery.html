@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>日本网络流行语 · 新词发现与审核状态</title>
+<style>
+:root{font:16px/1.65 system-ui,-apple-system,"Noto Sans SC",sans-serif;color:#263348;background:#f5f7fa}
+body{max-width:920px;margin:0 auto;padding:26px 18px 65px}
+h1{font-size:1.65rem;line-height:1.35;margin:0 0 9px}h2{font-size:1.1rem}
+p{margin:8px 0 14px}.sub{color:#59677a}.panel,.item{background:white;border:1px solid #dce3ee;border-radius:12px;padding:15px 17px;margin:14px 0}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.metric{margin:0;text-align:center}.metric strong{display:block;font-size:1.8rem}.metric span{font-size:.88rem;color:#576576}
+button{font:inherit;padding:8px 16px;border:1px solid #b1bfd2;border-radius:9px;background:#f0f4fb;color:#223f6b;cursor:pointer}
+a{color:#165caa;overflow-wrap:anywhere}a:focus-visible,button:focus-visible{outline:3px solid #7b9fe7}
+.item h3{font-size:1.14rem;margin:0 0 6px}.tag{display:inline-block;color:#784c03;background:#fff2cb;border-radius:999px;padding:2px 10px;font-size:.8rem}
+.sources{padding-left:22px;margin:8px 0}.sources li{margin:5px 0}
+.muted{color:#576576;font-size:.9rem}.notice{border-left:4px solid #bd8833;padding:12px 16px;background:#fff8e9}
+#error{color:#a12828}@media(prefers-color-scheme:dark){:root{background:#121c2b;color:#e7edf7}.panel,.item{background:#1d2b3f;border-color:#40516a}.sub,.metric span,.muted{color:#a9bbd1}.notice{background:#382e20}.tag{background:#5c4821;color:#ffe6a5}button{background:#283d5d;color:#eef4ff;border-color:#496487}a{color:#94bbfb}}
+</style>
+</head>
+<body>
+<h1>日本网络流行语 · 新词发现雷达</h1>
+<p class="sub">独立采集器的自动发现与审核状态。这里的候选尚未核实词义，不能作为准确日中英学习释义。</p>
+<section class="notice" role="note"><strong>候选词 ≠ 正式词库。</strong> 自动抓取的文章或帖子可能只是普通高频词、旧梗或错误引用；只有经过可信语义核对的词才会进入正式学习词库。</section>
+<section class="panel" aria-label="采集概况">
+<div class="metrics">
+<p class="metric"><strong id="verified">—</strong><span>已核实的正式词汇</span></p>
+<p class="metric"><strong id="pending">—</strong><span>待审核候选</span></p>
+<p class="metric"><strong id="new">—</strong><span>本次新发现候选</span></p>
+</div>
+<p class="muted" id="time" aria-live="polite">正在读取公开采集数据…</p>
+<p class="muted" id="change"></p>
+<button id="reload" type="button">刷新最新状态</button>
+<a href="./feed.json" style="margin-left:10px">查看已核实正式 Feed</a>
+<p class="muted" id="error" role="status"></p>
+</section>
+<h2>新词候选与原始出处</h2>
+<div id="items" aria-live="polite"></div>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const node=(type,content,klass)=>{
+ const e=document.createElement(type);
+ if(content!==undefined)e.textContent=String(content);
+ if(klass)e.className=klass;
+ return e;
+};
+const formatDate=s=>{
+ if(!s)return '未知';
+ const d=new Date(s);
+ return isNaN(d)?'未知':d.toLocaleString('zh-CN',{timeZone:'Asia/Tokyo',hour12:false});
+};
+const safeURL=raw=>{
+ try{const u=new URL(raw);return u.protocol==='https:'&&!u.username&&!u.password?u.href:null}
+ catch(_){return null}
+};
+async function refresh(){
+ $('reload').disabled=true;$('error').textContent='';
+ try{
+  const response=await fetch('./discovery_feed.json?nocache='+Date.now(),{cache:'no-store',credentials:'omit'});
+  if(!response.ok)throw new Error('HTTP '+response.status);
+  const data=await response.json();
+  if(data.schemaVersion!==1||data.feedType!=='japanese-slang-discovery-unverified'||!Array.isArray(data.items))throw Error('来源格式不符');
+  $('verified').textContent=Number(data.verifiedWordCount)||0;
+  $('pending').textContent=data.items.length;
+  $('new').textContent=data.firstSnapshot?'—':Array.isArray(data.newCandidatesThisRun)?data.newCandidatesThisRun.length:0;
+  $('time').textContent='最近采集：'+formatDate(data.generatedAt)+'（日本时间）';
+  $('change').textContent=data.lastVerifiedChangeAt?
+    '最近一次已核实词库发生变化：'+formatDate(data.lastVerifiedChangeAt):
+    '正式词库的最近一次内容变化尚无可追溯时间；采集时间不代表有新词入库。';
+  const host=$('items');host.replaceChildren();
+  if(!data.items.length){host.append(node('p','目前没有达到来源门槛的待审核候选。'));return}
+  for(const word of data.items){
+   if(!word||typeof word.jp!=='string')continue;
+   const card=node('article',undefined,'item');
+   card.append(node('h3',word.jp));
+   if(word.kanaSuggestion)card.append(node('p','读音候选：'+word.kanaSuggestion,'muted'));
+   card.append(node('span','未经核实 · 禁止当作准确释义','tag'));
+   card.append(node('p','最近来源日期：'+(word.latestEvidenceDate||'未知')+' · 出处 '+(word.sourceCount||0)+' 条','muted'));
+   const sources=node('ul',undefined,'sources');
+   for(const s of (Array.isArray(word.sources)?word.sources:[]).slice(0,4)){
+    const url=safeURL(s.url);
+    if(!url)continue;
+    const li=node('li');
+    const a=node('a',(s.origin||'公开来源')+' · '+(s.date||''));a.href=url;a.target='_blank';a.rel='noopener noreferrer';
+    li.append(a);sources.append(li)
+   }
+   card.append(sources);host.append(card);
+  }
+ }catch(e){$('error').textContent='读取失败：'+String(e.message).slice(0,120)+'。可稍后刷新。'}
+ finally{$('reload').disabled=false}
+}
+$('reload').addEventListener('click',refresh);
+refresh();
+</script>
+</body>
+</html>
