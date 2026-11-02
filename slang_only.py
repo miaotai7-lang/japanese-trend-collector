@@ -403,6 +403,22 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
     feed['counts']['autoPublishedReviewed']=len(eligible_auto)
     feed['counts']['reviewedCatalog']=len(catalog)
     feed['sourceDescription'] += ' 自动加入新条目仅限事先审校释义且再次匹配近期正式调查的词；机器翻译仍只存待审核队列。'
+    # The verified dictionary and the automatically discovered *unverified*
+    # leads are different products. Never include machine drafts as trusted
+    # zh/en fields in either public output.
+    from discovery_feed import snapshot
+    previous_feed={}
+    previous_discovery={}
+    for file_name,destination in (('feed.json','feed'),('discovery_feed.json','discovery')):
+        try:
+            value=json.loads((root/file_name).read_text(encoding='utf8'))
+            if not isinstance(value,dict):continue
+            if destination=='feed':previous_feed=value
+            else:previous_discovery=value
+        except (OSError,ValueError,TypeError):
+            pass
+    discovery=snapshot(feed,pending,previous_feed,previous_discovery,now)
+
     # Never read or transfer old generic docs/state.json; replacing docs/feed.json
     # drops old meaningless news-frequency entries by design.
     root.mkdir(exist_ok=True,parents=True)
@@ -411,4 +427,5 @@ def run(root, catalog_path, fixture=None, no_network=False, now=None,
     blogger_path.write_text(json.dumps(blogger_state,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     (root/'slang_pending.json').write_text(json.dumps({'generatedAt':now.isoformat(timespec='seconds'),'items':pending},ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     (root/'feed.json').write_text(json.dumps(feed,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    (root/'discovery_feed.json').write_text(json.dumps(discovery,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     return feed
