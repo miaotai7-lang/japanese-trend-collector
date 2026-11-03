@@ -80,36 +80,6 @@
           "platform": "hatena_title_slang"
         }
       ]
-    },
-    {
-      "jp": "頭みいちゃん",
-      "evidence": [
-        {
-          "url": "https://anond.hatelabo.jp/20260929051627",
-          "date": "2026-09-29",
-          "platform": "hatena_title_trends"
-        }
-      ]
-    },
-    {
-      "jp": "行った",
-      "evidence": [
-        {
-          "url": "https://anond.hatelabo.jp/20260929051627",
-          "date": "2026-09-29",
-          "platform": "hatena_title_trends"
-        }
-      ]
-    },
-    {
-      "jp": "みいちゃんと山田さん",
-      "evidence": [
-        {
-          "url": "https://anond.hatelabo.jp/20260929051627",
-          "date": "2026-09-29",
-          "platform": "hatena_title_trends"
-        }
-      ]
     }
   ]
 }
