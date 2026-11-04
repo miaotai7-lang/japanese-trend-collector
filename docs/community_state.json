@@ -2,6 +2,16 @@
   "schemaVersion": 1,
   "items": [
     {
+      "jp": "韓本語",
+      "evidence": [
+        {
+          "url": "https://kevinsjournal.ca/korean-slang-trend-japan/",
+          "date": "2026-11-04",
+          "platform": "hatena_title_trends"
+        }
+      ]
+    },
+    {
       "jp": "滅（〇〇すぎて滅）",
       "evidence": [
         {
