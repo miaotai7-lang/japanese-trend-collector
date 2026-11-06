@@ -1,6 +1,55 @@
 {
-  "generatedAt": "2026-11-06T03:44:36+09:00",
+  "generatedAt": "2026-11-06T12:26:21+09:00",
   "items": [
+    {
+      "jp": "NISA貧乏",
+      "sources": [
+        "https://www.oricon.co.jp/news/2490887/full/",
+        "https://news.yahoo.co.jp/articles/340b70a9480ba02bdb60980e73fcb6b9ec5a5ef2"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.oricon.co.jp/news/2490887/full/",
+          "date": "2026-11-05",
+          "platform": "hatena_title_trends",
+          "rank": null
+        },
+        {
+          "url": "https://news.yahoo.co.jp/articles/340b70a9480ba02bdb60980e73fcb6b9ec5a5ef2",
+          "date": "2026-11-05",
+          "platform": "hatena_title_trends",
+          "rank": null
+        }
+      ],
+      "status": "community_signal_needs_independent_meaning_review",
+      "communitySources": [
+        "hatena_title_trends"
+      ],
+      "bloggerSources": [],
+      "bloggerEvidenceCount": 0,
+      "independentEvidenceCount": 2,
+      "communityEvidenceCount": 2,
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 80,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 2
+      },
+      "kanaSuggestion": "",
+      "translationStatus": "draft_unverified",
+      "translationDraft": {
+        "zh": "NISA差",
+        "en": "NISA Poor",
+        "provider": "MyMemory / machine translation",
+        "verified": false,
+        "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
+      },
+      "draftGeneratedAt": "2026-11-06",
+      "approvedForPublication": false
+    },
     {
       "jp": "アツい",
       "sources": [
@@ -118,6 +167,104 @@
         "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
       },
       "draftGeneratedAt": "2026-10-30",
+      "approvedForPublication": false
+    },
+    {
+      "jp": "ホビ垢",
+      "sources": [
+        "https://www.oricon.co.jp/news/2490887/full/",
+        "https://news.yahoo.co.jp/articles/340b70a9480ba02bdb60980e73fcb6b9ec5a5ef2"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.oricon.co.jp/news/2490887/full/",
+          "date": "2026-11-05",
+          "platform": "hatena_title_trends",
+          "rank": null
+        },
+        {
+          "url": "https://news.yahoo.co.jp/articles/340b70a9480ba02bdb60980e73fcb6b9ec5a5ef2",
+          "date": "2026-11-05",
+          "platform": "hatena_title_trends",
+          "rank": null
+        }
+      ],
+      "status": "community_signal_needs_independent_meaning_review",
+      "communitySources": [
+        "hatena_title_trends"
+      ],
+      "bloggerSources": [],
+      "bloggerEvidenceCount": 0,
+      "independentEvidenceCount": 2,
+      "communityEvidenceCount": 2,
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 80,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 2
+      },
+      "kanaSuggestion": "",
+      "translationStatus": "draft_unverified",
+      "translationDraft": {
+        "zh": "霍比秤",
+        "en": "Hobi Scale",
+        "provider": "MyMemory / machine translation",
+        "verified": false,
+        "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
+      },
+      "draftGeneratedAt": "2026-11-06",
+      "approvedForPublication": false
+    },
+    {
+      "jp": "新語・流行語大賞",
+      "sources": [
+        "https://www.oricon.co.jp/news/2490887/full/",
+        "https://news.yahoo.co.jp/articles/340b70a9480ba02bdb60980e73fcb6b9ec5a5ef2"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.oricon.co.jp/news/2490887/full/",
+          "date": "2026-11-05",
+          "platform": "hatena_title_trends",
+          "rank": null
+        },
+        {
+          "url": "https://news.yahoo.co.jp/articles/340b70a9480ba02bdb60980e73fcb6b9ec5a5ef2",
+          "date": "2026-11-05",
+          "platform": "hatena_title_trends",
+          "rank": null
+        }
+      ],
+      "status": "community_signal_needs_independent_meaning_review",
+      "communitySources": [
+        "hatena_title_trends"
+      ],
+      "bloggerSources": [],
+      "bloggerEvidenceCount": 0,
+      "independentEvidenceCount": 2,
+      "communityEvidenceCount": 2,
+      "quality": {
+        "status": "needs_human_review",
+        "reviewPriority": 80,
+        "priorityMeaning": "仅用于安排审核次序，不是词义或翻译准确率",
+        "reasons": [
+          "流行语调查中的候选；网络语义、实际用法与翻译仍需核验"
+        ],
+        "evidenceSources": 2
+      },
+      "kanaSuggestion": "",
+      "translationStatus": "draft_unverified",
+      "translationDraft": {
+        "zh": "SHINGO/BUZZWORD大奖",
+        "en": "Shingo/buzzword grand prize",
+        "provider": "MyMemory / machine translation",
+        "verified": false,
+        "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
+      },
+      "draftGeneratedAt": "2026-11-06",
       "approvedForPublication": false
     }
   ]

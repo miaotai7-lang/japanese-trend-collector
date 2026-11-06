@@ -1,16 +1,83 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-slang-discovery-unverified",
-  "generatedAt": "2026-11-06T03:44:36+09:00",
+  "generatedAt": "2026-11-06T12:26:21+09:00",
   "verifiedWordCount": 16,
   "verifiedChangedThisRun": false,
   "verifiedAddedThisRun": [],
   "lastVerifiedChangeAt": null,
-  "candidateCount": 3,
-  "newCandidatesThisRun": [],
+  "candidateCount": 6,
+  "newCandidatesThisRun": [
+    "新語・流行語大賞",
+    "ホビ垢",
+    "NISA貧乏"
+  ],
   "firstSnapshot": false,
   "notice": "此页仅为自动发现的候选与出处，不保证词义或流行程度，不能直接收入正式学习词典。",
   "items": [
+    {
+      "id": "45c67d86427b8d1fbc05",
+      "jp": "新語・流行語大賞",
+      "kanaSuggestion": "",
+      "status": "未核实候选（不可作为准确学习释义）",
+      "firstObservedAt": "2026-11-06T12:26:21+09:00",
+      "latestEvidenceDate": "2026-11-05",
+      "sourceCount": 2,
+      "sources": [
+        {
+          "url": "https://www.oricon.co.jp/news/2490887/full/",
+          "date": "2026-11-05",
+          "origin": "公开社区"
+        },
+        {
+          "url": "https://news.yahoo.co.jp/articles/340b70a9480ba02bdb60980e73fcb6b9ec5a5ef2",
+          "date": "2026-11-05",
+          "origin": "公开社区"
+        }
+      ]
+    },
+    {
+      "id": "670581909a3d29c74925",
+      "jp": "ホビ垢",
+      "kanaSuggestion": "",
+      "status": "未核实候选（不可作为准确学习释义）",
+      "firstObservedAt": "2026-11-06T12:26:21+09:00",
+      "latestEvidenceDate": "2026-11-05",
+      "sourceCount": 2,
+      "sources": [
+        {
+          "url": "https://www.oricon.co.jp/news/2490887/full/",
+          "date": "2026-11-05",
+          "origin": "公开社区"
+        },
+        {
+          "url": "https://news.yahoo.co.jp/articles/340b70a9480ba02bdb60980e73fcb6b9ec5a5ef2",
+          "date": "2026-11-05",
+          "origin": "公开社区"
+        }
+      ]
+    },
+    {
+      "id": "6d91387bbc9c2e2e5e02",
+      "jp": "NISA貧乏",
+      "kanaSuggestion": "",
+      "status": "未核实候选（不可作为准确学习释义）",
+      "firstObservedAt": "2026-11-06T12:26:21+09:00",
+      "latestEvidenceDate": "2026-11-05",
+      "sourceCount": 2,
+      "sources": [
+        {
+          "url": "https://www.oricon.co.jp/news/2490887/full/",
+          "date": "2026-11-05",
+          "origin": "公开社区"
+        },
+        {
+          "url": "https://news.yahoo.co.jp/articles/340b70a9480ba02bdb60980e73fcb6b9ec5a5ef2",
+          "date": "2026-11-05",
+          "origin": "公开社区"
+        }
+      ]
+    },
     {
       "id": "730ae875f1021b452df1",
       "jp": "チャッピー構文",

@@ -8,6 +8,11 @@
           "url": "https://www.oricon.co.jp/news/2490887/full/",
           "date": "2026-11-05",
           "platform": "hatena_title_trends"
+        },
+        {
+          "url": "https://news.yahoo.co.jp/articles/340b70a9480ba02bdb60980e73fcb6b9ec5a5ef2",
+          "date": "2026-11-05",
+          "platform": "hatena_title_trends"
         }
       ]
     },
@@ -18,6 +23,11 @@
           "url": "https://www.oricon.co.jp/news/2490887/full/",
           "date": "2026-11-05",
           "platform": "hatena_title_trends"
+        },
+        {
+          "url": "https://news.yahoo.co.jp/articles/340b70a9480ba02bdb60980e73fcb6b9ec5a5ef2",
+          "date": "2026-11-05",
+          "platform": "hatena_title_trends"
         }
       ]
     },
@@ -26,6 +36,11 @@
       "evidence": [
         {
           "url": "https://www.oricon.co.jp/news/2490887/full/",
+          "date": "2026-11-05",
+          "platform": "hatena_title_trends"
+        },
+        {
+          "url": "https://news.yahoo.co.jp/articles/340b70a9480ba02bdb60980e73fcb6b9ec5a5ef2",
           "date": "2026-11-05",
           "platform": "hatena_title_trends"
         }

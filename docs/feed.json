@@ -1,28 +1,28 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-internet-slang-only",
-  "generatedAt": "2026-11-06T03:44:36+09:00",
+  "generatedAt": "2026-11-06T12:26:21+09:00",
   "sourceDescription": "仅展示有近期流行语调查或专题出处、并人工编写日中英释义的网络用语；不收录新闻高频词或搜索热点。新增候选暂不自动发布，须核对释义。 自动加入新条目仅限事先审校释义且再次匹配近期正式调查的词；机器翻译仍只存待审核队列。",
   "counts": {
     "words": 16,
-    "candidateWords": 3,
-    "pendingReview": 3,
+    "candidateWords": 6,
+    "pendingReview": 6,
     "sourceSucceeded": 1,
-    "communityCandidateWords": 1,
+    "communityCandidateWords": 4,
     "communitySignals": 12,
     "bloggerSignals": 3,
     "bloggerCandidateWords": 1,
     "bloggerHeldForCorroboration": 2,
     "bloggerSourceSucceeded": 6,
     "bloggerSourceReadable": 6,
-    "communityHeldForCorroboration": 11,
+    "communityHeldForCorroboration": 8,
     "communitySourceSucceeded": 4,
     "communitySourceReadable": 6,
     "autoPublishedReviewed": 2,
     "reviewedCatalog": 14,
     "verifiedChangedThisRun": false,
     "verifiedAddedThisRun": 0,
-    "discoveryAddedThisRun": 0,
+    "discoveryAddedThisRun": 3,
     "discoverySnapshotInitialized": false
   },
   "sourceStatus": [
@@ -88,7 +88,7 @@
     {
       "name": "社区RSS:hatena_title_trends",
       "status": "ok",
-      "articles": 7,
+      "articles": 8,
       "candidateMentions": 3
     },
     {
