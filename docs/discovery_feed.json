@@ -1,17 +1,13 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-slang-discovery-unverified",
-  "generatedAt": "2026-11-06T12:26:21+09:00",
+  "generatedAt": "2026-11-07T02:57:17+09:00",
   "verifiedWordCount": 16,
   "verifiedChangedThisRun": false,
   "verifiedAddedThisRun": [],
   "lastVerifiedChangeAt": null,
   "candidateCount": 6,
-  "newCandidatesThisRun": [
-    "新語・流行語大賞",
-    "ホビ垢",
-    "NISA貧乏"
-  ],
+  "newCandidatesThisRun": [],
   "firstSnapshot": false,
   "notice": "此页仅为自动发现的候选与出处，不保证词义或流行程度，不能直接收入正式学习词典。",
   "items": [
