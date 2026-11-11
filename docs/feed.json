@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-internet-slang-only",
-  "generatedAt": "2026-11-11T11:46:15+09:00",
+  "generatedAt": "2026-11-12T03:41:26+09:00",
   "sourceDescription": "仅展示有近期流行语调查或专题出处、并人工编写日中英释义的网络用语；不收录新闻高频词或搜索热点。新增候选暂不自动发布，须核对释义。 自动加入新条目仅限事先审校释义且再次匹配近期正式调查的词；机器翻译仍只存待审核队列。",
   "counts": {
     "words": 16,
@@ -13,8 +13,8 @@
     "bloggerSignals": 3,
     "bloggerCandidateWords": 1,
     "bloggerHeldForCorroboration": 2,
-    "bloggerSourceSucceeded": 6,
-    "bloggerSourceReadable": 6,
+    "bloggerSourceSucceeded": 0,
+    "bloggerSourceReadable": 0,
     "communityHeldForCorroboration": 9,
     "communitySourceSucceeded": 4,
     "communitySourceReadable": 6,
@@ -111,39 +111,33 @@
     },
     {
       "name": "知识博主RSS:nihon_5",
-      "status": "ok",
-      "articles": 25,
-      "candidateMentions": 0
+      "status": "error",
+      "detail": "HTTPError: HTTP Error 503: Service Temporarily Unavailable"
     },
     {
       "name": "知识博主RSS:open_fairy44",
-      "status": "ok",
-      "articles": 25,
-      "candidateMentions": 0
+      "status": "error",
+      "detail": "HTTPError: HTTP Error 503: Service Temporarily Unavailable"
     },
     {
       "name": "知识博主RSS:50s_lab",
-      "status": "ok",
-      "articles": 25,
-      "candidateMentions": 0
+      "status": "error",
+      "detail": "HTTPError: HTTP Error 503: Service Temporarily Unavailable"
     },
     {
       "name": "知识博主RSS:hokeminomura",
-      "status": "ok",
-      "articles": 3,
-      "candidateMentions": 0
+      "status": "error",
+      "detail": "HTTPError: HTTP Error 503: Service Temporarily Unavailable"
     },
     {
       "name": "知识博主RSS:weiden_haus_lab",
-      "status": "ok",
-      "articles": 1,
-      "candidateMentions": 0
+      "status": "error",
+      "detail": "HTTPError: HTTP Error 503: Service Temporarily Unavailable"
     },
     {
       "name": "知识博主RSS:nizi_to_mangetsu",
-      "status": "ok",
-      "articles": 14,
-      "candidateMentions": 0
+      "status": "error",
+      "detail": "HTTPError: HTTP Error 503: Service Temporarily Unavailable"
     }
   ],
   "items": [
@@ -186,7 +180,7 @@
       "previous7": 0,
       "docCount": 3,
       "trendCount": 3,
-      "score": 218,
+      "score": 216,
       "surveyRank": 1
     },
     {
@@ -222,7 +216,7 @@
       "previous7": 0,
       "docCount": 2,
       "trendCount": 2,
-      "score": 214,
+      "score": 212,
       "surveyRank": 2
     },
     {
@@ -258,7 +252,7 @@
       "previous7": 0,
       "docCount": 2,
       "trendCount": 2,
-      "score": 210,
+      "score": 208,
       "surveyRank": 3
     },
     {
@@ -288,7 +282,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 204,
+      "score": 202,
       "surveyRank": 30
     },
     {
@@ -330,7 +324,7 @@
       "previous7": 0,
       "docCount": 3,
       "trendCount": 3,
-      "score": 198,
+      "score": 196,
       "surveyRank": 6
     },
     {
@@ -360,7 +354,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 1,
-      "score": 198,
+      "score": 196,
       "surveyRank": 6
     },
     {
@@ -390,7 +384,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 1,
-      "score": 190,
+      "score": 188,
       "surveyRank": 8
     },
     {
@@ -420,7 +414,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 188,
+      "score": 186,
       "surveyRank": null
     },
     {
@@ -450,7 +444,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 188,
+      "score": 186,
       "surveyRank": null
     },
     {
@@ -486,7 +480,7 @@
       "previous7": 0,
       "docCount": 2,
       "trendCount": 1,
-      "score": 176,
+      "score": 174,
       "surveyRank": null
     },
     {
@@ -516,7 +510,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 174,
+      "score": 172,
       "surveyRank": null
     },
     {
@@ -546,7 +540,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 174,
+      "score": 172,
       "surveyRank": null
     },
     {
@@ -576,7 +570,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 162,
+      "score": 160,
       "surveyRank": null
     },
     {
@@ -606,7 +600,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 1,
-      "score": 162,
+      "score": 160,
       "surveyRank": null
     },
     {
@@ -642,7 +636,7 @@
       "previous7": 0,
       "docCount": 2,
       "trendCount": 2,
-      "score": 162,
+      "score": 160,
       "surveyRank": null
     },
     {
@@ -672,7 +666,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 118,
+      "score": 116,
       "surveyRank": null
     }
   ],
