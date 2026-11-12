@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T12:48:24+09:00",
+  "generatedAt": "2026-11-13T03:54:45+09:00",
   "items": [
     {
       "jp": "NISA貧乏",
@@ -73,7 +73,7 @@
         "evidenceSources": 1
       },
       "kanaSuggestion": "あつい",
-      "translationStatus": "cached_unverified",
+      "translationStatus": "draft_unverified",
       "translationDraft": {
         "zh": "热",
         "en": "Hot",
@@ -81,7 +81,7 @@
         "verified": false,
         "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
       },
-      "draftGeneratedAt": "2026-10-29",
+      "draftGeneratedAt": "2026-11-13",
       "approvedForPublication": false
     },
     {
@@ -107,15 +107,15 @@
         "evidenceSources": 1
       },
       "kanaSuggestion": "しょーとすりーぱー",
-      "translationStatus": "cached_unverified",
+      "translationStatus": "draft_unverified",
       "translationDraft": {
         "zh": "短睡眠者",
-        "en": "Short Sleeper",
+        "en": "Short sleeper",
         "provider": "MyMemory / machine translation",
         "verified": false,
         "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
       },
-      "draftGeneratedAt": "2026-10-29",
+      "draftGeneratedAt": "2026-11-13",
       "approvedForPublication": false
     },
     {
