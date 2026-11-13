@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T12:25:36+09:00",
+  "generatedAt": "2026-11-14T03:31:43+09:00",
   "items": [
     {
       "jp": "NISA貧乏",
@@ -158,15 +158,15 @@
         "evidenceSources": 2
       },
       "kanaSuggestion": "",
-      "translationStatus": "cached_unverified",
+      "translationStatus": "draft_unverified",
       "translationDraft": {
-        "zh": "Chappie语法",
-        "en": "Chappie Syntax",
+        "zh": "Chappy语法",
+        "en": "Chappy syntax",
         "provider": "MyMemory / machine translation",
         "verified": false,
         "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
       },
-      "draftGeneratedAt": "2026-10-30",
+      "draftGeneratedAt": "2026-11-14",
       "approvedForPublication": false
     },
     {
