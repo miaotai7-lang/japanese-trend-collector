@@ -2,6 +2,16 @@
   "schemaVersion": 1,
   "items": [
     {
+      "jp": "長谷川あかりさんの薬味たっぷりだしカレー",
+      "evidence": [
+        {
+          "url": "https://yano-t.net/entry/youtube26111403",
+          "date": "2026-11-14",
+          "platform": "hatena_title_trends"
+        }
+      ]
+    },
+    {
       "jp": "元は長谷川あかりさんのレシピを信じる投稿",
       "evidence": [
         {
@@ -113,36 +123,6 @@
           "url": "https://www.itmedia.co.jp/mobile/articles/2610/30/news031.html",
           "date": "2026-10-30",
           "platform": "hatena_title_trends"
-        }
-      ]
-    },
-    {
-      "jp": "マウンティングの語源調査の仕方",
-      "evidence": [
-        {
-          "url": "https://www.nikkei.com/article/DGXZQOUC181F60Y6A810C2000000/",
-          "date": "2026-10-10",
-          "platform": "hatena_title_slang"
-        }
-      ]
-    },
-    {
-      "jp": "マウンティング",
-      "evidence": [
-        {
-          "url": "https://www.nikkei.com/article/DGXZQOUC181F60Y6A810C2000000/",
-          "date": "2026-10-10",
-          "platform": "hatena_title_slang"
-        }
-      ]
-    },
-    {
-      "jp": "プログラマーの脳みそ",
-      "evidence": [
-        {
-          "url": "https://www.nikkei.com/article/DGXZQOUC181F60Y6A810C2000000/",
-          "date": "2026-10-10",
-          "platform": "hatena_title_slang"
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-internet-slang-only",
-  "generatedAt": "2026-11-14T12:14:06+09:00",
+  "generatedAt": "2026-11-15T02:06:18+09:00",
   "sourceDescription": "仅展示有近期流行语调查或专题出处、并人工编写日中英释义的网络用语；不收录新闻高频词或搜索热点。新增候选暂不自动发布，须核对释义。 自动加入新条目仅限事先审校释义且再次匹配近期正式调查的词；机器翻译仍只存待审核队列。",
   "counts": {
     "words": 16,
@@ -9,14 +9,14 @@
     "pendingReview": 6,
     "sourceSucceeded": 1,
     "communityCandidateWords": 4,
-    "communitySignals": 13,
+    "communitySignals": 11,
     "bloggerSignals": 3,
     "bloggerCandidateWords": 1,
     "bloggerHeldForCorroboration": 2,
     "bloggerSourceSucceeded": 6,
     "bloggerSourceReadable": 6,
-    "communityHeldForCorroboration": 9,
-    "communitySourceSucceeded": 4,
+    "communityHeldForCorroboration": 7,
+    "communitySourceSucceeded": 3,
     "communitySourceReadable": 6,
     "autoPublishedReviewed": 2,
     "reviewedCatalog": 14,
@@ -81,15 +81,15 @@
     },
     {
       "name": "社区RSS:hatena_title_slang",
-      "status": "ok",
-      "articles": 1,
+      "status": "empty",
+      "articles": 0,
       "candidateMentions": 0
     },
     {
       "name": "社区RSS:hatena_title_trends",
       "status": "ok",
-      "articles": 9,
-      "candidateMentions": 0
+      "articles": 10,
+      "candidateMentions": 1
     },
     {
       "name": "社区RSS:mastodon_slang",
@@ -186,7 +186,7 @@
       "previous7": 0,
       "docCount": 3,
       "trendCount": 3,
-      "score": 212,
+      "score": 210,
       "surveyRank": 1
     },
     {
@@ -222,7 +222,7 @@
       "previous7": 0,
       "docCount": 2,
       "trendCount": 2,
-      "score": 208,
+      "score": 206,
       "surveyRank": 2
     },
     {
@@ -258,7 +258,7 @@
       "previous7": 0,
       "docCount": 2,
       "trendCount": 2,
-      "score": 204,
+      "score": 202,
       "surveyRank": 3
     },
     {
@@ -288,7 +288,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 198,
+      "score": 196,
       "surveyRank": 30
     },
     {
@@ -330,7 +330,7 @@
       "previous7": 0,
       "docCount": 3,
       "trendCount": 3,
-      "score": 192,
+      "score": 190,
       "surveyRank": 6
     },
     {
@@ -360,7 +360,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 1,
-      "score": 192,
+      "score": 190,
       "surveyRank": 6
     },
     {
@@ -390,7 +390,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 1,
-      "score": 184,
+      "score": 182,
       "surveyRank": 8
     },
     {
@@ -420,7 +420,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 182,
+      "score": 180,
       "surveyRank": null
     },
     {
@@ -450,7 +450,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 182,
+      "score": 180,
       "surveyRank": null
     },
     {
@@ -486,7 +486,7 @@
       "previous7": 0,
       "docCount": 2,
       "trendCount": 1,
-      "score": 170,
+      "score": 168,
       "surveyRank": null
     },
     {
@@ -516,7 +516,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 168,
+      "score": 166,
       "surveyRank": null
     },
     {
@@ -546,7 +546,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 168,
+      "score": 166,
       "surveyRank": null
     },
     {
@@ -576,7 +576,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 156,
+      "score": 154,
       "surveyRank": null
     },
     {
@@ -606,7 +606,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 1,
-      "score": 156,
+      "score": 154,
       "surveyRank": null
     },
     {
@@ -642,7 +642,7 @@
       "previous7": 0,
       "docCount": 2,
       "trendCount": 2,
-      "score": 156,
+      "score": 154,
       "surveyRank": null
     },
     {
@@ -672,7 +672,7 @@
       "previous7": 0,
       "docCount": 1,
       "trendCount": 0,
-      "score": 112,
+      "score": 110,
       "surveyRank": null
     }
   ],
