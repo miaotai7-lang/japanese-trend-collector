@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-internet-slang-only",
-  "generatedAt": "2026-11-18T04:50:36+09:00",
+  "generatedAt": "2026-11-18T13:19:17+09:00",
   "sourceDescription": "仅展示有近期流行语调查或专题出处、并人工编写日中英释义的网络用语；不收录新闻高频词或搜索热点。新增候选暂不自动发布，须核对释义。 自动加入新条目仅限事先审校释义且再次匹配近期正式调查的词；机器翻译仍只存待审核队列。",
   "counts": {
     "words": 16,
@@ -16,8 +16,8 @@
     "bloggerSourceSucceeded": 6,
     "bloggerSourceReadable": 6,
     "communityHeldForCorroboration": 7,
-    "communitySourceSucceeded": 2,
-    "communitySourceReadable": 3,
+    "communitySourceSucceeded": 3,
+    "communitySourceReadable": 6,
     "autoPublishedReviewed": 2,
     "reviewedCatalog": 14,
     "verifiedChangedThisRun": false,
@@ -30,6 +30,11 @@
       "name": "流行语调查页面读取",
       "status": "fetched",
       "articles": 10
+    },
+    {
+      "name": "调查排名解析",
+      "status": "no_matches",
+      "detail": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4704/"
     },
     {
       "name": "调查排名解析",
@@ -62,11 +67,6 @@
       "detail": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4351/"
     },
     {
-      "name": "调查排名解析",
-      "status": "no_matches",
-      "detail": "https://shibuya-trendresearch.jp/monthlytrendsurvey/4220/"
-    },
-    {
       "name": "有效流行语调查解析",
       "status": "ok",
       "articles": 3,
@@ -75,18 +75,21 @@
     },
     {
       "name": "社区RSS:hatena_slang",
-      "status": "error",
-      "detail": "HTTPError: HTTP Error 500: Internal Server Error"
+      "status": "empty",
+      "articles": 0,
+      "candidateMentions": 0
     },
     {
       "name": "社区RSS:hatena_title_slang",
-      "status": "error",
-      "detail": "HTTPError: HTTP Error 500: Internal Server Error"
+      "status": "empty",
+      "articles": 0,
+      "candidateMentions": 0
     },
     {
       "name": "社区RSS:hatena_title_trends",
-      "status": "error",
-      "detail": "TimeoutError: The read operation timed out"
+      "status": "ok",
+      "articles": 10,
+      "candidateMentions": 0
     },
     {
       "name": "社区RSS:mastodon_slang",
