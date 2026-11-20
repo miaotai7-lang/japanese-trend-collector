@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T12:58:21+09:00",
+  "generatedAt": "2026-11-21T04:05:58+09:00",
   "items": [
     {
       "jp": "NISA貧乏",
@@ -39,15 +39,15 @@
         "evidenceSources": 2
       },
       "kanaSuggestion": "",
-      "translationStatus": "cached_unverified",
+      "translationStatus": "draft_unverified",
       "translationDraft": {
-        "zh": "NISA差",
-        "en": "NISA Poor",
+        "zh": "NISA穷人",
+        "en": "NISA poor",
         "provider": "MyMemory / machine translation",
         "verified": false,
         "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
       },
-      "draftGeneratedAt": "2026-11-06",
+      "draftGeneratedAt": "2026-11-21",
       "approvedForPublication": false
     },
     {
@@ -207,15 +207,15 @@
         "evidenceSources": 2
       },
       "kanaSuggestion": "",
-      "translationStatus": "cached_unverified",
+      "translationStatus": "draft_unverified",
       "translationDraft": {
-        "zh": "霍比秤",
-        "en": "Hobi Scale",
+        "zh": "兴趣爱好账号",
+        "en": "Hobby account",
         "provider": "MyMemory / machine translation",
         "verified": false,
         "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
       },
-      "draftGeneratedAt": "2026-11-06",
+      "draftGeneratedAt": "2026-11-21",
       "approvedForPublication": false
     },
     {
@@ -256,15 +256,15 @@
         "evidenceSources": 2
       },
       "kanaSuggestion": "",
-      "translationStatus": "cached_unverified",
+      "translationStatus": "draft_unverified",
       "translationDraft": {
-        "zh": "SHINGO/BUZZWORD大奖",
-        "en": "Shingo/buzzword grand prize",
+        "zh": "新语·流行语大奖",
+        "en": "New Words and Buzzwords Awards",
         "provider": "MyMemory / machine translation",
         "verified": false,
         "warning": "机器翻译未核对网络语义，禁止未经审核直接发布"
       },
-      "draftGeneratedAt": "2026-11-06",
+      "draftGeneratedAt": "2026-11-21",
       "approvedForPublication": false
     }
   ]
