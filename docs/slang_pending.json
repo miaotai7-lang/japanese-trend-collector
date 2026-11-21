@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T04:05:58+09:00",
+  "generatedAt": "2026-11-21T12:57:58+09:00",
   "items": [
     {
       "jp": "NISA貧乏",
@@ -39,7 +39,7 @@
         "evidenceSources": 2
       },
       "kanaSuggestion": "",
-      "translationStatus": "draft_unverified",
+      "translationStatus": "cached_unverified",
       "translationDraft": {
         "zh": "NISA穷人",
         "en": "NISA poor",
@@ -207,7 +207,7 @@
         "evidenceSources": 2
       },
       "kanaSuggestion": "",
-      "translationStatus": "draft_unverified",
+      "translationStatus": "cached_unverified",
       "translationDraft": {
         "zh": "兴趣爱好账号",
         "en": "Hobby account",
@@ -256,7 +256,7 @@
         "evidenceSources": 2
       },
       "kanaSuggestion": "",
-      "translationStatus": "draft_unverified",
+      "translationStatus": "cached_unverified",
       "translationDraft": {
         "zh": "新语·流行语大奖",
         "en": "New Words and Buzzwords Awards",
