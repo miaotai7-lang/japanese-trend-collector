@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "feedType": "japanese-internet-slang-only",
-  "generatedAt": "2026-11-28T04:56:38+09:00",
+  "generatedAt": "2026-11-28T13:43:57+09:00",
   "sourceDescription": "仅展示有近期流行语调查或专题出处、并人工编写日中英释义的网络用语；不收录新闻高频词或搜索热点。新增候选暂不自动发布，须核对释义。 自动加入新条目仅限事先审校释义且再次匹配近期正式调查的词；机器翻译仍只存待审核队列。",
   "counts": {
     "words": 16,
@@ -16,7 +16,7 @@
     "bloggerSourceSucceeded": 6,
     "bloggerSourceReadable": 6,
     "communityHeldForCorroboration": 10,
-    "communitySourceSucceeded": 3,
+    "communitySourceSucceeded": 4,
     "communitySourceReadable": 6,
     "autoPublishedReviewed": 2,
     "reviewedCatalog": 14,
@@ -81,8 +81,8 @@
     },
     {
       "name": "社区RSS:hatena_title_slang",
-      "status": "empty",
-      "articles": 0,
+      "status": "ok",
+      "articles": 1,
       "candidateMentions": 0
     },
     {
